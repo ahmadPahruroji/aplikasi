@@ -18,8 +18,6 @@ class CreateCoordinatorsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('member_id')->unsigned();
-            $table->string('name');
-            $table->string('address');
             $table->string('description')->nullable();
             $table->timestamps();
 

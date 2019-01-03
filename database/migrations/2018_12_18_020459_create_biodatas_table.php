@@ -20,7 +20,7 @@ class CreateBiodatasTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('no_hp');
-            $table->string('alamat');
+            $table->text('address')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

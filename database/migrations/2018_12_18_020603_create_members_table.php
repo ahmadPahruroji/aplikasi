@@ -18,11 +18,10 @@ class CreateMembersTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('name');
-            $table->string('no_hp');
-            $table->string('kk');
-            $table->string('email');
             $table->string('alamat');
-            $table->string('description');
+            $table->string('kk')->nullable();
+            $table->string('no_hp')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

@@ -18,3 +18,23 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware'=>'auth'],function(){
+
+Route::resources([
+	'users'=>'UserController',
+	'biodatas'=>'BiodataController',
+	'categories'=>'CategoryController',
+	'complaints'=>'ComplaintController',
+	'contacts'=>'ContactController',
+	'coordinators'=>'CoordinatorController',
+	'countributions'=>'CountributionController',
+	'events'=>'EventController',
+	'evidences'=>'EvidenceController',
+	'members'=>'MemberController',
+	'officers'=>'OfficerController',
+	'spendings'=>'SpendingController',
+	'proofs'=>'ProofController',
+
+	]);
+});

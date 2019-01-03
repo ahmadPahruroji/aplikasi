@@ -16,16 +16,14 @@ class CreateOfficersTable extends Migration
         Schema::create('officers', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('image');
             $table->string('no_wa');
-            $table->string('ktp');
-            $table->string('address');
+            $table->string('ktp')->nullable();
+            $table->string('address')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -21,6 +21,7 @@ class CreateCountributionsTable extends Migration
             $table->string('month');
             $table->integer('total');
             $table->date('date');
+            $table->string('status');
             $table->string('description')->nullable();
             $table->timestamps();
 
