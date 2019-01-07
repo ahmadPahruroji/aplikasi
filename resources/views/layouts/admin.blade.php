@@ -265,7 +265,7 @@
      <li><a href="{{ url ('categories') }}"><i class="fa fa-fw fa-bookmark"></i>Kategori</a></li>
      <li><a href="{{ url ('countributions') }}"><i class="fa fa-fw fa-bookmark"></i>Iuran</a></li>
      <li><a href="{{ url ('proofs') }}"><i class="fa fa-fw fa-bookmark"></i>Data Bukti</a></li>
-     <li><a href="#"><i class="fa fa-fw fa-bookmark"></i>Pengeluaran</a></li>
+     <li><a href="{{ url ('spendings') }}"><i class="fa fa-fw fa-bookmark"></i>Pengeluaran</a></li>
  </ul>
 </li>
 {{-- keluhan --}}

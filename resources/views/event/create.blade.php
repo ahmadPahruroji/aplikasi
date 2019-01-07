@@ -39,6 +39,10 @@
 								<input type="file" name="image" class="form-control">
 							</div>
 							<div class="form-group">
+								<label>Tanggal</label>
+								<input type="date" class="form-control" name="date" placeholder="type something" required>
+							</div>
+							<div class="form-group">
 								<label>Deskripsi</label>
 								<textarea type="text" class="form-control" name="description" placeholder="type something" > </textarea>
 							</div> 

@@ -18,7 +18,6 @@ class CreateSpendingsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
-            $table->integer('countribution_id')->unsigned();
             $table->integer('total');
             $table->date('date');
             $table->string('description')->nullable();
@@ -26,7 +25,6 @@ class CreateSpendingsTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('countribution_id')->references('id')->on('countributions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
