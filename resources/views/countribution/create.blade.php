@@ -24,24 +24,44 @@
 					<form action="{{ route('countributions.store') }}" method="post">
 					{{ csrf_field()}} 
 					<div class="form-group">
-						<label>User</label>
-							<select class="form-control select2" name="user_id">
-								@foreach ($users as $u => $user)
-								<option value="{{ $user->id }}">{{ $user->name }}</option>
+						<label>Nama Warga</label>
+							<select class="form-control select2" name="member_id">
+								@foreach ($members as $m => $member)
+								<option value="{{ $member->id }}">{{ $member->name }}</option>
 								@endforeach
 							</select>
 					</div>
 					<div class="form-group">
-						<label>Nama</label>
-						<input type="text" class="form-control" name="name" placeholder="type something" required>
-					</div>
-					<div class="form-group">
 						<label>Bulan</label>
-						<input type="text" class="form-control" name="month" placeholder="type something" required>
+						{{-- <input type="text" class="form-control" name="month" placeholder="type something" required> --}}
+						{{-- <select class="form-control select2" name="month"> --}}
+								{{-- <option>Januari</option>
+								<option>Februari</option>
+								<option>Maret</option>
+								<option>April</option>
+								<option>Mei</option>
+								<option>Juni</option>
+								<option>Juli</option>
+								<option>Agustus</option>
+								<option>September</option>
+								<option>Oktober</option>
+								<option>November</option>
+								<option>Desember</option>
+							</select> --}}
+							<input type="text" class="form-control date" name="month" />
+ 
 					</div>
 					<div class="form-group">
 						<label>Jumlah</label>
 						<input type="number" class="form-control" name="total" placeholder="type something" required>
+					</div>
+					<div class="form-group">
+						<label>Metode Pembayaran</label>
+							<select class="form-control select2" name="payment_id">
+								@foreach ($payments as $p => $payment)
+								<option value="{{ $payment->id }}">{{ $payment->name }}</option>
+								@endforeach
+							</select>
 					</div>
 					<div class="form-group">
 						<label>Tanggal</label>
@@ -49,11 +69,11 @@
 					</div>
 					<div class="form-group">
 						<label>Status</label>
-						<input type="text" class="form-control" name="status" placeholder="type something" required>
-					</div>
-					<div class="form-group">
-						<label>Keterangan</label>
-						<textarea type="text" class="form-control" name="description" placeholder="type something" > </textarea>
+							<select class="form-control select2" name="status_id">
+								@foreach ($statuses as $s => $status)
+								<option value="{{ $status->id }}">{{ $status->name }}</option>
+								@endforeach
+							</select>
 					</div>
 					
 					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>

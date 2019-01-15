@@ -2,7 +2,10 @@
 @section('content')
 <div class="page-header">
 	<div class="container-fluid">
-		<h2 class="h5 no-margin-bottom">Data Keluhan</h2>
+		{{-- <h2 class="h5 no-margin-bottom">Data Keluhan</h2> --}}
+		<div class="alert alert-primary" role="alert">
+          <i class="fa fa-call"></i> KELURAN
+        </div>
 	</div>
 </div>
 

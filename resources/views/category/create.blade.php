@@ -2,7 +2,10 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Kategori</h2>
+    {{-- <h2 class="h5 no-margin-bottom">Kategori</h2> --}}
+    <div class="alert alert-primary" role="alert">
+          <i class="fa fa-call"></i> KATEGORI
+        </div>
   </div>
 </div>
 
@@ -12,9 +15,9 @@
 	<div class="row">
 		<div class="offset-3 col-6">
 			<div class="card">
-				<div class="card-header">
+				<div class="card-header border-primary">
 					<a href="{{ url('categories') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
-					<h5 class="pull-right"> Isi Form</h5>
+					<h5 class="pull-right"> Form Kategori</h5>
 				</div>
 				<div class="card-body"> 
 					

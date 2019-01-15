@@ -25,16 +25,28 @@
 						@csrf
 
 					<div class="form-group">
-						<label>Nama</label>
-						<input type="text" class="form-control" value="{{ $countributions->name }}"  name="name" placeholder="type something" required> 
+						<label>Nama Warga</label>
+						<select class="form-control select2" name="member_id">
+								@foreach ($members as $m => $member)
+								<option value="{{ $member->id }}" {{$member->id==$countributions->member_id ? 'selected':null}}>{{ $member->name }}</option>
+								@endforeach
+							</select>
 					</div> 
 					<div class="form-group">
 						<label>Bulan</label>
-						<input type="text" class="form-control" value="{{ $countributions->month }}"  name="month" placeholder="type something" required> 
+						<input type="text" class="form-control date" value="{{ $countributions->month }}"  name="month" placeholder="type something" required> 
 					</div> 
 					<div class="form-group">
 						<label>Jumlah</label>
 						<input type="number" class="form-control" value="{{ $countributions->total }}"  name="total" placeholder="type something" required> 
+					</div>
+					<div class="form-group">
+						<label>Metode Pembayaran</label>
+							<select class="form-control select2" name="payment_id">
+								@foreach ($payments as $p => $payment)
+								<option value="{{ $payment->id }}" {{$payment->id==$countributions->payment_id ? 'selected':null}}>{{ $payment->name }}</option>
+								@endforeach
+							</select>
 					</div>
 					<div class="form-group">
 						<label>Tanggal</label>
@@ -42,11 +54,15 @@
 					</div>
 					<div class="form-group">
 						<label>Status</label>
-						<input type="text" class="form-control" value="{{ $countributions->status }}"  name="status" placeholder="type something" required> 
+						<select class="form-control select2" name="status_id">
+								@foreach ($statuses as $s => $status)
+								<option value="{{ $status->id }}" {{$status->id==$countributions->status_id ? 'selected':null}}>{{ $status->name }}</option>
+								@endforeach
+							</select>
 					</div>
 					<div class="form-group">
 						<label>Keterangan</label>
-						<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $countributions->description}}</textarea>
+						<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $countributions->description}}a</textarea>
 					</div> 
 					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
 					</form>

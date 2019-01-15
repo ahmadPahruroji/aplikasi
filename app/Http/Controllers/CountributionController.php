@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\User;
+use App\Member;
+use App\Payment;
+use App\Status;
 use App\Countribution;
 
 class CountributionController extends Controller
@@ -16,7 +18,7 @@ class CountributionController extends Controller
      */
     public function index()
     {
-        $data["countributions"] = Countribution::get();
+        $data["countributions"] = Countribution::with('member','payment','status')->get();
         return view('countribution.index', $data);
     }
 
@@ -27,7 +29,9 @@ class CountributionController extends Controller
      */
     public function create()
     {
-        $data["users"] = User::get();
+        $data["members"] = Member::get();
+        $data["payments"] = Payment::get();
+        $data["statuses"] = Status::get();
        return view('countribution.create',$data);
     }
 
@@ -67,6 +71,9 @@ class CountributionController extends Controller
     public function edit($id)
     {
         $data["countributions"] = Countribution::find($id);
+        $data["members"] = Member::get();
+        $data["payments"] = Payment::get();
+        $data["statuses"] = Status::get();
        return view('countribution.edit', $data);
     }
 

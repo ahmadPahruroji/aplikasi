@@ -12,29 +12,58 @@
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+	return view('auth/login');
+});
+
+Route::get('check',function(){
+	switch (Auth::user()->role_id) {
+		case '1':
+			return redirect('/home');
+			break;
+		case '2':
+			return redirect('auth/login');
+			break;
+		
+		default:
+			# code...
+			break;
+	}
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::group(['middleware'=>'auth'],function(){
 
-Route::resources([
-	'users'=>'UserController',
-	'biodatas'=>'BiodataController',
-	'categories'=>'CategoryController',
-	'complaints'=>'ComplaintController',
-	'contacts'=>'ContactController',
-	'coordinators'=>'CoordinatorController',
-	'countributions'=>'CountributionController',
-	'events'=>'EventController',
-	'evidences'=>'EvidenceController',
-	'members'=>'MemberController',
-	'officers'=>'OfficerController',
-	'spendings'=>'SpendingController',
-	'proofs'=>'ProofController',
+	Route::group(['middleware'=>'role:1'],function(){
 
-	]);
+		Route::get('/home', 'HomeController@index')->name('home');
+		Route::resources([
+			'users'=>'UserController',
+			'biodatas'=>'BiodataController',
+			'categories'=>'CategoryController',
+			'complaints'=>'ComplaintController',
+			'contacts'=>'ContactController',
+			'coordinators'=>'CoordinatorController',
+			'countributions'=>'CountributionController',
+			'events'=>'EventController',
+			'evidences'=>'EvidenceController',
+			'members'=>'MemberController',
+			'officers'=>'OfficerController',
+			'spendings'=>'SpendingController',
+			'proofs'=>'ProofController',
+
+		]);
+	});
+
+	Route::group(['middleware'=>'role:2'],function(){
+		Route::get('/homeumkm', 'UMKM\HomeUmkmController@index')->name('homeumkm');
+		Route::resources([
+			'user'=>'UMKM\UserController',
+			'umkmuser'=>'UMKM\UmkmController',
+			'productimageuser'=>'UMKM\ProductImageController',
+		]);
+	});
+
 });

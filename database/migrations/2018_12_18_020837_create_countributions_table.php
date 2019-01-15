@@ -16,16 +16,19 @@ class CreateCountributionsTable extends Migration
         Schema::create('countributions', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->string('name');
+            // $table->integer('user_id')->unsigned();
+            $table->integer('member_id')->unsigned();
             $table->string('month');
             $table->integer('total');
+            $table->integer('payment_id')->unsigned();
             $table->date('date');
-            $table->string('status');
+            $table->integer('status_id')->unsigned();
             $table->string('description')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('payment_id')->references('id')->on('payments')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

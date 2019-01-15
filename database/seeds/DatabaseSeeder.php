@@ -15,12 +15,14 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolesTableSeeder::class,
             UsersTableSeeder::class,
+             MembersTableSeeder::class,
             BiodatasTableSeeder::class,
             CategoriesTableSeeder::class,
+            PaymentsTableSeeder::class,
+            StatusesTableSeeder::class,
             ContactsTableSeeder::class,
             CountributionsTableSeeder::class,
             EventsTableSeeder::class,
-            MembersTableSeeder::class,
             OfficersTableSeeder::class,
 
             ]);

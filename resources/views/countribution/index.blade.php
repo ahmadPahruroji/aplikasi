@@ -24,21 +24,25 @@
                             <td>Jumlah</td>
                             <td>Tanggal</td>
                             <td>Status</td>
-                            <td>Keterangan</td>
+                            {{-- <td>Keterangan</td> --}}
                             <td>Action</td>
     					</tr>
     				</thead>
     				<tbody>
     		
                         @foreach ($countributions as $cu => $countribution)
+                         @php
+               setlocale (LC_TIME, 'ID');
+               $date = strftime( "%d %B %Y", strtotime($countribution->date));
+               @endphp
                         <tr>
                             <td>{{ $cu+1 }}</td>
-                            <td>{{ $countribution->name }}</td>
+                            <td>{{ $countribution->member->name }}</td>
                             <td>{{ $countribution->month }}</td>
                             <td>{{ $countribution->total }}</td>
-                            <td>{{ $countribution->date }}</td>
-                            <td>{{ $countribution->status }}</td>
-                            <td>{{ $countribution->description }}</td>
+                            <td>{{ $date }}</td>
+                            <td><span class="label radius-circle bg-primary float-left">{{ $countribution->status->name }}</span></td>
+                            {{-- <td>{{ $countribution->description }}</td> --}}
                             <td>
                                <center>
                                 <div class="btn-group">

@@ -2,7 +2,10 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Data Petugas</h2>
+    {{-- <h2 class="h5 no-margin-bottom">Data Petugas</h2> --}}
+    <div class="alert alert-primary" role="alert">
+          <i class="fa fa-call"></i> PETUGAS
+        </div>
   </div>
 </div>
 
@@ -12,9 +15,9 @@
 	<div class="row">
 		<div class="offset-3 col-6">
 			<div class="card">
-				<div class="card-header">
+				<div class="card-header border-primary">
 					<a href="{{ url('officers') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
-					<h5 class="pull-right"> Fill the Form</h5>
+					<h5 class="pull-right"> Form Petugas</h5>
 				</div>
 				<div class="card-body"> 
 					

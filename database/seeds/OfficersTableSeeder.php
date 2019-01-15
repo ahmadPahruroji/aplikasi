@@ -15,9 +15,9 @@ class OfficersTableSeeder extends Seeder
         $data = [
 		    [
 		    	"id"=>1,
-		    	"name"=>"Ridwan",
-        		"image"=>"officer/avatar.png",
-        		"no_wa"=>"0896654346",
+		    	"name"=>"KONIRI",
+        		"image"=>"officer/KONIRI.jpg",
+        		"no_wa"=>"087727584323",
         		"ktp"=>"",
         		"address"=>"",
         		"description"=>""
@@ -25,13 +25,42 @@ class OfficersTableSeeder extends Seeder
 
         	[
 		    	"id"=>2,
-		    	"name"=>"Kamil",
-        		"image"=>"officer/avatar.png",
-        		"no_wa"=>"0896654346",
+		    	"name"=>"QODIR",
+        		"image"=>"officer/QODIR.jpg",
+        		"no_wa"=>"087718863820",
         		"ktp"=>"",
         		"address"=>"",
         		"description"=>""
         	],
+            [
+                "id"=>3,
+                "name"=>"RIGWAN",
+                "image"=>"officer/RIGWAN.jpg",
+                "no_wa"=>"081807953082",
+                "ktp"=>"",
+                "address"=>"",
+                "description"=>""
+            ],
+
+            [
+                "id"=>4,
+                "name"=>"SAKUDIN",
+                "image"=>"officer/SAKUDIN.jpg",
+                "no_wa"=>"081947257240",
+                "ktp"=>"",
+                "address"=>"",
+                "description"=>""
+            ],
+            [
+                "id"=>5,
+                "name"=>"YANA",
+                "image"=>"officer/YANA.jpg",
+                "no_wa"=>"087760711755",
+                "ktp"=>"",
+                "address"=>"",
+                "description"=>""
+            ],
+
 		];
 
         Officer::insert($data);		
