@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.coordinator')
 
 @section('content')
 
@@ -24,11 +24,3 @@
     </div>
 </section>
 @endsection
-@section('script')
-<script type="text/javascript">
-    $(()=>{
-        if({!! $login !!}){
-            swal("Selamat Datang :)","Anda Login Sebagai Admin","success");
-        }
-    });
-</script>

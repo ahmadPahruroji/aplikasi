@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.coordinator')
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
@@ -17,19 +17,21 @@
 		<div class="col-8">
 			<div class="card">
 				<div class="card-header">
-					<a href="{{ url('countributions') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+					<a href="{{ url('countributionuser') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
 					<h5 class="pull-right">Form Iuran</h5>
 				</div>
 				<div class="card-body">
-					<form action="{{ route('countributions.store') }}" method="post">
+					<form action="{{ route('countributionuser.store') }}" method="post">
 					{{ csrf_field()}} 
 					<div class="form-group">
-						
-						<input type="hidden" class="form-control" name="user_id" value="1" placeholder="type something" required>
+						<label>Nama User</label>
+						<select class="form-control select2" name="countribution[user_id]">
+								<option value="{{ $user->id }}">{{ $user->name }}</option>
+							</select>
 					</div>
 					<div class="form-group">
 						<label>Nama Warga</label>
-							<select class="form-control select2" name="member_id">
+							<select class="form-control select2" name="countribution[member_id]">
 								@foreach ($members as $m => $member)
 								<option value="{{ $member->id }}">{{ $member->name }}</option>
 								@endforeach
@@ -52,16 +54,16 @@
 								<option>November</option>
 								<option>Desember</option>
 							</select> --}}
-							<input type="text" class="form-control date" name="month" />
+							<input type="text" class="form-control date" name="countribution[month]" />
  
 					</div>
 					<div class="form-group">
 						<label>Jumlah</label>
-						<input type="number" class="form-control" name="total" placeholder="type something" required>
+						<input type="number" class="form-control" name="countribution[total]" placeholder="type something" required>
 					</div>
 					<div class="form-group">
 						<label>Metode Pembayaran</label>
-							<select class="form-control select2" name="payment_id">
+							<select class="form-control select2" name="countribution[payment_id]">
 								@foreach ($payments as $p => $payment)
 								<option value="{{ $payment->id }}">{{ $payment->name }}</option>
 								@endforeach
@@ -69,11 +71,11 @@
 					</div>
 					<div class="form-group">
 						<label>Tanggal</label>
-						<input type="date" class="form-control" name="date" placeholder="type something" required>
+						<input type="date" class="form-control" name="countribution[date]" placeholder="type something" required>
 					</div>
 					<div class="form-group">
 						<label>Status</label>
-							<select class="form-control select2" name="status_id">
+							<select class="form-control select2" name="countribution[status_id]">
 								@foreach ($statuses as $s => $status)
 								<option value="{{ $status->id }}">{{ $status->name }}</option>
 								@endforeach

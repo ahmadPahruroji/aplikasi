@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Coordinator;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Biodata;
 use App\Member;
 use App\Payment;
 use App\Status;
@@ -19,8 +21,10 @@ class CountributionController extends Controller
      */
     public function index()
     {
-        $data["countributions"] = Countribution::with('member','payment','status')->get();
-        return view('countribution.index', $data);
+        $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
+         $name['user'] = User::with('biodata')->find(Auth::user()->id);
+        // dd($data);
+        return view('admincoordinator\countribution.index', $data,$name);
     }
 
     /**
@@ -33,7 +37,7 @@ class CountributionController extends Controller
         $data["members"] = Member::get();
         $data["payments"] = Payment::get();
         $data["statuses"] = Status::get();
-       return view('countribution.create',$data);
+       return view('admincoordinator\countribution.create',$data);
     }
 
     /**
@@ -44,12 +48,7 @@ class CountributionController extends Controller
      */
     public function store(Request $request)
     {
-        $countribution = new Countribution;
-        $countribution->fill($request->all());
-        // $biodata->user_id = Auth::user()->id;
-        $countribution->save();
-
-        return redirect()->route('countributions.index', $countribution);
+        //
     }
 
     /**
@@ -71,11 +70,7 @@ class CountributionController extends Controller
      */
     public function edit($id)
     {
-        $data["countributions"] = Countribution::find($id);
-        $data["members"] = Member::get();
-        $data["payments"] = Payment::get();
-        $data["statuses"] = Status::get();
-       return view('countribution.edit', $data);
+        //
     }
 
     /**
@@ -87,11 +82,7 @@ class CountributionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $countribution = Countribution::find($id);
-        $countribution->fill($request->all());
-        $countribution->update();
-
-        return redirect()->route('countributions.index');
+        //
     }
 
     /**
@@ -102,7 +93,6 @@ class CountributionController extends Controller
      */
     public function destroy($id)
     {
-        $data = Countribution::find($id)->delete();
-        return response()->json($data);
+        //
     }
 }

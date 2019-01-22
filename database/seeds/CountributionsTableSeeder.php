@@ -16,6 +16,7 @@ class CountributionsTableSeeder extends Seeder
         $data = [
 		    [
 		    	"id"=>1,
+                "user_id"=>1,
         		"member_id"=>1,
         		"month"=>"Januari",
         		"total"=>75000,
@@ -27,6 +28,7 @@ class CountributionsTableSeeder extends Seeder
 
         	[
 		    	"id"=>2,
+                "user_id"=>1,
         		"member_id"=>2,
         		"month"=>"Januari",
         		"total"=>75000,

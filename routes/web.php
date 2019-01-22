@@ -18,10 +18,13 @@ Route::get('/', function () {
 Route::get('check',function(){
 	switch (Auth::user()->role_id) {
 		case '1':
-			return redirect('/home');
+			return redirect('/home?login=true');
 			break;
 		case '2':
-			return redirect('auth/login');
+			return redirect('/');
+			break;
+		case '3':
+			return redirect('/homecoordinator');
 			break;
 		
 		default:
@@ -57,12 +60,13 @@ Route::group(['middleware'=>'auth'],function(){
 		]);
 	});
 
-	Route::group(['middleware'=>'role:2'],function(){
-		Route::get('/homeumkm', 'UMKM\HomeUmkmController@index')->name('homeumkm');
+	Route::group(['middleware'=>'role:3'],function(){
+		Route::get('/homecoordinator', 'Coordinator\HomeCoordinatorController@index')->name('homecoordinator');
 		Route::resources([
 			'user'=>'UMKM\UserController',
 			'umkmuser'=>'UMKM\UmkmController',
 			'productimageuser'=>'UMKM\ProductImageController',
+			'countributionuser'=>'Coordinator\CountributionController',
 		]);
 	});
 
