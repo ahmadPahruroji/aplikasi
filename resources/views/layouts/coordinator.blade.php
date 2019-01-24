@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Admin Grasud</title>
+  <title>Coordinator Grasud</title>
   <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
   <meta name="author" content="Pike Web Development - https://www.pikephp.com">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -46,7 +46,7 @@
 
     <!-- LOGO -->
     <div class="headerbar-left">
-     <a href="index.html" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Admin</span></a>
+     <a href="index.html" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Coordinator</span></a>
    </div>
 
    <nav class="navbar-custom">
