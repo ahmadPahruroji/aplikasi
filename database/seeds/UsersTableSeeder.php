@@ -705,6 +705,13 @@ class UsersTableSeeder extends Seeder
                 "email"=>"asgap@member.com",
                 "password"=>bcrypt("password")
             ],
+            [
+                "id"=>100,
+                "role_id"=>3,
+                "name"=>"Koordinator",
+                "email"=>"admin@gmail.com",
+                "password"=>bcrypt("password")
+            ],
            
         ];
         User::insert($data);

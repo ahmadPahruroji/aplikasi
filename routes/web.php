@@ -21,7 +21,7 @@ Route::get('check',function(){
 			return redirect('/home?login=true');
 			break;
 		case '2':
-			return redirect('/');
+			return redirect('/homemember?login=true');
 			break;
 		case '3':
 			return redirect('/homecoordinator');
@@ -60,6 +60,14 @@ Route::group(['middleware'=>'auth'],function(){
 		]);
 	});
 
+	Route::group(['middleware'=>'role:2'],function(){
+		Route::get('/homemember', 'Member\HomeMemberController@index')->name('homemember');
+		Route::resources([
+			'countributionuser'=>'Coordinator\CountributionController',
+			'complaintuser'=>'Coordinator\ComplaintController',
+		]);
+	});
+
 	Route::group(['middleware'=>'role:3'],function(){
 		Route::get('/homecoordinator', 'Coordinator\HomeCoordinatorController@index')->name('homecoordinator');
 		Route::resources([
@@ -67,7 +75,7 @@ Route::group(['middleware'=>'auth'],function(){
 			'umkmuser'=>'UMKM\UmkmController',
 			'productimageuser'=>'UMKM\ProductImageController',
 			'countributionuser'=>'Coordinator\CountributionController',
+			'complaintuser'=>'Coordinator\ComplaintController',
 		]);
 	});
-
 });

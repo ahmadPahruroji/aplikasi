@@ -46,7 +46,7 @@
 
     <!-- LOGO -->
     <div class="headerbar-left">
-     <a href="index.html" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Admin</span></a>
+     <a href="#" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Admin</span></a>
    </div>
 
    <nav class="navbar-custom">
