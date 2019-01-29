@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Data Iuran</h2>
+    <h2 class="h5 no-margin-bottom">Data Keluhan</h2>
   </div>
 </div>
 <section>
@@ -20,11 +20,9 @@
     					<tr>
     						<td>No</td>
                             <td>Nama</td>
-                            <td>Bulan</td>
-                            <td>Jumlah</td>
+                            <td>Image</td>
                             <td>Tanggal</td>
-                            <td>Status</td>
-                            {{-- <td>Keterangan</td> --}}
+                            <td>Keluhan</td>
                             <td>Action</td>
     					</tr>
     				</thead>
