@@ -22,7 +22,7 @@ class KeluhanController extends Controller
     public function index()
     {
         $data["complains"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
-         $name["user"] = User::with('biodata')->find(Auth::user()->id);
+         $name["users"] = User::with('biodata')->find(Auth::user()->id);
         // dd($data);
         return view('admincoordinator\countribution.keluhan', $data, $name);
     }

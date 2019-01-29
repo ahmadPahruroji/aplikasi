@@ -16,12 +16,12 @@
 			<div class="offset-3 col-6">
 				<div class="card">
 					<div class="card-header">
-						<a href="{{ url('complaints') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
+						<a href="{{ url('complaintuser') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
 						<h5 class="pull-right"> Fill the Form</h5>
 					</div>
 					<div class="card-body"> 
 						
-						<form action="{{ route('complaints.store') }}" enctype="multipart/form-data" files="true" method="post">
+						<form action="{{ route('complaintuser.store') }}" enctype="multipart/form-data" files="true" method="post">
 							@csrf
 							@method('post')
 							<div class="form-group">
@@ -39,7 +39,7 @@
 							<div class="form-group">
 								<label>Gambar</label>
 								<!-- <img src="{{ asset('storage/uploads/avatars/default.png') }}" class="rounded mx-auto d-block" width="150"> -->
-								<input type="file" name="image" class="form-control">
+								<input required type="file" name="image" class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Tanggal</label>

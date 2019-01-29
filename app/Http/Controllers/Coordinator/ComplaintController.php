@@ -19,7 +19,7 @@ class ComplaintController extends Controller
     public function index()
     {
         $data['complaints'] = Complaint::get();
-        return view('admincoordinator\complaint.index');
+        return view('admincoordinator/complaint.index', $data);
     }
 
     /**
@@ -29,7 +29,8 @@ class ComplaintController extends Controller
      */
     public function create()
     {
-        //
+        $data["users"] = User::get();
+        return view('admincoordinator/complaint.create',$data);
     }
 
     /**
@@ -40,7 +41,15 @@ class ComplaintController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $complaint = new Complaint();
+        $complaint->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('foto');
+            $complaint->image = $path;    
+        }
+        $complaint->save();
+
+        return redirect('complaintuser');
     }
 
     /**
@@ -85,6 +94,7 @@ class ComplaintController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Complaint::find($id)->delete();
+        return response()->json($data);
     }
 }

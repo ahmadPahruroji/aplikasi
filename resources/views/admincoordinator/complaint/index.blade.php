@@ -34,7 +34,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                             {{--  --}}
+                             @foreach ($complaints as $cm => $complaint)
+                             <tr>
+                                 <td>{{ $cm+1 }}</td>
+                                 <td>{{ $complaint->name }}</td>
+                                 <td>
+                                    <img src="{{ asset('storage/'.$complaint->image) }}" class="rounded mx-auto d-block" width="50">
+                                </td>
+                                <td>{{ $complaint->date }}</td>
+                                <td>{{ $complaint->complain }}</td>
+                                <td>{{ $complaint->description }}</td>
+                                <td>
+                                  <button type="button" class="btn btn-danger" onclick="destroy({{$complaint->id}})"><i class="fa fa-trash"></i> Hapus</button> 
+                              </td>
+                          </tr>
+                          @endforeach
                       </tbody>
                   </table>
               </div>   

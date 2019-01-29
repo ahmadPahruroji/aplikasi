@@ -64,16 +64,14 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/homemember', 'Member\HomeMemberController@index')->name('homemember');
 		Route::resources([
 			'countributionuser'=>'Coordinator\CountributionController',
-			'complaintuser'=>'Coordinator\ComplaintController',
+			'complaintusers'=>'Coordinator\ComplaintController',
 		]);
 	});
 
 	Route::group(['middleware'=>'role:3'],function(){
 		Route::get('/homecoordinator', 'Coordinator\HomeCoordinatorController@index')->name('homecoordinator');
 		Route::resources([
-			'user'=>'UMKM\UserController',
-			'umkmuser'=>'UMKM\UmkmController',
-			'productimageuser'=>'UMKM\ProductImageController',
+			
 			'countributionuser'=>'Coordinator\CountributionController',
 			'complaintuser'=>'Coordinator\ComplaintController',
 		]);
