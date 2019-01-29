@@ -10,7 +10,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-  {{-- <!-- <link rel="stylesheet" href="{{ asset('adminlte/vendor/bootstrap/css/bootstrap.min.css') }}"> --> --}}
+  {{-- d<!-- <link rel="stylesheet" href="{{ asset('adminlte/vendor/bootstrap/css/bootstrap.min.css') }}"> --> --}}
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ asset('Admin/assets/images/favicon.ico') }}">
 
@@ -46,7 +46,7 @@
 
     <!-- LOGO -->
     <div class="headerbar-left">
-     <a href="index.html" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Coordinator</span></a>
+     <a href="{{ route('home') }}" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Coordinator</span></a>
    </div>
 
    <nav class="navbar-custom">
