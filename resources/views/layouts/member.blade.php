@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Admin Grasud</title>
+    <title>Member Grasud</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
@@ -50,7 +50,7 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="#" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" width="50" /> <span>Admin</span></a>
+                <!-- Navbar Brand --><a href="#" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" width="50" /> <span>Member</span></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <!-- Navbar Menu -->
@@ -84,6 +84,11 @@
             <li {{ Request::is('home') ? 'class=active' : '' }}>
               <a href="{{ route('home') }}"> <i class="icon-home"></i>Dashboard </a>
             </li>
+
+            {{-- keluhan --}}
+               <li {{ Request::is('complaintusers') ? 'class=active' : '' }}>
+                <a href="{{ url ('complaintusers') }}"> <i class="fa fa-fw fa-comment"></i><span> Keluhan </span> </a>
+              </li>
 
             {{-- <li><a href="#areadropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Area </a>
               <ul id="areadropdown" class="collapse list-unstyled ">

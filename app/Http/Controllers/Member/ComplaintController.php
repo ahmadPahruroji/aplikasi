@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Coordinator;
+namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\User;
-use App\Biodata;
-use App\Member;
-use App\Payment;
-use App\Status;
-use App\Countribution;
+use App\Complaint;
 
-class KeluhanController extends Controller
+class ComplaintController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,10 +18,9 @@ class KeluhanController extends Controller
      */
     public function index()
     {
-        $data["complains"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
-         $name["users"] = User::with('biodata')->find(Auth::user()->id);
-        // dd($data);
-        return view('admincoordinator\countribution.keluhan', $data, $name);
+        $data['complaints'] = Auth::user()->id;
+        $data['complaints'] = Complaint::get();
+        return view('adminmember/complaint.index', $data);
     }
 
     /**
@@ -34,10 +30,8 @@ class KeluhanController extends Controller
      */
     public function create()
     {
-        $data["members"] = Member::get();
-        $data["payments"] = Payment::get();
-        $data["statuses"] = Status::get();
-       return view('admincoordinator\countribution.create',$data);
+        $data["users"] = User::get();
+        return view('adminmember/complaint.create',$data);
     }
 
     /**
@@ -48,7 +42,15 @@ class KeluhanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $complaint = new Complaint();
+        $complaint->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('foto');
+            $complaint->image = $path;    
+        }
+        $complaint->save();
+
+        return redirect('complaintusers');
     }
 
     /**
@@ -93,6 +95,7 @@ class KeluhanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Complaint::find($id)->delete();
+        return response()->json($data);
     }
 }

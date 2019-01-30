@@ -1,4 +1,4 @@
-@extends('layouts.coordinator')
+@extends('layouts.member')
 @section('content')
 <div class="page-header">
 	<div class="container-fluid">
@@ -16,12 +16,12 @@
 			<div class="offset-3 col-6">
 				<div class="card">
 					<div class="card-header">
-						<a href="{{ url('complaintuser') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
+						<a href="{{ url('complaintusers') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
 						<h5 class="pull-right"> Fill the Form</h5>
 					</div>
 					<div class="card-body"> 
 						
-						<form action="{{ route('complaintuser.store') }}" enctype="multipart/form-data" files="true" method="post">
+						<form action="{{ route('complaintusers.store') }}" enctype="multipart/form-data" files="true" method="post">
 							@csrf
 							@method('post')
 							<div class="form-group">

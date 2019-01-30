@@ -63,8 +63,8 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::group(['middleware'=>'role:2'],function(){
 		Route::get('/homemember', 'Member\HomeMemberController@index')->name('homemember');
 		Route::resources([
-			'countributionuser'=>'Coordinator\CountributionController',
-			'complaintusers'=>'Coordinator\ComplaintController',
+			'countributionuser'=>'Member\CountributionController',
+			'complaintusers'=>'Member\ComplaintController',
 		]);
 	});
 
