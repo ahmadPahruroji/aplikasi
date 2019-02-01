@@ -21,7 +21,7 @@
     						<td>No</td>
                             <td>Nama</td>
                             <td>Bulan</td>
-                            <td>Jumlah</td>
+                            <td>Jumlah Iuran</td>
                             <td>Tanggal</td>
                             <td>Status</td>
                             {{-- <td>Keterangan</td> --}}
@@ -34,12 +34,15 @@
                          @php
                setlocale (LC_TIME, 'ID');
                $date = strftime( "%d %B %Y", strtotime($countribution->date));
+
+               // Rupiah //
+               $rupiah = "Rp " . number_format($countribution->total,2,',','.');
                @endphp
                         <tr>
                             <td>{{ $cu+1 }}</td>
                             <td>{{ $countribution->member->name }}</td>
                             <td>{{ $countribution->month }}</td>
-                            <td>{{ $countribution->total }}</td>
+                            <td>{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
                             <td><span class="label radius-circle bg-primary float-left">{{ $countribution->status->name }}</span></td>
                             {{-- <td>{{ $countribution->description }}</td> --}}

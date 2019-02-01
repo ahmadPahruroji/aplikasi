@@ -29,9 +29,34 @@
     					</tr>
     				</thead>
     				<tbody>
-    		
-                        {{--  --}}
-    				</tbody>
+            
+                        @foreach ($countributions as $cu => $countribution)
+                         @php
+               setlocale (LC_TIME, 'ID');
+               $date = strftime( "%d %B %Y", strtotime($countribution->date));
+
+               // Rupiah //
+               $rupiah = "Rp " . number_format($countribution->total,2,',','.');
+               @endphp
+                        <tr>
+                            <td>{{ $cu+1 }}</td>
+                            <td>{{ $countribution->member->name }}</td>
+                            <td>{{ $countribution->month }}</td>
+                            <td>{{ $rupiah }}</td>
+                            <td>{{ $date }}</td>
+                            <td><span class="label radius-circle bg-primary float-left">{{ $countribution->status->name }}</span></td>
+                            {{-- <td>{{ $countribution->description }}</td> --}}
+                            <td>
+                               <center>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger" onclick="destroy({{$countribution->id}})"><i class="fa fa-trash"></i> Hapus</button>
+                                <a href="{{ route('countributionuser.edit',$countribution->id) }}" type="button" class="btn btn-warning" ><i class="fa fa-gear"></i> Edit</a>
+                                </div>
+                                </center> 
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
     			</table>
     		</div>
     	</div>

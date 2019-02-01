@@ -324,7 +324,7 @@
     {{-- <li class="submenu">
         <a href="#"><i class="fa fa-fw fa-image"></i> <span> Images and Galleries </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-            <li><a href="media-fancybox.html"><span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a></li>								
+            <li><a href="media-fancybox.html"><span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a></li>                
             <li><a href="media-masonry.html">Masonry</a></li>
             <li><a href="media-lightbox.html">Lightbox</a></li>
             <li><a href="media-owl-carousel.html">Owl Carousel</a></li>
@@ -335,11 +335,11 @@
 
     {{-- <li class="submenu">
         <a href="#"><span class="label radius-circle bg-danger float-right">20</span><i class="fa fa-fw fa-copy"></i><span> Example Pages </span></a>
-        <ul class="list-unstyled">								
+        <ul class="list-unstyled">                
             <li><a href="page-pricing-tables.html">Pricing Tables</a></li>
-            <li><a target="_blank" href="page-coming-soon.html">Countdown</a></li>								
+            <li><a target="_blank" href="page-coming-soon.html">Countdown</a></li>                
             <li><a href="page-invoice.html">Invoice</a></li>                        
-            <li><a href="page-login.html">Login / Register</a></li>								
+            <li><a href="page-login.html">Login / Register</a></li>               
             <li><a href="page-blank.html">Blank Page</a></li>
         </ul>
       </li> --}}
@@ -362,14 +362,14 @@
 
     {{-- <li class="submenu">
         <a class="pro" href="#"><i class="fa fa-fw fa-star"></i><span> Pike Admin PRO </span> <span class="menu-arrow"></span></a>
-        <ul class="list-unstyled">								
+        <ul class="list-unstyled">                
             <li><a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro">Admin PRO features</a></li>
             <li><a href="pro-settings.html">Settings</a></li>
             <li><a href="pro-profile.html">My Profile</a></li>
             <li><a href="pro-users.html">Users</a></li>
             <li><a href="pro-articles.html">Articles</a></li>
             <li><a href="pro-categories.html">Categories</a></li>
-            <li><a href="pro-pages.html">Pages</a></li>								
+            <li><a href="pro-pages.html">Pages</a></li>               
             <li><a href="pro-contact-messages.html">Contact Messages</a></li>
             <li><a href="pro-slider.html">Slider</a></li>
         </ul>
@@ -879,74 +879,78 @@
                                                 </div>
                                                 <!-- END main -->
 
-                                                <script src="{{ asset('Admin/assets/js/modernizr.min.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/jquery.min.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/moment.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/modernizr.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/moment.min.js') }}"></script>
 
-                                                <script src="{{ asset('Admin/assets/js/popper.min.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/bootstrap.min.js') }}"></script>
 
-                                                <script src="{{ asset('Admin/assets/js/detect.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/fastclick.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/jquery.blockUI.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/jquery.nicescroll.js') }}"></script>
-                                                {{--  --}}
-                                                <script src="{{ asset('Admin/assets/plugins/datetimepicker/js/moment.min.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/plugins/datetimepicker/js/daterangepicker.js') }}"></script>
-                                                <!-- App js -->
-                                                <script src="{{ asset('Admin/assets/js/pikeadmin.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/detect.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/fastclick.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/jquery.blockUI.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/jquery.nicescroll.js') }}"></script>
+{{--  --}}
+<script src="{{ asset('Admin/assets/plugins/datetimepicker/js/moment.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/plugins/datetimepicker/js/daterangepicker.js') }}"></script>
+<!-- App js -->
+<script src="{{ asset('Admin/assets/js/pikeadmin.js') }}"></script>
 
-                                                <!-- BEGIN Java Script for this page -->
-                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-                                                <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-                                                <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-                                                <!-- sweet -->
-                                                <!-- <script src="assets/js/detect.js"></script> -->
-                                                <!-- <script src="assets/js/fastclick.js"></script> -->
-                                                <!-- <script src="assets/js/jquery.blockUI.js"></script> -->
-                                                <!-- <script src="assets/js/jquery.nicescroll.js"></script> -->
-                                                <script src="{{ asset('Admin/assets/js/jquery.scrollTo.min.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/plugins/switchery/switchery.min.js') }}"></script>
-                                                <!-- Counter-Up-->
-                                                <script src="{{ asset('Admin/assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-                                                <!-- Bootstrap date -->
-                                                <script src="{{ asset('Admin/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
-                                                <!-- Counter-Up-->
-                                                <script src="{{ asset('Admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
-                                                {{--  --}}
-                                                <script src="{{ asset('Admin/assets/plugins/counterup/jquery.counterup.min.js') }}"></script>			
-                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
-                                                <script src="{{ asset('Admin/assets/plugins/select2/js/select2.min.js') }}"></script>
-                                                <script>                
-                                                  $(document).ready(function() {
-                                                    $('.select2').select2();
-                                                  });
-                                                </script>
-                                                <script>
-                                                  $(document).ready(function() {
-                                                    $('.date').daterangepicker({
-                                                      singleDatePicker: true,
-                                                      showDropdowns: true,
-                                                      locale: {
-                      format: 'MMMM'
-                    }
-                                                    });
-                                                  });
-                                                </script>
-                                                <script>
-                                                  $(document).ready(function() {
-			// data-tables
-			$('.datatable').DataTable();
+<!-- BEGIN Java Script for this page -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<!-- sweet -->
+<!-- <script src="assets/js/detect.js"></script> -->
+<!-- <script src="assets/js/fastclick.js"></script> -->
+<!-- <script src="assets/js/jquery.blockUI.js"></script> -->
+<!-- <script src="assets/js/jquery.nicescroll.js"></script> -->
+<script src="{{ asset('Admin/assets/js/jquery.scrollTo.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/plugins/switchery/switchery.min.js') }}"></script>
+<!-- Counter-Up-->
+<script src="{{ asset('Admin/assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
+<!-- Bootstrap date -->
+<script src="{{ asset('Admin/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
+<!-- Counter-Up-->
+<script src="{{ asset('Admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+{{--  --}}
+<script src="{{ asset('Admin/assets/plugins/counterup/jquery.counterup.min.js') }}"></script>     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
+<script src="{{ asset('Admin/assets/plugins/select2/js/select2.min.js') }}"></script>
+  
+  {{-- dropdwon --}}
+  <script>                
+    $(document).ready(function() {
+      $('.select2').select2();
+    });
+  </script>
+  {{-- bulan --}}
+  <script>
+    $(document).ready(function() {
+      $('.date').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        locale: {
+format: 'MMMM'
+}
+      });
+    });
+  </script>
+  {{-- datatables --}}
+  <script>
+      $(document).ready(function() {
+      // data-tables
+      $('.datatable').DataTable();
 
-			// counter-up
-			$('.counter').counterUp({
-				delay: 10,
-				time: 600
-			});
-		} );		
-	</script>
-	
-	<script>
+      // counter-up
+      $('.counter').counterUp({
+        delay: 10,
+        time: 600
+      });
+    } );    
+  </script>
+  
+  <script>
 
     const logout = ()=>{
       swal({
@@ -964,6 +968,45 @@
     }
 
   </script>
+  {{-- angka --}}
+  <script type="text/javascript">
+    function hanyaAngka(evt) {
+  var charCode = (evt.which) ? evt.which : event.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+    return false;
+  return true;
+}
+  </script>
+  {{-- rupiah --}}
+<script type="text/javascript">
+  var rupiah = document.getElementById("rupiah");
+rupiah.addEventListener("keyup", function(e) {
+  // tambahkan 'Rp.' pada saat form di ketik
+  // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+  rupiah.value = formatRupiah(this.value, "Rp. ");
+});
+
+/* Fungsi formatRupiah */
+function formatRupiah(angka, prefix) {
+  var number_string = angka.replace(/[^,\d]/g, "").toString(),
+    split = number_string.split(","),
+    sisa = split[0].length % 3,
+    rupiah = split[0].substr(0, sisa),
+    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+  // tambahkan titik jika yang di input sudah menjadi angka ribuan
+  if (ribuan) {
+    separator = sisa ? "." : "";
+    rupiah += separator + ribuan.join(".");
+  }
+
+  rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+  return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
+}
+
+</script>
+
   <!-- END Java Script for this page -->
   @yield('script')
 </body>

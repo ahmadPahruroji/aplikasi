@@ -13,10 +13,10 @@
 	
 <div class="container">
 	<div class="row">
-		<div class="col-2">
+		<div class="col-md-2">
 			
 		</div>
-		<div class="col-8">
+		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header border-primary">
 					<a href="{{ url('spendings') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
@@ -37,8 +37,8 @@
 							</select>
 					</div> 
 					<div class="form-group">
-						<label>Jumlah</label>
-						<input type="number" class="form-control" value="{{ $spendings->total }}"  name="total" placeholder="type something" required> 
+						<label>Jumlah Pengeluaran</label>
+						<input type="number" class="form-control" value="{{ $spendings->total }}"  name="total"  onkeypress="return hanyaAngka(event)" placeholder="Hanya Angka" required> 
 					</div> 
 					<div class="form-group">
 						<label>Tanggal</label>
@@ -50,7 +50,7 @@
 					</div> 
 					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
 					</form>
-		<div class="col-2">
+		<div class="col-md-2">
 			
 		</div>
 				</div>

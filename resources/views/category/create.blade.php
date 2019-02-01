@@ -13,7 +13,7 @@
 	
 <div class="container">
 	<div class="row">
-		<div class="offset-3 col-6">
+		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header border-primary">
 					<a href="{{ url('categories') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>

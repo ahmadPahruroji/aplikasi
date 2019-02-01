@@ -11,10 +11,10 @@
 <div class="container">
 	
 	<div class="row">
-		<div class="col-2">
+		<div class="col-md-2">
 			
 		</div>
-		<div class="col-8">
+		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">
 					<a href="{{ url('countributions') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
@@ -57,7 +57,8 @@
 					</div>
 					<div class="form-group">
 						<label>Jumlah</label>
-						<input type="number" class="form-control" name="total" placeholder="type something" required>
+						<input type="text" class="form-control" name="total" onkeypress="return hanyaAngka(event)"
+						placeholder="Hanya Angka" maxlength="5" required>
 					</div>
 					<div class="form-group">
 						<label>Metode Pembayaran</label>
@@ -86,7 +87,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-2">
+		<div class="col-md-2">
 		</div>
 	</div>
 	

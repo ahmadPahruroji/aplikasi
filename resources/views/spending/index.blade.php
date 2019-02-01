@@ -24,7 +24,7 @@
                            <tr>
                               <td>No</td>
                               <td>Nama Item</td>
-                              <td>Jumlah</td>
+                              <td>Jumlah Pengeluaran</td>
                               <td>Tanggal</td>
                               <td>Keterangan</td>
                               <td>Action</td>
@@ -36,12 +36,15 @@
                         @php
                         setlocale (LC_TIME, 'ID');
                         $date = strftime( "%d %B %Y", strtotime($spending->date));
+                        
+                        // rupiah //
+                        $rupiah = "Rp " . number_format($spending->total,2,',','.');
                         @endphp
 
                         <tr>
                             <td>{{ $sp+1 }}</td>
                             <td>{{ $spending->category->name }}</td>
-                            <td>{{ $spending->total }}</td>
+                            <td>{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
                             <td>{{ $spending->description }}</td>
                             <td>
