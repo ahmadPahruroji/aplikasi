@@ -38,8 +38,8 @@
                              <tr>
                                  <td>{{ $cm+1 }}</td>
                                  <td>{{ $complaint->name }}</td>
-                                 <td>
-                                    <img src="{{ asset('storage/'.$complaint->image) }}" class="rounded mx-auto d-block" width="50">
+                                 <td style="display: box">
+                                    <img data-toggle="magnify" src="{{ asset('storage/'.$complaint->image) }}" class="img-fluid" width="50">
                                 </td>
                                 <td>{{ $complaint->date }}</td>
                                 <td>{{ $complaint->complain }}</td>

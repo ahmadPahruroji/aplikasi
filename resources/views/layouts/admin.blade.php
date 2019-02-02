@@ -35,6 +35,48 @@
   <link href="{{ asset('Admin/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css') }}" rel="stylesheet" />
   <link href="{{ asset('Admin/assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
   {{--  --}}
+
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+    <style type="text/css">
+        a.fancybox img {
+            border: none;
+            box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+              -o-transform: scale(1,1);
+              -ms-transform: scale(1,1); 
+              -moz-transform: scale(1,1); 
+              -webkit-transform: scale(1,1); 
+            transform: scale(1,1); 
+              -o-transition: all 0.2s ease-in-out; 
+              -ms-transition: all 0.2s ease-in-out; 
+              -moz-transition: all 0.2s ease-in-out; 
+              -webkit-transition: all 0.2s ease-in-out;  
+            transition: all 0.2s ease-in-out;
+        } 
+        a.fancybox:hover img {
+            position: relative; 
+            z-index: 999; 
+              -o-transform: scale(1.03,1.03); 
+              -ms-transform: scale(1.03,1.03); 
+              -moz-transform: scale(1.03,1.03); 
+              -webkit-transform: scale(1.03,1.03); 
+            transform: scale(1.03,1.03);
+        }
+    </style>
+
+    <style type="text/css">
+      .select2 span { display:block }
+    </style>
+<!-- BEGIN CSS for this page -->
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" /> --}}
+    <!-- END CSS for this page -->
+
+  <!-- BEGIN CSS for this page -->
+    <link href="{{ asset('Admin/assets/plugins/lightbox/ekko-lightbox.css') }}" rel="stylesheet" /> 
+    <!-- END CSS for this page -->
+
+    <!-- BEGIN CSS for this page -->
+    <link href="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.css') }}" rel="stylesheet" /> 
+    <!-- END CSS for this page -->
 </head>
 
 <body class="adminbody">
@@ -182,7 +224,7 @@
 
                     <li class="list-inline-item dropdown notif">
                       <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ asset('Admin/assets/images/avatars/admin.png') }}" alt="Profile image" class="avatar-rounded">
+                        <i class="fa fa-user"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                         <!-- item-->
@@ -917,6 +959,46 @@
 <script src="{{ asset('Admin/assets/plugins/counterup/jquery.counterup.min.js') }}"></script>     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
 <script src="{{ asset('Admin/assets/plugins/select2/js/select2.min.js') }}"></script>
+
+<!-- BEGIN Java Script for this page -->
+<script src="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.js') }}"></script>
+<!-- END Java Script for this page -->
+
+<!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="{{asset('fancybox-master/lib/jquery.mousewheel-3.0.6.pack.js')}}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function($){
+            var addToAll = true;
+            var gallery = true;
+            var titlePosition = 'inside';
+            $(addToAll ? 'img' : 'img.fancybox').each(function(){
+                var $this = $(this);
+                var title = $this.attr('title');
+                var src = $this.attr('data-big') || $this.attr('src');
+                var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+                $this.wrap(a);
+            });
+            if (gallery)
+                $('a.fancybox').attr('rel', 'fancyboxgallery');
+            $('a.fancybox').fancybox({
+                titlePosition: titlePosition
+            });
+        });
+        $.noConflict();
+    </script>
+
+<!-- BEGIN Java Script for this page -->
+<script src="{{ asset('Admin/assets/plugins/lightbox/ekko-lightbox.min.js') }}"></script>
+<script>
+$(document).ready(function() {
+    $('.besar').ekkoLightbox();
+});
+</script>
+<!-- END Java Script for this page -->
   
   {{-- dropdwon --}}
   <script>                

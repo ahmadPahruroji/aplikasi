@@ -42,8 +42,8 @@
                <tr>
                  <td>{{ $e+1 }}</td>
                  <td>{{ $event->name }}</td>
-                 <td>
-                  <img src="{{ asset('storage/'.$event->image) }}" class="rounded mx-auto d-block" width="50">
+                 <td class="zoom">
+                  <img data-toggle="magnify" src="{{ asset('storage/'.$event->image) }}" class="rounded mx-auto d-block" width="50">
                 </td>
                 <td>{{ $date }}</td>
                 <td>{{ $event->description }}</td>
@@ -65,6 +65,13 @@
 @endsection
 
 @section('script')
+{{--  --}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".zoom").fancybox();
+    });
+</script>
+{{--  --}}
 <script type="text/javascript">
   $(()=>{
 
