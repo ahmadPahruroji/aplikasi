@@ -24,7 +24,7 @@ class CountributionController extends Controller
         $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
          $name["user"] = User::with('biodata')->find(Auth::user()->id);
         // dd($data);
-        return view('admincoordinator\countribution.index', $data, $name);
+        return view('admincoordinator/countribution.index', $data, $name);
     }
 
     /**
@@ -38,7 +38,7 @@ class CountributionController extends Controller
         $data["members"] = Member::get();
         $data["payments"] = Payment::get();
         $data["statuses"] = Status::get();
-       return view('admincoordinator\countribution.create',$data);
+       return view('admincoordinator/countribution.create',$data);
     }
 
     /**
@@ -82,7 +82,7 @@ class CountributionController extends Controller
         $data["members"] = Member::get();
         $data["payments"] = Payment::get();
         $data["statuses"] = Status::get();
-       return view('admincoordinator\countribution.edit', $data);
+       return view('admincoordinator/countribution.edit', $data);
     }
 
     /**

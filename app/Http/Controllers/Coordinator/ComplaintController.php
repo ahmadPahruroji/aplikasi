@@ -29,7 +29,7 @@ class ComplaintController extends Controller
      */
     public function create()
     {
-        $data["users"] = User::get();
+        $data["users"] = User::find(Auth::user()->id);
         return view('admincoordinator/complaint.create',$data);
     }
 
