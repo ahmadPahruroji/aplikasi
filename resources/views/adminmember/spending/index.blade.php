@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header bg-primary mb-3 text-white" style="color: #6194c1">
-                <h3> Data Pengeluaran </h3>
+                <h3> Data laporan tp blm jadi </h3>
             </div>
             <div class="card">
                <div class="card-header border-primary">

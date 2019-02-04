@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 use App\User;
 use App\Member;
 use App\Payment;
@@ -30,10 +30,7 @@ class CountributionController extends Controller
      */
     public function create()
     {
-        $data["members"] = Member::get();
-        $data["payments"] = Payment::get();
-        $data["statuses"] = Status::get();
-       return view('adminmember/countribution.create',$data);
+        //
     }
 
     /**
@@ -44,12 +41,7 @@ class CountributionController extends Controller
      */
     public function store(Request $request)
     {
-        $countribution = new Countribution;
-        $countribution->fill($request->all());
-        // $biodata->user_id = Auth::user()->id;
-        $countribution->save();
-
-        return redirect()->route('adminmember/countributions.index', $countribution);
+        //
     }
 
     /**
@@ -71,11 +63,7 @@ class CountributionController extends Controller
      */
     public function edit($id)
     {
-       //  $data["countributions"] = Countribution::find($id);
-       //  $data["members"] = Member::get();
-       //  $data["payments"] = Payment::get();
-       //  $data["statuses"] = Status::get();
-       // return view('countribution.edit', $data);
+        //
     }
 
     /**
@@ -87,11 +75,7 @@ class CountributionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $countribution = Countribution::find($id);
-        // $countribution->fill($request->all());
-        // $countribution->update();
-
-        // return redirect()->route('countributions.index');
+        //
     }
 
     /**
@@ -102,7 +86,6 @@ class CountributionController extends Controller
      */
     public function destroy($id)
     {
-        $data = Countribution::find($id)->delete();
-        return response()->json($data);
+        //
     }
 }

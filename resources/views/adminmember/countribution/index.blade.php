@@ -23,8 +23,7 @@
                             <td>Jumlah Iuran</td>
                             <td>Tanggal</td>
                             <td>Status</td>
-                            {{-- <td>Keterangan</td> --}}
-                            <td>Action</td>
+                            
     					</tr>
     				</thead>
     				<tbody>
@@ -77,7 +76,7 @@
                     _method:'delete',
                     _token:"{{csrf_token()}}"
                 }
-                $.post("{{ url('countributions') }}/"+id,access)
+                $.post("{{ url('countributionusers') }}/"+id,access)
                 .done(res=>{
                     console.log(res);
                     swal({
@@ -85,7 +84,7 @@
                         text:"Anda menghapus Data",
                         type:"success",
                     }).then(result=>{
-                        window.location = "{{ url('countributions') }}";
+                        window.location = "{{ url('countributionusers') }}";
                     })
                 }).fail(err=>{
                     console.log(err);
