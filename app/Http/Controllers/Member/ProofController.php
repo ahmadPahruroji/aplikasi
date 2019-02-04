@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Proof;
+use App\User;
 
 class ProofController extends Controller
 {
@@ -12,9 +14,10 @@ class ProofController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function index()
     {
-        //
+        $data["proofs"] = Proof::get();
+        return view('adminmember/proof.index');
     }
 
     /**
@@ -24,7 +27,8 @@ class ProofController extends Controller
      */
     public function create()
     {
-        //
+         // $data["proofs"] = User::get();
+        // return view('adminmember/proof.create',$data);
     }
 
     /**
@@ -35,7 +39,15 @@ class ProofController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $proof = new Proof();
+        $proof->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('foto');
+            $proof->image = $path;    
+        }
+        $proof->save();
+
+        return redirect('proofusers');
     }
 
     /**
@@ -80,6 +92,7 @@ class ProofController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $data = Proof::find($id)->delete();
+        return response()->json($data);
+    }    
 }
