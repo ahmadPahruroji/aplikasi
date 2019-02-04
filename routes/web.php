@@ -64,6 +64,9 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/homemember', 'Member\HomeMemberController@index')->name('homemember');
 		Route::resources([
 			'countributionusers'=>'Member\CountributionController',
+			'eventsusers'=>'Member\EventController',
+			'proofusers'=>'Member\ProofController',
+			'profileusers'=>'Member\UsersController',
 			'complaintusers'=>'Member\ComplaintController',
 			'spendingusers'=>'Member\SpendingController',
 		]);
