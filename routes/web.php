@@ -65,6 +65,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::resources([
 			'countributionusers'=>'Member\CountributionController',
 			'complaintusers'=>'Member\ComplaintController',
+			'spendingusers'=>'Member\SpendingController',
 		]);
 	});
 
@@ -74,6 +75,7 @@ Route::group(['middleware'=>'auth'],function(){
 			
 			'countributionuser'=>'Coordinator\CountributionController',
 			'complaintuser'=>'Coordinator\ComplaintController',
+
 		]);
 	});
 });

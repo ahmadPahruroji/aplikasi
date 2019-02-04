@@ -90,6 +90,15 @@
                 <a href="{{ url ('complaintusers') }}"> <i class="fa fa-fw fa-comment"></i><span> Keluhan </span> </a>
               </li>
 
+              {{-- pengeluaran --}}
+                <li {{ Request::is('groups') ? 'class=active' : '' }}>
+                 <a href="#iurandropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-fw fa-money"></i> <span> Data Iuran </span> <span class="menu-arrow"></span></a>
+                 <ul id="iurandropdown" class="collapse list-unstyled">
+                   <li><a href="{{ url ('countributionusers') }}"><i class="fa fa-fw fa-bookmark"></i>Iuran</a></li>
+                   <li><a href="{{ url ('spendingusers') }}"><i class="fa fa-fw fa-bookmark"></i>Pengeluaran</a></li>
+                 </ul>
+               </li>
+
             {{-- <li><a href="#areadropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Area </a>
               <ul id="areadropdown" class="collapse list-unstyled ">
                 <li><a href="{{}}"><i class="fa fa-angle-right"></i>States</a></li>
