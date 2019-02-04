@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
+use App\Event;
 
 class EventController extends Controller
 {
@@ -13,8 +15,8 @@ class EventController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   $data["events"] = Event::get();
+        return view('adminmember/event.index', $data);
     }
 
     /**
@@ -24,7 +26,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $data["users"] = User::get();
+        return view('adminmember/event.create', $data);
     }
 
     /**
@@ -35,7 +38,15 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new Event();
+        $event->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('foto');
+            $event->image = $path;    
+        }
+        $event->save();
+
+        return redirect('eventsusers');
     }
 
     /**
@@ -57,7 +68,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+         $data["members"] = Member::find($id);
+       return view('member.edit', $data);
     }
 
     /**
@@ -69,7 +81,11 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $member = Member::find($id);
+        $member->fill($request->all());
+        $member->update();
+
+        return redirect()->route('members.index');
     }
 
     /**
@@ -80,6 +96,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Member::find($id)->delete();
+        return response()->json($data);
     }
 }
