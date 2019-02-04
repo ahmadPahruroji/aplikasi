@@ -72,7 +72,7 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="{{ asset('storage/officer/avatar.png') }}" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="avatar"><img src="{{ asset('adminlte/img/default.png') }}" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h3">Member</h1>
               <p>Web Designer</p>
