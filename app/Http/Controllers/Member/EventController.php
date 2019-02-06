@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 use App\User;
-use App\Category;
-use App\Spending;
+use App\Event;
 
-class SpendingController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,8 @@ class SpendingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $data["spendings"] = Spending::with('category')->get();
-        return view('adminmember/spending.index',$data);
+    {   $data["events"] = Event::get();
+        return view('adminmember/event.index', $data);
     }
 
     /**
@@ -29,8 +27,7 @@ class SpendingController extends Controller
     public function create()
     {
         $data["users"] = User::get();
-        $data["categories"] = Category::get();
-       return view('spending.create',$data);
+        return view('adminmember/event.create', $data);
     }
 
     /**
@@ -41,12 +38,15 @@ class SpendingController extends Controller
      */
     public function store(Request $request)
     {
-        $spending = new Spending;
-        $spending->fill($request->all());
-        // $biodata->user_id = Auth::user()->id;
-        $spending->save();
+        $event = new Event();
+        $event->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('foto');
+            $event->image = $path;    
+        }
+        $event->save();
 
-        return redirect()->route('spendings.index', $spending);
+        return redirect('eventsusers');
     }
 
     /**
@@ -68,10 +68,8 @@ class SpendingController extends Controller
      */
     public function edit($id)
     {
-        $data["spendings"] = Spending::find($id);
-        $data["users"] = User::get();
-        $data["categories"] = Category::get();
-       return view('spending.edit', $data);
+         $data["members"] = Member::find($id);
+       return view('member.edit', $data);
     }
 
     /**
@@ -83,11 +81,11 @@ class SpendingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $spending = Spending::find($id);
-        $spending->fill($request->all());
-        $spending->update();
+        $member = Member::find($id);
+        $member->fill($request->all());
+        $member->update();
 
-        return redirect()->route('spendings.index');
+        return redirect()->route('members.index');
     }
 
     /**
@@ -98,7 +96,7 @@ class SpendingController extends Controller
      */
     public function destroy($id)
     {
-        $data = Spending::find($id)->delete();
+        $data = Member::find($id)->delete();
         return response()->json($data);
     }
 }

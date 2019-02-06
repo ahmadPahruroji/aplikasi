@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 use App\User;
 use App\Category;
 use App\Spending;
@@ -28,9 +28,7 @@ class SpendingController extends Controller
      */
     public function create()
     {
-        $data["users"] = User::get();
-        $data["categories"] = Category::get();
-       return view('spending.create',$data);
+        //
     }
 
     /**
@@ -41,12 +39,7 @@ class SpendingController extends Controller
      */
     public function store(Request $request)
     {
-        $spending = new Spending;
-        $spending->fill($request->all());
-        // $biodata->user_id = Auth::user()->id;
-        $spending->save();
-
-        return redirect()->route('spendings.index', $spending);
+        //
     }
 
     /**
@@ -68,10 +61,7 @@ class SpendingController extends Controller
      */
     public function edit($id)
     {
-        $data["spendings"] = Spending::find($id);
-        $data["users"] = User::get();
-        $data["categories"] = Category::get();
-       return view('spending.edit', $data);
+        //
     }
 
     /**
@@ -83,11 +73,7 @@ class SpendingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $spending = Spending::find($id);
-        $spending->fill($request->all());
-        $spending->update();
-
-        return redirect()->route('spendings.index');
+        //
     }
 
     /**
@@ -98,7 +84,6 @@ class SpendingController extends Controller
      */
     public function destroy($id)
     {
-        $data = Spending::find($id)->delete();
-        return response()->json($data);
+        //
     }
 }
