@@ -45,6 +45,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::resources([
 			'users'=>'UserController',
 			'biodatas'=>'BiodataController',
+			'profile'=>'ProfileController',
 			'categories'=>'CategoryController',
 			'complaints'=>'ComplaintController',
 			'contacts'=>'ContactController',

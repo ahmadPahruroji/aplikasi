@@ -233,7 +233,7 @@
                         </div>
 
                         <!-- item-->
-                        <a href="pro-profile.html" class="dropdown-item notify-item">
+                        <a href="{{ url ('profile') }}" class="dropdown-item notify-item">
                           <i class="fa fa-user"></i> <span>Profile</span>
                         </a>
 
