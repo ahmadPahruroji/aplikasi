@@ -21,7 +21,16 @@
                             </div>
                         @endif
 
-                        You are logged in!
+                        
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                <div class="card-box noradius noborder bg-default">
+                                    <i class="fa fa-money float-right text-white" style="font-size: 20px"></i>
+                                    <h6 class="text-white text-uppercase m-b-20">Iuran</h6>
+                                </div>
+                        </div>
+                        
+
                     </div>
                 </div>
             </div>
@@ -33,7 +42,7 @@
 <script type="text/javascript">
     $(()=>{
         if({!! $login !!}){
-            swal("Hello :)","You Have Login as Admin, Feel free to surf","success");
+            swal("Hello :)","You Have Login as Member, Feel free to surf","success");
         }
     });
 </script>
