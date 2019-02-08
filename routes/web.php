@@ -76,7 +76,7 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::group(['middleware'=>'role:3'],function(){
 		Route::get('/homecoordinator', 'Coordinator\HomeCoordinatorController@index')->name('homecoordinator');
 		Route::resources([
-			
+			'coordinatorusers'=>'Coordinator\UsersController',
 			'countributionuser'=>'Coordinator\CountributionController',
 			'complaintuser'=>'Coordinator\ComplaintController',
 
