@@ -82,7 +82,7 @@
            <ul class="list-unstyled">
 
             <li {{ Request::is('home') ? 'class=active' : '' }}>
-              <a href="{{ route('home') }}"> <i class="icon-home"></i>Dashboard </a>
+              <a href="{{ route('homemember') }}"> <i class="icon-home"></i>Dashboard </a>
             </li>
 
               {{-- pengeluaran --}}

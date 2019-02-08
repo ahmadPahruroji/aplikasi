@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use App\Role;
+use App\User;
+use App\Biodata;
 
 class UsersController extends Controller
 {
@@ -14,7 +19,12 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+
+        $data['users'] = User::with('biodata')->find(Auth::user()->id);
+        return view('adminmember/profile.index',$data);
+
+            // $data["users"] = User::with('biodata')->get();
+            // return view('adminmember/profile.index', $data);
     }
 
     /**
@@ -57,7 +67,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**
@@ -69,7 +79,25 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->fill($request['user']);
+        // if(isset($request['user']['avatar'])){/
+        // $path = $request['user']['avatar']->store('user');/
+        // dd($path);
+        // $user->avatar = $path;/
+        // if($request['user']['avatar']){
+        //     $path = $request['user']['avatar']->store('uploads/avatars');
+        //     $file = Storage::delete($request['user']['avatar']);
+        //     $user->avatar = $path;
+            // dd("yey",$user);
+        // }/
+        $user->update();
+
+        // $biodata = Biodata::where('user_id',$id)->first();
+        // $biodata->fill($request['biodata']);
+        // $biodata->update();
+        // dd($biodata,$user);
+        return redirect()->route('profileusers.index');
     }
 
     /**

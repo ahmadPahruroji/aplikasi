@@ -18,7 +18,7 @@ class SpendingController extends Controller
     public function index()
     {
         $data["spendings"] = Spending::with('category')->get();
-        return view('adminmember/spending.index',$data);
+        return view('spending.index',$data);
     }
 
     /**
