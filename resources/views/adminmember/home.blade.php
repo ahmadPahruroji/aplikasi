@@ -15,20 +15,21 @@
                 <!-- Item -->
                 <div class="col-xl-3 col-sm-6">
                   <div class="item d-flex align-items-center">
-                    <div class="icon bg-violet"><i class="icon-user"></i></div>
-                    <div class="title"><span>New<br>Clients</span>
+                    <div class="icon bg-violet"><i class="fa fa-user"></i></div>
+                    <div class="title"><span>Profil</span>
                       <div class="progress">
                         <div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-violet"></div>
                       </div>
                     </div>
-                    <div class="number"><strong>25</strong></div>
+                    <div class="number"><strong>25</strong>
+                    </div>
                   </div>
                 </div>
                 <!-- Item -->
                 <div class="col-xl-3 col-sm-6">
                   <div class="item d-flex align-items-center">
-                    <div class="icon bg-red"><i class="icon-padnote"></i></div>
-                    <div class="title"><span>Work<br>Orders</span>
+                    <div class="icon bg-red"><i class="fa fa-fw fa-credit-card"></i></div>
+                    <div class="title"><span>Pengeluran</span>
                       <div class="progress">
                         <div role="progressbar" style="width: 70%; height: 4px;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-red"></div>
                       </div>
@@ -39,20 +40,80 @@
                 <!-- Item -->
                 <div class="col-xl-3 col-sm-6">
                   <div class="item d-flex align-items-center">
-                    <div class="icon bg-green"><i class="icon-bill"></i></div>
-                    <div class="title"><span>New<br>Invoices</span>
+                    <div class="icon bg-green"><i class="fa fa-money"></i></div>
+                    <div class="title"><span>Iuran</span>
                       <div class="progress">
                         <div role="progressbar" style="width: 40%; height: 4px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-green"></div>
                       </div>
                     </div>
-                    <div class="number"><strong>40</strong></div>
+                    <div class="number"><h4>
+                      <?php
+                                     function format_uang($angka){
+                                        $hasil = "Rp. " . number_format($angka,2,',','.');
+                                        return $hasil;
+                                    }
+                                    echo format_uang($countributions);
+
+                                    ?>
+                    </h4>
+                    
+
+
+
+
+                      <?php
+// // duedate.php
+// $tglbayar = strtotime("4/25/2015"); // 25 April 2015
+// $tglsekarang = strtotime("6/26/2015"); // 26 Juni 2015
+// $jatuhtempo = strtotime("7/1/2015"); // 1 Juli 2015
+ 
+// // hitung perbedaan  jatuh tempo dengan sekarang 
+// $beda = $jatuhtempo - $tglsekarang; // unix time
+// // konversi $beda kedalam hari
+// $bedahari = ($beda/24/60/60);
+ 
+// // pastikan nilainya positif, kalo negatif berarti sudah lewat.
+// if ($beda > 0 )
+// {
+//   if ($bedahari < 10 )
+//   {
+//     echo "Waktunya ditagih!!!. Jatuh tempo dalam $bedahari hari.";
+//   }
+//   else 
+//   {
+//     echo "Masih lama. Nagihnya $bedahari hari lagi.";
+//   }
+// }
+// else
+// {
+//   echo "hasilnya kok minus?";
+// }
+ 
+
+
+                                                // @if($countributions->date != null)
+                                                    $masaaktif = $countributions->date; 
+                                                    $sekarang = date("d-m-Y"); 
+                                                    $masaberlaku = strtotime($masaaktif) - strtotime($sekarang); 
+
+                                                    @if($masaberlaku/(24*60*60)<1)  
+                                                        echo "<font color='red'><font size=1>Masa Berlaku Sudah Habis!!!"; 
+                                                     @elseif($masaberlaku/(24*60*60)<8) 
+                                                        echo "".$masaberlaku/(24*60*60)." hari lagi"; 
+                                                        echo "<font color='blue'><font size=1><b>Masa Berlaku akan Habis!!!</b></font>"; 
+                                                  @endif
+                                                
+
+?>
+
+                    </div>
                   </div>
                 </div>
                 <!-- Item -->
                 <div class="col-xl-3 col-sm-6">
                   <div class="item d-flex align-items-center">
-                    <div class="icon bg-orange"><i class="icon-check"></i></div>
-                    <div class="title"><span>Open<br>Cases</span>
+                    <div class="icon bg-orange"><i class="fa fa-fw fa-comment"></i></div>
+                    <div class="title"><span>Keluhan</span>
                       <div class="progress">
                         <div role="progressbar" style="width: 50%; height: 4px;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-orange"></div>
                       </div>
