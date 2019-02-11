@@ -34,7 +34,17 @@
                         <div role="progressbar" style="width: 70%; height: 4px;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-red"></div>
                       </div>
                     </div>
-                    <div class="number"><strong>70</strong></div>
+                    <div class="number"><h4>
+                      <?php
+                                     function format_uang($angka){
+                                        $hasil = "Rp. " . number_format($angka,2,',','.');
+                                        return $hasil;
+                                    }
+                                    echo format_uang($spendings);
+
+                                    ?>
+                    </h4>
+                  </div>
                   </div>
                 </div>
                 <!-- Item -->
@@ -48,18 +58,11 @@
                     </div>
                     <div class="number"><h4>
                       <?php
-                                     function format_uang($angka){
-                                        $hasil = "Rp. " . number_format($angka,2,',','.');
-                                        return $hasil;
-                                    }
+                                  
                                     echo format_uang($countributions);
 
                                     ?>
                     </h4>
-                    
-
-
-
 
                       <?php
 // // duedate.php
@@ -92,16 +95,17 @@
 
 
                                                 // @if($countributions->date != null)
-                                                    $masaaktif = $countributions->date; 
-                                                    $sekarang = date("d-m-Y"); 
-                                                    $masaberlaku = strtotime($masaaktif) - strtotime($sekarang); 
+                                                  //   $masaaktif = $countributions->date; 
+                                                  //   $sekarang = date("d-m-Y"); 
+                                                  //   $masaberlaku = strtotime($masaaktif) - strtotime($sekarang); 
 
-                                                    @if($masaberlaku/(24*60*60)<1)  
-                                                        echo "<font color='red'><font size=1>Masa Berlaku Sudah Habis!!!"; 
-                                                     @elseif($masaberlaku/(24*60*60)<8) 
-                                                        echo "".$masaberlaku/(24*60*60)." hari lagi"; 
-                                                        echo "<font color='blue'><font size=1><b>Masa Berlaku akan Habis!!!</b></font>"; 
-                                                  @endif
+                                                  //   @if($masaberlaku/(24*60*60)<1)  
+                                                  //       echo "<font color='red'><font size=1>Masa Berlaku Sudah Habis!!!"; 
+                                    
+                                                  //    @elseif($masaberlaku/(24*60*60)<8) 
+                                                  //       echo "".$masaberlaku/(24*60*60)." hari lagi"; 
+                                                  //       echo "<font color='blue'><font size=1><b>Masa Berlaku akan Habis!!!</b></font>"; 
+                                                  // @endif
                                                 
 
 ?>

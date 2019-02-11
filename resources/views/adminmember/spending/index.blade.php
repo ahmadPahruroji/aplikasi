@@ -26,7 +26,6 @@
                               <td>Jumlah Pengeluaran</td>
                               <td>Tanggal</td>
                               <td>Keterangan</td>
-                              <td>Action</td>
                           </tr>
                       </thead>
                       <tbody>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Biodata;
 use App\Countribution;
+use App\Spending;
 
 class HomeMemberController extends Controller
 {
@@ -19,9 +20,12 @@ class HomeMemberController extends Controller
     public function index()
     {
          $data["login"] = request()->login ?? "false";
-          $total["countributions"] = Countribution::sum('total');
-           $data["countributions"] = Countribution::get();
+        $total["countributions"] = Countribution::sum('total');
+        $data["countributions"] = Countribution::get();
+        $total["spendings"] = Spending::sum('total');
+         $data["spendings"] = Spending::get();
          $name['user'] = User::with('biodata')->find(Auth::user()->id);
+         
        
         // dd($data);
         return view('adminmember.home',$total,$data,$name);

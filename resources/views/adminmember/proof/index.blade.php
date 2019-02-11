@@ -29,11 +29,20 @@
                                     <td>Gambar</td>
                                     <td>Tanggal</td>
                                     <td>Keterangan</td>
-                                    <td>Aksi</td>
                                 </tr>
                             </thead>
                             <tbody>
-                             
+                             @foreach ($proofs as $p => $proof)
+                             <tr>
+                             <td>{{ $p+1 }}</td>
+                             <td>{{ $proof->name }}</td>
+                             <td>
+                                 <img src="{{ asset('storage/'.$proof->image) }}" class="rounded mx-auto d-block" width="50">
+                             </td>
+                             <td>{{ $proof->date }}</td>
+                             <td>{{ $proof->description }}</td>
+                             </tr>
+                             @endforeach
                       </tbody>
                   </table>
               </div>   

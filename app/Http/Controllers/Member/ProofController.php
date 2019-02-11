@@ -17,7 +17,7 @@ class ProofController extends Controller
      public function index()
     {
         $data["proofs"] = Proof::get();
-        return view('adminmember/proof.index');
+        return view('adminmember/proof.index',$data);
     }
 
     /**
@@ -27,8 +27,9 @@ class ProofController extends Controller
      */
     public function create()
     {
-         // $data["proofs"] = User::get();
-        // return view('adminmember/proof.create',$data);
+         $data["proofs"] = User::get();
+
+        return view('adminmember/proof.create',$data);
     }
 
     /**
