@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Category;
 use App\Spending;
+use App\countribution;
+
 
 class SpendingController extends Controller
 {
@@ -18,7 +20,11 @@ class SpendingController extends Controller
     public function index()
     {
         $data["spendings"] = Spending::with('category')->get();
-        return view('adminmember/spending.index',$data);
+        $total["spend"] = Spending::sum('total');
+         $data["spend"] = Spending::get();
+         $total["countribution"] = Countribution::sum('total');
+         $data["countribution"] = Countribution::get();
+        return view('adminmember/spending.index',$total,$data);
     }
 
     /**

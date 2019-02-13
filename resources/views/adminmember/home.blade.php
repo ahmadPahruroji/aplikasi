@@ -65,34 +65,6 @@
                     </h4>
 
                       <?php
-// // duedate.php
-// $tglbayar = strtotime("4/25/2015"); // 25 April 2015
-// $tglsekarang = strtotime("6/26/2015"); // 26 Juni 2015
-// $jatuhtempo = strtotime("7/1/2015"); // 1 Juli 2015
- 
-// // hitung perbedaan  jatuh tempo dengan sekarang 
-// $beda = $jatuhtempo - $tglsekarang; // unix time
-// // konversi $beda kedalam hari
-// $bedahari = ($beda/24/60/60);
- 
-// // pastikan nilainya positif, kalo negatif berarti sudah lewat.
-// if ($beda > 0 )
-// {
-//   if ($bedahari < 10 )
-//   {
-//     echo "Waktunya ditagih!!!. Jatuh tempo dalam $bedahari hari.";
-//   }
-//   else 
-//   {
-//     echo "Masih lama. Nagihnya $bedahari hari lagi.";
-//   }
-// }
-// else
-// {
-//   echo "hasilnya kok minus?";
-// }
- 
-
 
                                                 // @if($countributions->date != null)
                                                   //   $masaaktif = $countributions->date; 

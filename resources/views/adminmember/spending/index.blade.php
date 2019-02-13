@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header bg-primary mb-3 text-white" style="color: #6194c1">
-                <h3> Data laporan tp blm jadi </h3>
+                <h3> Data laporan </h3>
             </div>
             <div class="card">
                <div class="card-header border-primary">
@@ -48,6 +48,31 @@
                     </tr>
                     @endforeach
                 </tbody>
+                <tfoot>
+                  @php
+                      function format_uang($angka){
+                        $hasil = "Rp. " . number_format($angka,2,',','.');
+                        return $hasil;
+                      }
+                      function pengurangan($a, $b){
+                        $kurang= $a-$b;
+                        return $kurang;
+                      }
+                  @endphp
+                      <tr>
+                        <td>Total Pengeluaran</td><td></td>
+                        <td>{{ format_uang($spend) }}</td>
+                      </tr>
+                      <tr>
+                        <td>Total masukan/Iuran</td><td></td>
+                        <td>{{ format_uang($countribution) }}</td>
+                      </tr>
+                      <tr>
+                        <td>Total sisa Iuran</td><td></td>
+                        <td>{{ pengurangan($countribution,$spend) }}</td>
+                      </tr>              
+                  
+                </tfoot>
             </table>
         </div>
     </div>

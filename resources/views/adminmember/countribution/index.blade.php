@@ -30,7 +30,7 @@
     		
                         @foreach ($countributions as $cu => $countribution)
                          @php
-               setlocale (LC_TIME, 'ID');
+                        setlocale (LC_TIME, 'ID');
                $date = strftime( "%d %B %Y", strtotime($countribution->date));
 
                // Rupiah //
