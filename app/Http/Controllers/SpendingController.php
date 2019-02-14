@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Category;
 use App\Spending;
+use PDF;
 
 class SpendingController extends Controller
 {
@@ -20,6 +21,16 @@ class SpendingController extends Controller
         $data["spendings"] = Spending::with('category')->get();
         return view('spending.index',$data);
     }
+
+// 
+   public function report($id)
+   {
+        $spending['spendings'] = Spending::find($id);
+        $spending['categories'] = Category::get();
+        $pdf = PDF::loadview('spending.report', $spending);
+
+        return $pdf->download('laporan.pdf');
+   } 
 
     /**
      * Show the form for creating a new resource.
@@ -100,5 +111,36 @@ class SpendingController extends Controller
     {
         $data = Spending::find($id)->delete();
         return response()->json($data);
+    }
+
+    public function export()
+    {
+        $data["spendings"] = Spending::with('category')->get();
+        return view('spending.report',$data);   
+    }
+
+    public function datetime()
+    {
+        $dari = date();
+        $sampai = date();
+
+        $hasil = Spending::whereBetween('date',[$dari,$sampai])->get();
+        $data["spendings"] = Spending::with('category')->get();
+        return view('spending.report', $hasil, $data);   
+    }
+
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+ 
+            // mengambil data dari table pegawai sesuai pencarian data
+        $pegawai['spendings'] = Spending::with('category')
+        ->where('date','like',"%".$cari."%")
+        ->paginate();
+ 
+            // mengirim data pegawai ke view index
+        return view('spending.report', $pegawai);
+ 
     }
 }

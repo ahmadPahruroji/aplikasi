@@ -22,6 +22,9 @@
 
   <!-- Custom CSS -->
   <link href="{{ asset('Admin/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+  {{--  --}}
+  {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> --}}
+  {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"> --}}
 
   <!-- BEGIN CSS for this page -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
@@ -37,6 +40,28 @@
   {{--  --}}
 
 <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+
+{{-- <style type="text/css">
+  .container {
+  width: 850px;
+  margin: auto;
+  border: 2px solid #123;
+  padding: 20px;
+}
+#change {
+  background: #123;
+  border: 2px solid #123;
+  border-radius: 1px;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+#change:hover {
+  background: #fff;
+  color: #123;
+}
+</style> --}}
+ 
     <style type="text/css">
         a.fancybox img {
             border: none;
@@ -322,6 +347,11 @@
               {{-- kontak --}}
               <li {{ Request::is('contacts') ? 'class=active' : '' }}>
                 <a href="{{ url ('contacts') }}"> <i class="fa fa-fw fa-phone"></i><span> Kontak </span> </a>
+              </li>
+
+              {{--  --}}
+              <li {{ Request::is('export') ? 'class=active' : '' }}>
+                <a href="{{ url ('export') }}"> <i class="fa fa-fw fa-area-chart"></i><span> Laporan </span> </a>
               </li>
         {{-- <li class="submenu">
             <a href="#"><i class="fa fa-fw fa-tv"></i> <span> User Interface </span> <span class="menu-arrow"></span></a>
@@ -937,12 +967,21 @@
 <script src="{{ asset('Admin/assets/plugins/datetimepicker/js/daterangepicker.js') }}"></script>
 <!-- App js -->
 <script src="{{ asset('Admin/assets/js/pikeadmin.js') }}"></script>
+{{--  --}}
+{{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script> --}}
+{{-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> --}}
+{{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script> --}}
+{{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script> --}}
+{{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script> --}}
+{{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script> --}}
 
 <!-- BEGIN Java Script for this page -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <!-- sweet -->
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 <!-- <script src="assets/js/detect.js"></script> -->
 <!-- <script src="assets/js/fastclick.js"></script> -->
 <!-- <script src="assets/js/jquery.blockUI.js"></script> -->
@@ -1031,7 +1070,9 @@ format: 'MMMM'
       });
     } );    
   </script>
+  {{--  --}}
   
+{{--  --}}
   <script>
 
     const logout = ()=>{

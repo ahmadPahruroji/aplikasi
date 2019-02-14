@@ -52,6 +52,7 @@
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-danger" onclick="destroy({{$spending->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                     <a href="{{ route('spendings.edit',$spending->id) }}" type="button" class="btn btn-warning" ><i class="fa fa-gear"></i> Edit</a>
+                                    <a href="{{ action('SpendingController@report',$spending->id) }}" type="button" class="btn btn-primary" ><i class="fa fa-print"></i> PDF</a>
                                 </div>
                             </center> 
                         </td>

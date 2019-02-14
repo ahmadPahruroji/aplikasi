@@ -59,7 +59,11 @@ Route::group(['middleware'=>'auth'],function(){
 			'proofs'=>'ProofController',
 
 		]);
+		Route::get('/report/{id}', 'SpendingController@report');
+		Route::get('/export', 'SpendingController@export');
+		Route::get('/export/cari', 'SpendingController@cari');
 	});
+
 
 	Route::group(['middleware'=>'role:2'],function(){
 		Route::get('/homemember', 'Member\HomeMemberController@index')->name('homemember');
