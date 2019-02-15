@@ -52,25 +52,25 @@
         // fungsi initialize untuk mempersiapkan peta
         function initialize() {
         var propertiPeta = {
-            center:new google.maps.LatLng(-8.5830695,116.3202515),
-            zoom:9,
+            center:new google.maps.LatLng(-6.334288,108.3343947),
+            zoom:15,
             mapTypeId:google.maps.MapTypeId.ROADMAP
         };
         
         var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
         }
 
-        // asynchronous
-            function loadScript() {
-                var script = document.createElement("script");
-                script.src = "http://maps.googleapis.com/maps/api/js?callback=initialize";
-                document.body.appendChild(script);
-            }
+        // // asynchronous
+        //     function loadScript() {
+        //         var script = document.createElement("script");
+        //         script.src = "http://maps.googleapis.com/maps/api/js?callback=initialize";
+        //         document.body.appendChild(script);
+        //     }
  
-            window.onload = loadScript;
+        //     window.onload = loadScript;
 
         // event jendela di-load  
-        // google.maps.event.addDomListener(window, 'load', initialize);
+        google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
   </head>
