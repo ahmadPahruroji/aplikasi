@@ -98,8 +98,11 @@
                   </div>
                 </div>
               </div>
+              <div id="googleMap" style="width:100%;height:380px;"></div>
             </div>
+
           </section>
+
 @endsection
 @section('script')
 <script type="text/javascript">

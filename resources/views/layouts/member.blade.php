@@ -21,7 +21,11 @@
     <link rel="stylesheet" href="{{ asset('adminlte/css/style.default.css') }}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{ asset('adminlte/css/custom.css') }}">
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('datatables.net-bs/css/dataTables.bootstrap.min.css') }}"> 
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars-o.min.css">
     <!-- Favicon-->
@@ -40,6 +44,35 @@
       }
     </style>
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Menyisipkan library Google Maps -->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+    <script>
+        // fungsi initialize untuk mempersiapkan peta
+        function initialize() {
+        var propertiPeta = {
+            center:new google.maps.LatLng(-8.5830695,116.3202515),
+            zoom:9,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        
+        var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+        }
+
+        // asynchronous
+            function loadScript() {
+                var script = document.createElement("script");
+                script.src = "http://maps.googleapis.com/maps/api/js?callback=initialize";
+                document.body.appendChild(script);
+            }
+ 
+            window.onload = loadScript;
+
+        // event jendela di-load  
+        // google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
   </head>
   <body>
     <div class="page">
@@ -200,29 +233,60 @@
     {{-- <script src="{{ asset('adminlte/vendor/jquery.cookie/jquery.cookie.js') }}"> </script> --}}
     {{-- <script src="{{ asset('adminlte/vendor/chart.js/Chart.min.js') }}"></script> --}}
     {{-- <script src="{{ asset('adminlte/vendor/jquery-validation/jquery.validate.min.js') }}"></script> --}}
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
     <!-- Main File-->
     <script src="{{ asset('adminlte/js/front.js') }}"></script>
-    @yield('script')
-    <script type="text/javascript">
+
+    <script src="{{ asset('datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script>
+  $(document).ready(
+  function () {
+    $('#example1').DataTable();
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : true
+    });
+  } );
+</script>
+<script>                
+                                                $(document).ready(function() {
+                                                      $('.select2').select2();
+                                                    });
+  </script>
+    <!-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+    <!-- @yield('script') -->
+    <!-- <script>
       $(document).ready(function(){
         
-        $('.datatable').DataTable({
-            
-        });
+        // data-tables
+      $('.datatable').DataTable();
 
         $('.select2').select2();
 
         // $('.rating').barrating({
         //   theme: 'fontawesome-stars-o'
         // });
+        // counter-up
+      $('.counter').counterUp({
+        delay: 10,
+        time: 600
+      });
+    } );
 
       
       });
-
+</script> -->
+<script>
       const logout = ()=>{
         swal({
             type:"info",

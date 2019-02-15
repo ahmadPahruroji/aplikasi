@@ -10,7 +10,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-  {{-- d<!-- <link rel="stylesheet" href="{{ asset('adminlte/vendor/bootstrap/css/bootstrap.min.css') }}"> --> --}}
+  {{-- <!-- <link rel="stylesheet" href="{{ asset('adminlte/vendor/bootstrap/css/bootstrap.min.css') }}"> --> --}}
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ asset('Admin/assets/images/favicon.ico') }}">
 
