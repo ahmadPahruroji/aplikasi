@@ -13,7 +13,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="offset-3 col-6">
+			<div class="offset-2 col-md-8">
 				<div class="card">
 					<div class="card-header">
 						<a href="{{ url('complaintusers') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>

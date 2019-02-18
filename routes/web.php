@@ -62,6 +62,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/report/{id}', 'SpendingController@report');
 		Route::get('/export', 'SpendingController@export');
 		Route::get('/export/cari', 'SpendingController@cari');
+		Route::any('export/pdf', array('as' => 'export/pdf', 'uses' => 'SpendingController@pdf')); // action untuk mencetak data pdf
 	});
 
 

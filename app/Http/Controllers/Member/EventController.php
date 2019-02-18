@@ -15,7 +15,7 @@ class EventController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $data["events"] = Event::get();
+    {   $data["events"] = Event::get()->sortByDesc('created_at');
         return view('adminmember/event.index', $data);
     }
 

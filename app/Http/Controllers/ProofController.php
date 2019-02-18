@@ -17,7 +17,7 @@ class ProofController extends Controller
      */
     public function index()
     {
-        $data["proofs"] = Proof::get();
+        $data["proofs"] = Proof::get()->sortByDesc('created_at');
         return view('proof.index', $data);
     }
 

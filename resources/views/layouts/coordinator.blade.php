@@ -46,7 +46,7 @@
 
     <!-- LOGO -->
     <div class="headerbar-left">
-     <a href="{{ route('home') }}" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Coordinator</span></a>
+     <a href="{{ route('homecoordinator') }}" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Coordinator</span></a>
    </div>
 
    <nav class="navbar-custom">
@@ -235,8 +235,8 @@
 
                  <ul>
                   {{-- home --}}
-                  <li {{ Request::is('home') ? 'class=active' : '' }}>
-                    <a href="{{ route('home') }}" class="active"> <i class="fa fa-fw fa-home"></i><span> Dashboard </span> </a>
+                  <li {{ Request::is('homecoordinator') ? 'class=active' : '' }}>
+                    <a href="{{ route('homecoordinator') }}" class="active"> <i class="fa fa-fw fa-home"></i><span> Dashboard </span> </a>
                   </li>
                   {{-- user --}}
                   {{-- <li {{ Request::is('users') ? 'class=active' : '' }}>

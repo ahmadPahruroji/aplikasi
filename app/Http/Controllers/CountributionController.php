@@ -19,7 +19,7 @@ class CountributionController extends Controller
      */
     public function index()
     {
-        $data["countributions"] = Countribution::with('member','payment','status')->get();
+        $data["countributions"] = Countribution::with('member','payment','status')->get()->sortByDesc('created_at');
         return view('countribution.index', $data);
     }
 

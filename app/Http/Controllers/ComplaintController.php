@@ -17,7 +17,7 @@ class ComplaintController extends Controller
      */
     public function index()
     {
-        $data['complaints'] = Complaint::get();
+        $data['complaints'] = Complaint::get()->sortByDesc('created_at');
         return view('complaint.index', $data);
     }
 

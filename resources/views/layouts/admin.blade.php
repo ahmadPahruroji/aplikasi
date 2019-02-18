@@ -39,7 +39,7 @@
   <link href="{{ asset('Admin/assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
   {{--  --}}
 
-<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
 
 {{-- <style type="text/css">
   .container {
@@ -61,47 +61,47 @@
   color: #123;
 }
 </style> --}}
- 
-    <style type="text/css">
-        a.fancybox img {
-            border: none;
-            box-shadow: 0 1px 7px rgba(0,0,0,0.6);
-              -o-transform: scale(1,1);
-              -ms-transform: scale(1,1); 
-              -moz-transform: scale(1,1); 
-              -webkit-transform: scale(1,1); 
-            transform: scale(1,1); 
-              -o-transition: all 0.2s ease-in-out; 
-              -ms-transition: all 0.2s ease-in-out; 
-              -moz-transition: all 0.2s ease-in-out; 
-              -webkit-transition: all 0.2s ease-in-out;  
-            transition: all 0.2s ease-in-out;
-        } 
-        a.fancybox:hover img {
-            position: relative; 
-            z-index: 999; 
-              -o-transform: scale(1.03,1.03); 
-              -ms-transform: scale(1.03,1.03); 
-              -moz-transform: scale(1.03,1.03); 
-              -webkit-transform: scale(1.03,1.03); 
-            transform: scale(1.03,1.03);
-        }
-    </style>
 
-    <style type="text/css">
-      .select2 span { display:block }
-    </style>
+<style type="text/css">
+a.fancybox img {
+  border: none;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+  -o-transform: scale(1,1);
+  -ms-transform: scale(1,1); 
+  -moz-transform: scale(1,1); 
+  -webkit-transform: scale(1,1); 
+  transform: scale(1,1); 
+  -o-transition: all 0.2s ease-in-out; 
+  -ms-transition: all 0.2s ease-in-out; 
+  -moz-transition: all 0.2s ease-in-out; 
+  -webkit-transition: all 0.2s ease-in-out;  
+  transition: all 0.2s ease-in-out;
+} 
+a.fancybox:hover img {
+  position: relative; 
+  z-index: 999; 
+  -o-transform: scale(1.03,1.03); 
+  -ms-transform: scale(1.03,1.03); 
+  -moz-transform: scale(1.03,1.03); 
+  -webkit-transform: scale(1.03,1.03); 
+  transform: scale(1.03,1.03);
+}
+</style>
+
+<style type="text/css">
+.select2 span { display:block }
+</style>
 <!-- BEGIN CSS for this page -->
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" /> --}}
-    <!-- END CSS for this page -->
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" /> --}}
+<!-- END CSS for this page -->
 
-  <!-- BEGIN CSS for this page -->
-    <link href="{{ asset('Admin/assets/plugins/lightbox/ekko-lightbox.css') }}" rel="stylesheet" /> 
-    <!-- END CSS for this page -->
+<!-- BEGIN CSS for this page -->
+<link href="{{ asset('Admin/assets/plugins/lightbox/ekko-lightbox.css') }}" rel="stylesheet" /> 
+<!-- END CSS for this page -->
 
-    <!-- BEGIN CSS for this page -->
-    <link href="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.css') }}" rel="stylesheet" /> 
-    <!-- END CSS for this page -->
+<!-- BEGIN CSS for this page -->
+<link href="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.css') }}" rel="stylesheet" /> 
+<!-- END CSS for this page -->
 </head>
 
 <body class="adminbody">
@@ -951,115 +951,115 @@
                                                 </div>
                                                 <!-- END main -->
 
-<script src="{{ asset('Admin/assets/js/modernizr.min.js') }}"></script>
-<script src="{{ asset('Admin/assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('Admin/assets/js/moment.min.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/js/modernizr.min.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/js/jquery.min.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/js/moment.min.js') }}"></script>
 
-<script src="{{ asset('Admin/assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('Admin/assets/js/bootstrap.min.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/js/popper.min.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/js/bootstrap.min.js') }}"></script>
 
-<script src="{{ asset('Admin/assets/js/detect.js') }}"></script>
-<script src="{{ asset('Admin/assets/js/fastclick.js') }}"></script>
-<script src="{{ asset('Admin/assets/js/jquery.blockUI.js') }}"></script>
-<script src="{{ asset('Admin/assets/js/jquery.nicescroll.js') }}"></script>
-{{--  --}}
-<script src="{{ asset('Admin/assets/plugins/datetimepicker/js/moment.min.js') }}"></script>
-<script src="{{ asset('Admin/assets/plugins/datetimepicker/js/daterangepicker.js') }}"></script>
-<!-- App js -->
-<script src="{{ asset('Admin/assets/js/pikeadmin.js') }}"></script>
-{{--  --}}
-{{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script> --}}
-{{-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> --}}
-{{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script> --}}
-{{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script> --}}
-{{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script> --}}
-{{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script> --}}
+                                                <script src="{{ asset('Admin/assets/js/detect.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/js/fastclick.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/js/jquery.blockUI.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/js/jquery.nicescroll.js') }}"></script>
+                                                {{--  --}}
+                                                <script src="{{ asset('Admin/assets/plugins/datetimepicker/js/moment.min.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/plugins/datetimepicker/js/daterangepicker.js') }}"></script>
+                                                <!-- App js -->
+                                                <script src="{{ asset('Admin/assets/js/pikeadmin.js') }}"></script>
+                                                {{--  --}}
+                                                {{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script> --}}
+                                                {{-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> --}}
+                                                {{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script> --}}
+                                                {{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script> --}}
+                                                {{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script> --}}
+                                                {{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script> --}}
 
-<!-- BEGIN Java Script for this page -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-<!-- sweet -->
-<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-<!-- <script src="assets/js/detect.js"></script> -->
-<!-- <script src="assets/js/fastclick.js"></script> -->
-<!-- <script src="assets/js/jquery.blockUI.js"></script> -->
-<!-- <script src="assets/js/jquery.nicescroll.js"></script> -->
-<script src="{{ asset('Admin/assets/js/jquery.scrollTo.min.js') }}"></script>
-<script src="{{ asset('Admin/assets/plugins/switchery/switchery.min.js') }}"></script>
-<!-- Counter-Up-->
-<script src="{{ asset('Admin/assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-<!-- Bootstrap date -->
-<script src="{{ asset('Admin/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
-<!-- Counter-Up-->
-<script src="{{ asset('Admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
-{{--  --}}
-<script src="{{ asset('Admin/assets/plugins/counterup/jquery.counterup.min.js') }}"></script>     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
-<script src="{{ asset('Admin/assets/plugins/select2/js/select2.min.js') }}"></script>
+                                                <!-- BEGIN Java Script for this page -->
+                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+                                                <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+                                                <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+                                                <!-- sweet -->
+                                                <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+                                                <!-- <script src="assets/js/detect.js"></script> -->
+                                                <!-- <script src="assets/js/fastclick.js"></script> -->
+                                                <!-- <script src="assets/js/jquery.blockUI.js"></script> -->
+                                                <!-- <script src="assets/js/jquery.nicescroll.js"></script> -->
+                                                <script src="{{ asset('Admin/assets/js/jquery.scrollTo.min.js') }}"></script>
+                                                <script src="{{ asset('Admin/assets/plugins/switchery/switchery.min.js') }}"></script>
+                                                <!-- Counter-Up-->
+                                                <script src="{{ asset('Admin/assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
+                                                <!-- Bootstrap date -->
+                                                <script src="{{ asset('Admin/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
+                                                <!-- Counter-Up-->
+                                                <script src="{{ asset('Admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+                                                {{--  --}}
+                                                <script src="{{ asset('Admin/assets/plugins/counterup/jquery.counterup.min.js') }}"></script>     
+                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
+                                                <script src="{{ asset('Admin/assets/plugins/select2/js/select2.min.js') }}"></script>
 
-<!-- BEGIN Java Script for this page -->
-<script src="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.js') }}"></script>
-<!-- END Java Script for this page -->
+                                                <!-- BEGIN Java Script for this page -->
+                                                <script src="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.js') }}"></script>
+                                                <!-- END Java Script for this page -->
 
-<!-- Add mousewheel plugin (this is optional) -->
-    <script type="text/javascript" src="{{asset('fancybox-master/lib/jquery.mousewheel-3.0.6.pack.js')}}"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
-    
-    <script type="text/javascript">
-        $(function($){
-            var addToAll = true;
-            var gallery = true;
-            var titlePosition = 'inside';
-            $(addToAll ? 'img' : 'img.fancybox').each(function(){
-                var $this = $(this);
-                var title = $this.attr('title');
-                var src = $this.attr('data-big') || $this.attr('src');
-                var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
-                $this.wrap(a);
-            });
-            if (gallery)
-                $('a.fancybox').attr('rel', 'fancyboxgallery');
-            $('a.fancybox').fancybox({
-                titlePosition: titlePosition
-            });
-        });
-        $.noConflict();
-    </script>
+                                                <!-- Add mousewheel plugin (this is optional) -->
+                                                <script type="text/javascript" src="{{asset('fancybox-master/lib/jquery.mousewheel-3.0.6.pack.js')}}"></script>
+                                                <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+                                                <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+                                                <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+                                                
+                                                <script type="text/javascript">
+                                                  $(function($){
+                                                    var addToAll = true;
+                                                    var gallery = true;
+                                                    var titlePosition = 'inside';
+                                                    $(addToAll ? 'img' : 'img.fancybox').each(function(){
+                                                      var $this = $(this);
+                                                      var title = $this.attr('title');
+                                                      var src = $this.attr('data-big') || $this.attr('src');
+                                                      var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+                                                      $this.wrap(a);
+                                                    });
+                                                    if (gallery)
+                                                      $('a.fancybox').attr('rel', 'fancyboxgallery');
+                                                    $('a.fancybox').fancybox({
+                                                      titlePosition: titlePosition
+                                                    });
+                                                  });
+                                                  $.noConflict();
+                                                </script>
 
-<!-- BEGIN Java Script for this page -->
-<script src="{{ asset('Admin/assets/plugins/lightbox/ekko-lightbox.min.js') }}"></script>
-<script>
-$(document).ready(function() {
-    $('.besar').ekkoLightbox();
-});
-</script>
-<!-- END Java Script for this page -->
-  
-  {{-- dropdwon --}}
-  <script>                
-    $(document).ready(function() {
-      $('.select2').select2();
-    });
-  </script>
-  {{-- bulan --}}
-  <script>
-    $(document).ready(function() {
-      $('.date').daterangepicker({
-        singleDatePicker: true,
-        showDropdowns: true,
-        locale: {
-format: 'MMMM'
-}
-      });
-    });
-  </script>
-  {{-- datatables --}}
-  <script>
-      $(document).ready(function() {
+                                                <!-- BEGIN Java Script for this page -->
+                                                <script src="{{ asset('Admin/assets/plugins/lightbox/ekko-lightbox.min.js') }}"></script>
+                                                <script>
+                                                  $(document).ready(function() {
+                                                    $('.besar').ekkoLightbox();
+                                                  });
+                                                </script>
+                                                <!-- END Java Script for this page -->
+                                                
+                                                {{-- dropdwon --}}
+                                                <script>                
+                                                  $(document).ready(function() {
+                                                    $('.select2').select2();
+                                                  });
+                                                </script>
+                                                {{-- bulan --}}
+                                                <script>
+                                                  $(document).ready(function() {
+                                                    $('.date').daterangepicker({
+                                                      singleDatePicker: true,
+                                                      showDropdowns: true,
+                                                      locale: {
+                                                        format: 'MMMM'
+                                                      }
+                                                    });
+                                                  });
+                                                </script>
+                                                {{-- datatables --}}
+                                                <script>
+                                                  $(document).ready(function() {
       // data-tables
       $('.datatable').DataTable();
 
@@ -1072,7 +1072,7 @@ format: 'MMMM'
   </script>
   {{--  --}}
   
-{{--  --}}
+  {{--  --}}
   <script>
 
     const logout = ()=>{
@@ -1094,29 +1094,29 @@ format: 'MMMM'
   {{-- angka --}}
   <script type="text/javascript">
     function hanyaAngka(evt) {
-  var charCode = (evt.which) ? evt.which : event.keyCode
-  if (charCode > 31 && (charCode < 48 || charCode > 57))
+      var charCode = (evt.which) ? evt.which : event.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57))
 
-    return false;
-  return true;
-}
+        return false;
+      return true;
+    }
   </script>
   {{-- rupiah --}}
-<script type="text/javascript">
-  var rupiah = document.getElementById("rupiah");
-rupiah.addEventListener("keyup", function(e) {
+  <script type="text/javascript">
+    var rupiah = document.getElementById("rupiah");
+    rupiah.addEventListener("keyup", function(e) {
   // tambahkan 'Rp.' pada saat form di ketik
   // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
   rupiah.value = formatRupiah(this.value, "Rp. ");
 });
 
-/* Fungsi formatRupiah */
-function formatRupiah(angka, prefix) {
-  var number_string = angka.replace(/[^,\d]/g, "").toString(),
-    split = number_string.split(","),
-    sisa = split[0].length % 3,
-    rupiah = split[0].substr(0, sisa),
-    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+    /* Fungsi formatRupiah */
+    function formatRupiah(angka, prefix) {
+      var number_string = angka.replace(/[^,\d]/g, "").toString(),
+      split = number_string.split(","),
+      sisa = split[0].length % 3,
+      rupiah = split[0].substr(0, sisa),
+      ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
   // tambahkan titik jika yang di input sudah menjadi angka ribuan
   if (ribuan) {
@@ -1130,7 +1130,7 @@ function formatRupiah(angka, prefix) {
 
 </script>
 
-  <!-- END Java Script for this page -->
-  @yield('script')
+<!-- END Java Script for this page -->
+@yield('script')
 </body>
 </html>

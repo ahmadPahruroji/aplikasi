@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Category;
 use App\Spending;
+use App\Countribution;
 use PDF;
 
 class SpendingController extends Controller
@@ -18,7 +19,7 @@ class SpendingController extends Controller
      */
     public function index()
     {
-        $data["spendings"] = Spending::with('category')->get();
+        $data["spendings"] = Spending::with('category')->get()->sortByDesc('created_at');
         return view('spending.index',$data);
     }
 
@@ -116,7 +117,11 @@ class SpendingController extends Controller
     public function export()
     {
         $data["spendings"] = Spending::with('category')->get();
-        return view('spending.report',$data);   
+        $total["spend"] = Spending::sum('total');
+         $data["spend"] = Spending::get();
+         $total["countributions"] = Countribution::sum('total');
+         $data["countributions"] = Countribution::get();
+        return view('spending.report',$total,$data);   
     }
 
     public function datetime()
@@ -135,12 +140,31 @@ class SpendingController extends Controller
         $cari = $request->cari;
  
             // mengambil data dari table pegawai sesuai pencarian data
+        
+         $total["countributions"] = Countribution::sum('total');
+         $data["countributions"] = Countribution::get();
         $pegawai['spendings'] = Spending::with('category')
         ->where('date','like',"%".$cari."%")
         ->paginate();
  
             // mengirim data pegawai ke view index
-        return view('spending.report', $pegawai);
+        return view('spending.report',$total, $pegawai, $data);
  
+    }
+
+    public function pdf() {
+        // ambil semua data
+        $spending['spendings'] = Spending::with('category')->get();
+        $total["countributions"] = Countribution::sum('total');
+        $data["countributions"] = Countribution::get();
+        // mengarahkan view pada file pdf.blade.php di views/provinsi/
+        $pdf = PDF::loadview('spending.pdf', $total,$spending,$data);
+        // $view = View::make('spending.pdf',$provinsi); 
+        // panggil fungsi dompdf
+        // $pdf = App::make('PDF');
+        // set ukuran kertas dan orientasi
+        // $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
+        // cetak
+        return $pdf->download('laporan.pdf');
     }
 }

@@ -11,10 +11,10 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-2">
+			<div class="col-md-2">
 
 			</div>
-			<div class="col-8">
+			<div class="col-md-8">
 				<div class="card">
 					<div class="card-header">
 						<a href="{{ url('countributionuser') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
@@ -89,7 +89,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-2">
+		<div class="col-md-2">
 		</div>
 	</div>
 	

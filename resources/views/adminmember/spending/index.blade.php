@@ -2,16 +2,12 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    {{-- <h2 class="h5 no-margin-bottom">Data Pengeluaran</h2> --}}
+    <h2 class="h5 no-margin-bottom">Data Pengeluaran</h2>
 </div>
 </div>
 <section>
 
     <div class="container-fluid">
-        <div class="card">
-            <div class="card-header bg-primary mb-3 text-white" style="color: #6194c1">
-                <h3> Data laporan </h3>
-            </div>
             <div class="card">
                <div class="card-header border-primary">
                   <i class="fa fa-flag"></i> List Pengeluaran
