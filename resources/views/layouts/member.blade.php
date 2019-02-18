@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- CSRF Token -->
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>Member Grasud</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="robots" content="all,follow">
-  <!-- Bootstrap CSS-->
-  <link rel="stylesheet" href="{{ asset('adminlte/vendor/bootstrap/css/bootstrap.min.css') }}">
-  <!-- Font Awesome CSS-->
-  <link rel="stylesheet" href="{{ asset('adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
-  <!-- Custom Font Icons CSS-->
-  <link rel="stylesheet" href="{{ asset('css/font.css') }}">
-  <!-- Google fonts - Poppins -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-  <!-- theme stylesheet-->
-  <link rel="stylesheet" href="{{ asset('adminlte/css/style.default.css') }}" id="theme-stylesheet">
-  <!-- Custom stylesheet - for your changes-->
-  <link rel="stylesheet" href="{{ asset('adminlte/css/custom.css') }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Member Grasud</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="{{ asset('adminlte/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="{{ asset('adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
+    <!-- Custom Font Icons CSS-->
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="{{ asset('adminlte/css/style.default.css') }}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{{ asset('adminlte/css/custom.css') }}">
 
-  <!-- DataTables -->
-  
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
-  {{-- <link rel="stylesheet" href="{{ asset('datatables.net-bs/css/dataTables.bootstrap.min.css') }}">  --}}
-  {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> --}}
-  {{-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> --}}
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars-o.min.css">
-  <!-- Favicon-->
-  <link rel="shortcut icon" href="{{ asset('adminlte/img/favicon.ico') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('datatables.net-bs/css/dataTables.bootstrap.min.css') }}"> 
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars-o.min.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{{ asset('adminlte/img/favicon.ico') }}">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-        <style type="text/css">
-        .select2 span { display:block }
-        .select2-container, .select2-dropdown, .select2-search, .select2-results {
-          -webkit-transition: none !important;
-          -moz-transition: none !important;
-          -ms-transition: none !important;
-          -o-transition: none !important;
-          transition: none !important;
-        }
-      </style>
-      <script src="{{ asset('js/app.js') }}" defer></script>
+    <style type="text/css">
+      .select2 span { display:block }
+      .select2-container, .select2-dropdown, .select2-search, .select2-results {
+      -webkit-transition: none !important;
+      -moz-transition: none !important;
+      -ms-transition: none !important;
+      -o-transition: none !important;
+      transition: none !important;
+      }
+    </style>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-      <!-- Menyisipkan library Google Maps -->
-      <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <!-- Menyisipkan library Google Maps -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD_PAWlz-pnuwslVgZq7sZ3ESbYkgqO56g&sensor=false" type="text/javascript""></script>
 
-      <script>
+    <script>
         // fungsi initialize untuk mempersiapkan peta
         function initialize() {
-          var propertiPeta = {
+        var propertiPeta = {
             center:new google.maps.LatLng(-6.334288,108.3343947),
             zoom:15,
             mapTypeId:google.maps.MapTypeId.ROADMAP
-          };
-          
-          var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+        };
+        
+        var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
         }
 
         // // asynchronous
@@ -68,82 +66,82 @@
         //         script.src = "http://maps.googleapis.com/maps/api/js?callback=initialize";
         //         document.body.appendChild(script);
         //     }
-        
+ 
         //     window.onload = loadScript;
 
         // event jendela di-load  
         google.maps.event.addDomListener(window, 'load', initialize);
-      </script>
+    </script>
 
-    </head>
-    <body>
-      <div class="page">
-        <!-- Main Navbar-->
-        <header class="header">
-          <nav class="navbar">
-            <div class="container-fluid">
-              <div class="navbar-holder d-flex align-items-center justify-content-between">
-                <!-- Navbar Header-->
-                <div class="navbar-header">
-                  <!-- Navbar Brand --><a href="#" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" width="50" /> <span>Member</span></a>
-                  <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
-                </div>
-                <!-- Navbar Menu -->
-                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                  <!-- Logout    -->
-                  <li class="nav-item">
-                    <a href="#" onclick="logout()" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      @csrf
-                    </form>
-                  </li>
-                </ul>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Main Navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <!-- Navbar Header-->
+              <div class="navbar-header">
+                <!-- Navbar Brand --><a href="#" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" width="50" /> <span>Member</span></a>
+                <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
+              <!-- Navbar Menu -->
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Logout    -->
+                <li class="nav-item">
+                  <a href="#" onclick="logout()" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                </li>
+              </ul>
             </div>
-          </nav>
-        </header>
-        <div class="page-content d-flex align-items-stretch"> 
-          <!-- Side Navbar -->
-          <nav class="side-navbar">
-            <!-- Sidebar Header-->
-            <div class="sidebar-header d-flex align-items-center">
-              <div class="avatar"><img src="{{ asset('adminlte/img/default.png') }}" alt="..." class="img-fluid rounded-circle"></div>
-              <div class="title">
-                <h1 class="h3">Member</h1>
-                <p>Web Designer</p>
-              </div>
+          </div>
+        </nav>
+      </header>
+      <div class="page-content d-flex align-items-stretch"> 
+        <!-- Side Navbar -->
+        <nav class="side-navbar">
+          <!-- Sidebar Header-->
+          <div class="sidebar-header d-flex align-items-center">
+            <div class="avatar"><img src="{{ asset('adminlte/img/default.png') }}" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="title">
+              <h1 class="h3">Member</h1>
+              <p>Web Designer</p>
             </div>
-            <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
-            <ul class="list-unstyled">
+          </div>
+          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+           <ul class="list-unstyled">
 
-              <li {{ Request::is('home') ? 'class=active' : '' }}>
-                <a href="{{ route('homemember') }}"> <i class="fa fa-home"></i>Dashboard </a>
-              </li>
+            <li {{ Request::is('home') ? 'class=active' : '' }}>
+              <a href="{{ route('homemember') }}"> <i class="icon-home"></i>Dashboard </a>
+            </li>
 
               {{-- pengeluaran --}}
-              <li {{ Request::is('groups') ? 'class=active' : '' }}>
-               <a href="#iurandropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-money"></i> <span> Data Iuran </span> <span class="menu-arrow"></span></a>
-               <ul id="iurandropdown" class="collapse list-unstyled">
-                 <li><a href="{{ url ('countributionusers') }}"><i class="fa fa-money"></i>Status Iuran</a></li>
-                 <li><a href="{{ url ('proofusers') }}"><i class="fa fa-exchange"></i>Bukti Pembayaran</a></li>
-                 <li><a href="{{ url ('spendingusers') }}"><i class="fa fa-credit-card"></i>Pengeluaran</a></li>
-               </ul>
-             </li>
+                <li {{ Request::is('groups') ? 'class=active' : '' }}>
+                 <a href="#iurandropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-fw fa-money"></i> <span> Data Iuran </span> <span class="menu-arrow"></span></a>
+                 <ul id="iurandropdown" class="collapse list-unstyled">
+                   <li><a href="{{ url ('countributionusers') }}"><i class="fa fa-fw fa-money"></i>Status Iuran</a></li>
+                   <li><a href="{{ url ('proofusers') }}"><i class="fa fa-fw fa-exchange"></i>Bukti Pembayaran</a></li>
+                   <li><a href="{{ url ('spendingusers') }}"><i class="fa fa-fw fa-credit-card"></i>Pengeluaran</a></li>
+                 </ul>
+               </li>
 
 
-             {{-- event --}}
-             <li {{ Request::is('eventsusers') ? 'class=active' : '' }}>
-              <a href="{{ url ('eventsusers') }}"> <i class="fa fa-calendar"></i><span> Event </span> </a>
-            </li>
+              {{-- event --}}
+               <li {{ Request::is('eventsusers') ? 'class=active' : '' }}>
+                <a href="{{ url ('eventsusers') }}"> <i class="fa fa-fw fa-calendar"></i><span> Event </span> </a>
+              </li>
 
             {{-- keluhan --}}
-            <li {{ Request::is('complaintusers') ? 'class=active' : '' }}>
-              <a href="{{ url ('complaintusers') }}"> <i class="fa fa-comment"></i><span> Keluhan </span> </a>
-            </li>
+               <li {{ Request::is('complaintusers') ? 'class=active' : '' }}>
+                <a href="{{ url ('complaintusers') }}"> <i class="fa fa-fw fa-comment"></i><span> Keluhan </span> </a>
+              </li>
 
             {{-- profile --}}
-            <li {{ Request::is('profileusers') ? 'class=active' : '' }}>
-              <a href="{{ url ('profileusers') }}"> <i class="fa fa-user"></i><span> Profil </span> </a>
+               <li {{ Request::is('profileusers') ? 'class=active' : '' }}>
+                <a href="{{ url ('profileusers') }}"> <i class="fa fa-fw fa-user"></i><span> Profil </span> </a>
             </li>
 
             {{-- <li><a href="#areadropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Area </a>
@@ -197,8 +195,8 @@
             <!-- <li {{ Request::is('users') ? 'class=active' : '' }}>
               <a href="{{ url('users') }}"> <i class="fa fa-users"></i> Users</a>
             </li> -->
-            
-          </ul>
+                
+        </ul>
         {{-- <span class="heading">Settings</span>
         <ul class="list-unstyled">
           <li {{  }}>
@@ -207,7 +205,7 @@
             <a href="{{  }}"> <i class="icon-padnote"></i>Content </a></li>
           <li {{  }}> 
             <a href="{{  }}"> <i class="icon-settings"></i>Language </a></li>
-          </ul> --}}
+        </ul> --}}
         </nav>
         <div class="content-inner" id="app">
           @yield('content')
@@ -235,14 +233,14 @@
     {{-- <script src="{{ asset('adminlte/vendor/jquery.cookie/jquery.cookie.js') }}"> </script> --}}
     {{-- <script src="{{ asset('adminlte/vendor/chart.js/Chart.min.js') }}"></script> --}}
     {{-- <script src="{{ asset('adminlte/vendor/jquery-validation/jquery.validate.min.js') }}"></script> --}}
-    
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
     <!-- Main File-->
     <script src="{{ asset('adminlte/js/front.js') }}"></script>
 
-    {{-- <script src="{{ asset('datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 <script>
   $(document).ready(
@@ -262,34 +260,48 @@
                                                 $(document).ready(function() {
                                                       $('.select2').select2();
                                                     });
-                                                  </script> --}}
-                                                  
-                                                  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-                                                  {{-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> --}}
-                                                  {{-- <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> --}}
-                                                  {{-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> --}}
-                                                  @yield('script')
-                                                  <script type="text/javascript">
-                                                    $(document).ready( function () {
-                                                      $('#myTable').DataTable();
-                                                    } );
-                                                  </script>
-                                                  <script>
-                                                    const logout = ()=>{
-                                                      swal({
-                                                        type:"info",
-                                                        title: "Logout from here?",
-                                                        confirmButtonText: "<i class='fa fa-thumbs-up'></i> Yes, Log me out",
-                                                        showCancelButton:true,
-                                                        cancelButtonColor: '#d33',
-                                                        cancelButtonText: "<i class='fa fa-close'></i> Cancel"
-                                                      }).then(res=>{
-                                                        if(res.value){
-                                                          $("#logout-form").submit();
-                                                        }
-                                                      });
-                                                    }
+  </script>
+    <!-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+    <!-- @yield('script') -->
+    <!-- <script>
+      $(document).ready(function(){
+        
+        // data-tables
+      $('.datatable').DataTable();
 
-                                                  </script>
-                                                </body>
-                                                </html>
+        $('.select2').select2();
+
+        // $('.rating').barrating({
+        //   theme: 'fontawesome-stars-o'
+        // });
+        // counter-up
+      $('.counter').counterUp({
+        delay: 10,
+        time: 600
+      });
+    } );
+
+      
+      });
+</script> -->
+<script>
+      const logout = ()=>{
+        swal({
+            type:"info",
+            title: "Logout from here?",
+            confirmButtonText: "<i class='fa fa-thumbs-up'></i> Yes, Log me out",
+            showCancelButton:true,
+            cancelButtonColor: '#d33',
+            cancelButtonText: "<i class='fa fa-close'></i> Cancel"
+        }).then(res=>{
+          if(res.value){
+              $("#logout-form").submit();
+          }
+        });
+      }
+
+    </script>
+  </body>
+</html>
