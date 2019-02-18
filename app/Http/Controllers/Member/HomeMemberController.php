@@ -24,7 +24,8 @@ class HomeMemberController extends Controller
         $data["countributions"] = Countribution::get();
         $total["spendings"] = Spending::sum('total');
          $data["spendings"] = Spending::get();
-         $name['user'] = User::with('biodata')->find(Auth::user()->id);
+         $name['users'] = User::with('biodata')->find(Auth::user()->id);
+         $data['email'] = User::with('biodata')->find(Auth::user()->email);
          
        
         // dd($data);
