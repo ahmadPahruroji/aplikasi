@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Category;
 use App\Spending;
-use App\countribution;
+use App\Countribution;
 
 
 class SpendingController extends Controller
