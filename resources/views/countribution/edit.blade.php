@@ -32,10 +32,10 @@
 								@endforeach
 							</select>
 					</div> 
-					<div class="form-group">
+					{{-- <div class="form-group">
 						<label>Bulan</label>
 						<input type="text" class="form-control date" value="{{ $countributions->month }}"  name="month" placeholder="type something" required> 
-					</div> 
+					</div>  --}}
 					<div class="form-group">
 						<label>Jumlah Iuran</label>
 						<input type="text" class="form-control" value="{{ $countributions->total }}"  name="total" onkeypress="return hanyaAngka(event)" placeholder="Hanya Angka" maxlength="5" required> 
@@ -60,10 +60,10 @@
 								@endforeach
 							</select>
 					</div>
-					<div class="form-group">
+					{{-- <div class="form-group">
 						<label>Keterangan</label>
 						<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $countributions->description}}a</textarea>
-					</div> 
+					</div> --}} 
 					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
 					</form>
 		<div class="col-md-2">

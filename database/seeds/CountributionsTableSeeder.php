@@ -18,11 +18,10 @@ class CountributionsTableSeeder extends Seeder
 		    	"id"=>1,
                 "user_id"=>1,
         		"member_id"=>1,
-        		"month"=>"Januari",
         		"total"=>75000,
                 "payment_id"=>1,
         		"date"=>"2019-01-12",
-                "status_id"=>1,
+                "status_id"=>2,
                 "description"=>""
         	],
 
@@ -30,7 +29,6 @@ class CountributionsTableSeeder extends Seeder
 		    	"id"=>2,
                 "user_id"=>1,
         		"member_id"=>2,
-        		"month"=>"Januari",
         		"total"=>75000,
                 "payment_id"=>2,
         		"date"=>"2019-01-12",

@@ -29,23 +29,28 @@
                                     <td>Gambar</td>
                                     <td>Tanggal</td>
                                     <td>Keluhan</td>
-                                    <td>Keterangan</td>
+                                    <td>Status</td>
                                     <td>Aksi</td>
                                 </tr>
                             </thead>
                             <tbody>
-                             @foreach ($complaints as $cm => $complaint)
-                             <tr>
-                                 <td>{{ $cm+1 }}</td>
-                                 <td>{{ $complaint->name }}</td>
-                                 <td style="display: box">
+                               @foreach ($complaints as $cm => $complaint)
+                               @php
+                               setlocale (LC_TIME, 'ID');
+                               $date = strftime( "%d %B %Y", strtotime($complaint->date));
+                               @endphp
+                               <tr>
+                                   <td>{{ $cm+1 }}</td>
+                                   <td>{{ $complaint->user->name }}</td>
+                                   <td style="display: box">
                                     <img data-toggle="magnify" src="{{ asset('storage/'.$complaint->image) }}" class="img-fluid" width="50">
                                 </td>
-                                <td>{{ $complaint->date }}</td>
+                                <td>{{ $date }}</td>
                                 <td>{{ $complaint->complain }}</td>
-                                <td>{{ $complaint->description }}</td>
+                                <td><span class="label radius-circle bg-primary float-left">{{ $complaint->statuscomplaint->name }}</span></td>
                                 <td>
                                   <button type="button" class="btn btn-danger" onclick="destroy({{$complaint->id}})"><i class="fa fa-trash"></i> Hapus</button> 
+                                  <a href="{{ route('complaints.edit',$complaint->id) }}" type="button" class="btn btn-warning" ><i class="fa fa-gear"></i> Edit</a>
                               </td>
                           </tr>
                           @endforeach

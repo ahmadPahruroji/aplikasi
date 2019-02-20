@@ -15,7 +15,10 @@
             <div class="card">
                <div class="card-header border-primary">
                   <i class="fa fa-flag"></i> List Biodata
-                  <a href="{{ route('biodatas.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah Data</a>
+{{--                   <button type="button" class="btn btn-danger" onclick="destroy({{$user->id}})" data-toggle="tooltip" data-placement="left" title="Hapus Data"><i class="fa fa-trash"></i></button>
+                <a href="{{ route('users.edit',$user->id) }}" role="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-gear"></i></a> --}}
+
+                  <a role="button" href="{{ route('biodatas.create') }}" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="left" title="Tambah Data"><i class="fa fa-plus"></i></a>
               </div>
               <div class="card-body">
                   <div class="table-responsive">
@@ -42,8 +45,8 @@
                             <td>
                              <center>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-danger" onclick="destroy({{$biodata->id}})"><i class="fa fa-trash"></i> Hapus</button>
-                                    <a href="{{ route('biodatas.edit',$biodata->id) }}" type="button" class="btn btn-warning" ><i class="fa fa-gear"></i> Edit</a>
+                                    <button type="button" class="btn btn-danger" onclick="destroy({{$biodata->id}})" data-toggle="tooltip" data-placement="left" title="Hapus Data"><i class="fa fa-trash"></i></button>
+                                    <a role="button" href="{{ route('biodatas.edit',$biodata->id) }}" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-gear"></i></a>
                                 </div>
                             </center> 
                         </td>

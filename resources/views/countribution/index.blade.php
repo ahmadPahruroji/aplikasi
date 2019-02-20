@@ -20,7 +20,6 @@
     					<tr>
     						<td>No</td>
                             <td>Nama</td>
-                            <td>Bulan</td>
                             <td>Jumlah Iuran</td>
                             <td>Tanggal</td>
                             <td>Status</td>
@@ -41,7 +40,7 @@
                         <tr>
                             <td>{{ $cu+1 }}</td>
                             <td>{{ $countribution->member->name }}</td>
-                            <td>{{ $countribution->month }}</td>
+                            {{-- <td>{{ $countribution->month }}</td> --}}
                             <td>{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
                             <td><span class="label radius-circle bg-primary float-left">{{ $countribution->status->name }}</span></td>

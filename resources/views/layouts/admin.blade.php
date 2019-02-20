@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Admin Grasud</title>
+  <title>Admin E-Grasud</title>
   <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
   <meta name="author" content="Pike Web Development - https://www.pikephp.com">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -22,9 +22,6 @@
 
   <!-- Custom CSS -->
   <link href="{{ asset('Admin/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
-  {{--  --}}
-  {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> --}}
-  {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"> --}}
 
   <!-- BEGIN CSS for this page -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
@@ -38,29 +35,7 @@
   <link href="{{ asset('Admin/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css') }}" rel="stylesheet" />
   <link href="{{ asset('Admin/assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
   {{--  --}}
-
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
-
-{{-- <style type="text/css">
-  .container {
-  width: 850px;
-  margin: auto;
-  border: 2px solid #123;
-  padding: 20px;
-}
-#change {
-  background: #123;
-  border: 2px solid #123;
-  border-radius: 1px;
-  padding: 10px;
-  color: #fff;
-  font-weight: bold;
-}
-#change:hover {
-  background: #fff;
-  color: #123;
-}
-</style> --}}
 
 <style type="text/css">
 a.fancybox img {
@@ -101,7 +76,6 @@ a.fancybox:hover img {
 
 <!-- BEGIN CSS for this page -->
 <link href="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.css') }}" rel="stylesheet" /> 
-<!-- END CSS for this page -->
 </head>
 
 <body class="adminbody">
@@ -113,7 +87,7 @@ a.fancybox:hover img {
 
     <!-- LOGO -->
     <div class="headerbar-left">
-     <a href="{{ route('home') }}" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" /> <span>Admin</span></a>
+     <a href="{{ route('home') }}" class="logo"><img alt="Logo" src="{{ asset('Admin/assets/images/lg.png') }}" alt="Profile image" class="avatar-rounded"/> <span>Admin</span></a>
    </div>
 
    <nav class="navbar-custom">
@@ -353,6 +327,10 @@ a.fancybox:hover img {
               <li {{ Request::is('export') ? 'class=active' : '' }}>
                 <a href="{{ url ('export') }}"> <i class="fa fa-fw fa-area-chart"></i><span> Laporan </span> </a>
               </li>
+
+
+
+              
         {{-- <li class="submenu">
             <a href="#"><i class="fa fa-fw fa-tv"></i> <span> User Interface </span> <span class="menu-arrow"></span></a>
             <ul class="list-unstyled">
@@ -941,47 +919,36 @@ a.fancybox:hover img {
                                                   </div>
                                                   <footer class="footer">
                                                     <span class="text-right">
-                                                      Copyright <a target="_blank" href="#">Grasud</a>
+                                                      Copyright <a target="_blank" href="#">E-Grasud</a>
                                                     </span>
                                                     <span class="float-right">
-                                                      Powered by <a target="_blank" href="#"><b>Admin Grasud</b></a>
+                                                      Powered by <a target="_blank" href="#"><b>Admin E-Grasud</b></a>
                                                     </span>
                                                   </footer>
 
                                                 </div>
                                                 <!-- END main -->
 
-                                                <script src="{{ asset('Admin/assets/js/modernizr.min.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/jquery.min.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/moment.min.js') }}"></script>
-
-                                                <script src="{{ asset('Admin/assets/js/popper.min.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/bootstrap.min.js') }}"></script>
-
-                                                <script src="{{ asset('Admin/assets/js/detect.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/fastclick.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/jquery.blockUI.js') }}"></script>
-                                                <script src="{{ asset('Admin/assets/js/jquery.nicescroll.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/modernizr.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/moment.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/detect.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/fastclick.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/jquery.blockUI.js') }}"></script>
+<script src="{{ asset('Admin/assets/js/jquery.nicescroll.js') }}"></script>
                                                 {{--  --}}
                                                 <script src="{{ asset('Admin/assets/plugins/datetimepicker/js/moment.min.js') }}"></script>
                                                 <script src="{{ asset('Admin/assets/plugins/datetimepicker/js/daterangepicker.js') }}"></script>
                                                 <!-- App js -->
                                                 <script src="{{ asset('Admin/assets/js/pikeadmin.js') }}"></script>
-                                                {{--  --}}
-                                                {{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script> --}}
-                                                {{-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> --}}
-                                                {{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script> --}}
-                                                {{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script> --}}
-                                                {{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script> --}}
-                                                {{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script> --}}
 
                                                 <!-- BEGIN Java Script for this page -->
                                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
                                                 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
                                                 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
                                                 <!-- sweet -->
-                                                <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
                                                 <!-- <script src="assets/js/detect.js"></script> -->
                                                 <!-- <script src="assets/js/fastclick.js"></script> -->
                                                 <!-- <script src="assets/js/jquery.blockUI.js"></script> -->
@@ -998,18 +965,44 @@ a.fancybox:hover img {
                                                 <script src="{{ asset('Admin/assets/plugins/counterup/jquery.counterup.min.js') }}"></script>     
                                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
                                                 <script src="{{ asset('Admin/assets/plugins/select2/js/select2.min.js') }}"></script>
+{{--  --}}
+<script src="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.js') }}"></script>
+{{--  --}}
+<script type="text/javascript" src="{{asset('fancybox-master/lib/jquery.mousewheel-3.0.6.pack.js')}}"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+{{--  --}}
+                                                <script>                
+                                                  $(document).ready(function() {
+                                                    $('.select2').select2();
+                                                  });
+                                                </script>
+                                                <script>
+                                                  $(document).ready(function() {
+                                                    $('.date').daterangepicker({
+                                                      singleDatePicker: true,
+                                                      showDropdowns: true,
+                                                      locale: {
+                      format: 'MMMM'
+                    }
+                                                    });
+                                                  });
+                                                </script>
+                                                <script>
+                                                  $(document).ready(function() {
+      // data-tables
+      $('.datatable').DataTable();
 
-                                                <!-- BEGIN Java Script for this page -->
-                                                <script src="{{ asset('Admin/assets/plugins/bootstrap-magnify/bootstrap-magnify.min.js') }}"></script>
-                                                <!-- END Java Script for this page -->
-
-                                                <!-- Add mousewheel plugin (this is optional) -->
-                                                <script type="text/javascript" src="{{asset('fancybox-master/lib/jquery.mousewheel-3.0.6.pack.js')}}"></script>
-                                                <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-                                                <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-                                                <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
-                                                
-                                                <script type="text/javascript">
+      // counter-up
+      $('.counter').counterUp({
+        delay: 10,
+        time: 600
+      });
+    } );    
+  </script>
+  {{--  --}}
+  <script type="text/javascript">
                                                   $(function($){
                                                     var addToAll = true;
                                                     var gallery = true;
@@ -1029,49 +1022,6 @@ a.fancybox:hover img {
                                                   });
                                                   $.noConflict();
                                                 </script>
-
-                                                <!-- BEGIN Java Script for this page -->
-                                                <script src="{{ asset('Admin/assets/plugins/lightbox/ekko-lightbox.min.js') }}"></script>
-                                                <script>
-                                                  $(document).ready(function() {
-                                                    $('.besar').ekkoLightbox();
-                                                  });
-                                                </script>
-                                                <!-- END Java Script for this page -->
-                                                
-                                                {{-- dropdwon --}}
-                                                <script>                
-                                                  $(document).ready(function() {
-                                                    $('.select2').select2();
-                                                  });
-                                                </script>
-                                                {{-- bulan --}}
-                                                <script>
-                                                  $(document).ready(function() {
-                                                    $('.date').daterangepicker({
-                                                      singleDatePicker: true,
-                                                      showDropdowns: true,
-                                                      locale: {
-                                                        format: 'MMMM'
-                                                      }
-                                                    });
-                                                  });
-                                                </script>
-                                                {{-- datatables --}}
-                                                <script>
-                                                  $(document).ready(function() {
-      // data-tables
-      $('.datatable').DataTable();
-
-      // counter-up
-      $('.counter').counterUp({
-        delay: 10,
-        time: 600
-      });
-    } );    
-  </script>
-  {{--  --}}
-  
   {{--  --}}
   <script>
 
@@ -1091,6 +1041,7 @@ a.fancybox:hover img {
     }
 
   </script>
+  {{--  --}}
   {{-- angka --}}
   <script type="text/javascript">
     function hanyaAngka(evt) {
@@ -1129,8 +1080,14 @@ a.fancybox:hover img {
 }
 
 </script>
-
-<!-- END Java Script for this page -->
-@yield('script')
+{{--  --}}
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover()
+})
+</script>
+  <!-- END Java Script for this page -->
+  @yield('script')
 </body>
 </html>

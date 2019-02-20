@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             CategoriesTableSeeder::class,
             PaymentsTableSeeder::class,
             StatusesTableSeeder::class,
+            StatusComplaintsTableSeeder::class,
             ContactsTableSeeder::class,
             CountributionsTableSeeder::class,
             EventsTableSeeder::class,

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\User;
+use App\StatusComplaint;
 use App\Complaint;
 
 class ComplaintController extends Controller
@@ -17,7 +18,7 @@ class ComplaintController extends Controller
      */
     public function index()
     {
-        $data['complaints'] = Complaint::get()->sortByDesc('created_at');
+        $data['complaints'] = Complaint::with('user','statuscomplaint')->get()->sortByDesc('created_at');
         return view('complaint.index', $data);
     }
 
@@ -29,6 +30,7 @@ class ComplaintController extends Controller
     public function create()
     {
          $data["users"] = User::get();
+         $data["status_complaints"] = StatusComplaint::get();
         return view('complaint.create',$data);
     }
 
@@ -43,7 +45,7 @@ class ComplaintController extends Controller
         $complaint = new Complaint();
         $complaint->fill($request->all());
          if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('foto');
+            $path = $request->file('image')->store('complaint');
             $complaint->image = $path;    
         }
         $complaint->save();
@@ -70,7 +72,9 @@ class ComplaintController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['complaints'] = Complaint::find($id);
+        $data["status_complaints"] = StatusComplaint::get();
+       return view('complaint.edit',$data);
     }
 
     /**
@@ -82,7 +86,16 @@ class ComplaintController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $complaint = Complaint::find($id);
+        $complaint->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('complaint');
+            $file = Storage::delete($complaint->image);
+            $complaint->image = $path;    
+        }
+        $complaint->update();
+             // dd($productimage);
+        return redirect('complaints');
     }
 
     /**

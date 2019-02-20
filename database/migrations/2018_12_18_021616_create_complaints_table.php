@@ -17,14 +17,14 @@ class CreateComplaintsTable extends Migration
             $table->engine = "InnoDB";
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('name');
             $table->string('image');
             $table->date('date');
             $table->string('complain');
-            $table->string('description')->nullable();
+            $table->integer('statuscomplaint_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('statuscomplaint_id')->references('id')->on('status_complaints')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

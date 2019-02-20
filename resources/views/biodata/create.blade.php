@@ -20,7 +20,7 @@
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header border-primary">
-					<a href="{{ url('biodatas') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+					<a href="{{ url('biodatas') }}" role="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Kembali"><i class="fa fa-arrow-left"> </i></a>
 					<h5 class="pull-right">Form Biodata</h5>
 				</div>
 				<div class="card-body">
@@ -51,7 +51,7 @@
 						<textarea type="text" class="form-control" name="address" placeholder="type something" > </textarea>
 					</div>
 					
-					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>
+					<button type="submit" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Simpan"><i class="fa fa-check"></i></button>
 
 					</form> 
 				</div>

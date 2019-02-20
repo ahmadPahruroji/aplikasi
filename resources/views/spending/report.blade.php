@@ -52,7 +52,7 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-             <table class="table table-striped example" id="example">
+             <table class="table table-striped datatable">
               <thead>
                <tr>
                 <td>No</td>

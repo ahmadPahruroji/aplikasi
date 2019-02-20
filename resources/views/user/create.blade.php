@@ -20,7 +20,10 @@
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header border-primary">
-					<a href="{{ url('users') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+{{-- 					<button type="button" class="btn btn-danger" onclick="destroy({{$user->id}})" data-toggle="tooltip" data-placement="left" title="Hapus Data"><i class="fa fa-trash"></i></button>
+                <a href="{{ route('users.edit',$user->id) }}" role="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-gear"></i></a> --}}
+
+					<a role="button" href="{{ url('users') }}" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Kembali"><i class="fa fa-arrow-left"> </i></a>
 					<h5 class="pull-right">Form User</h5>
 				</div>
 				<div class="card-body">
@@ -69,7 +72,7 @@
 						<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
 					</div>			
 					
-					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>
+					<button type="submit" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="left" title="Simpan"><i class="fa fa-check"></i></button>
 
 					</form> 
 				</div>

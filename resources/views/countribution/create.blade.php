@@ -35,26 +35,7 @@
 									@endforeach
 								</select>
 							</div>
-							<div class="form-group">
-								<label>Bulan</label>
-								{{-- <input type="text" class="form-control" name="month" placeholder="type something" required> --}}
-								{{-- <select class="form-control select2" name="month"> --}}
-								{{-- <option>Januari</option>
-								<option>Februari</option>
-								<option>Maret</option>
-								<option>April</option>
-								<option>Mei</option>
-								<option>Juni</option>
-								<option>Juli</option>
-								<option>Agustus</option>
-								<option>September</option>
-								<option>Oktober</option>
-								<option>November</option>
-								<option>Desember</option>
-							</select> --}}
-							<input type="text" class="form-control date" name="month" />
-
-						</div>
+				
 						<div class="form-group">
 							<label>Jumlah</label>
 							<input type="text" class="form-control" name="total" onkeypress="return hanyaAngka(event)"
@@ -73,12 +54,14 @@
 							<input type="date" class="form-control" name="date" placeholder="type something" required>
 						</div>
 						<div class="form-group">
-							<label>Status</label>
-							<select class="form-control select2" name="status_id">
+							{{-- <label>Status</label> --}}
+							<input type="hidden" class="form-control" name="status_id" value="2" placeholder="type something" required>
+
+							{{-- <select class="form-control select2" name="status_id">
 								@foreach ($statuses as $s => $status)
 								<option value="{{ $status->id }}">{{ $status->name }}</option>
 								@endforeach
-							</select>
+							</select> --}}
 						</div>
 
 						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>

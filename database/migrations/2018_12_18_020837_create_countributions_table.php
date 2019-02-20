@@ -18,7 +18,6 @@ class CreateCountributionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('member_id')->unsigned();
-            $table->string('month');
             $table->integer('total');
             $table->integer('payment_id')->unsigned();
             $table->date('date');

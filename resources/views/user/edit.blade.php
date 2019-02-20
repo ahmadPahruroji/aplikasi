@@ -19,7 +19,7 @@
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header border-primary">
-					<a href="{{ url('users') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+					<a role="button" href="{{ url('users') }}" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Kembali"><i class="fa fa-arrow-left"> </i></a>
 					<h5 class="pull-right">Form Edit User</h5>
 				</div>
 				<div class="card-body">
@@ -48,7 +48,7 @@
 						<label>Password</label>
 						<input type="password" class="form-control" value="{{ $users->password }}"  name="password" placeholder="type something" required> 
 					</div> 
-					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
+					<button type="submit" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Simpan"><i class="fa fa-check"></i></button> 
 		<div class="col-md-2">
 			
 		</div>
