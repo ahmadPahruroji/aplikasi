@@ -16,7 +16,7 @@
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">
-					<a href="{{ url('countributions') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+					<a href="{{ url('countributions') }}" role="button" class="btn btn-secondary"><i class="fa fa-arrow-left" data-toggle="tooltip" data-placement="right" title="Kembali"> </i></a>
 					<h5 class="pull-right">Form Edit Iuran</h5>
 				</div>
 				<div class="card-body">
@@ -64,7 +64,7 @@
 						<label>Keterangan</label>
 						<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $countributions->description}}a</textarea>
 					</div> --}} 
-					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
+					<button type="submit" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Simpan"><i class="fa fa-check"></i></button> 
 					</form>
 		<div class="col-md-2">
 			

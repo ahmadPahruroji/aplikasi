@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header border-primary">
                     <i class="fa fa-flag"></i> List Bukti Pembayaran
-                    <a href="{{ route('proofs.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
+                    {{-- <a href="{{ route('proofs.create') }}" role="button" class="btn btn-success pull-right" ><i class="fa fa-plus"></i></a> --}}
 
                 </div>
                 <div class="card-body">
@@ -43,7 +43,7 @@
                                 <td>{{ $proof->date }}</td>
                                 <td>{{ $proof->description }}</td>
                                 <td>
-                                  <button type="button" class="btn btn-danger" onclick="destroy({{$proof->id}})"><i class="fa fa-trash"></i> Hapus</button> 
+                                  <button type="button" class="btn btn-danger" onclick="destroy({{$proof->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button> 
                               </td>
                           </tr>
                           @endforeach

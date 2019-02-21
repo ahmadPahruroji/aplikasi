@@ -16,7 +16,7 @@
 			<div class="col-md-8">
 				<div class="card">
 					<div class="card-header">
-						<a href="{{ url('complaints') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+						<a href="{{ url('complaints') }}" role="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Kembali"><i class="fa fa-arrow-left"> </i></a>
 						<h5 class="pull-right">Form Edit Status</h5>
 					</div>
 					<div class="card-body">
@@ -32,7 +32,7 @@
 									@endforeach
 								</select>
 							</div> 
-							<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
+							<button type="submit" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Simpan"><i class="fa fa-check"></i></button> 
 						</form>
 						<div class="col-md-2">
 

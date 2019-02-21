@@ -15,7 +15,7 @@
             <div class="card">
                <div class="card-header border-primary">
                   <i class="fa fa-flag"></i> List Kontak
-                  <a href="{{ route('contacts.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah Data</a>
+                  <a href="{{ route('contacts.create') }}" role="button" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Tambah Data"><i class="fa fa-plus"></i></a>
               </div>
               <div class="card-body">
                   <div class="table-responsive">
@@ -40,8 +40,8 @@
                             <td>
                              <center>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-danger" onclick="destroy({{$contact->id}})"><i class="fa fa-trash"></i> Hapus</button>
-                                    <a href="{{ route('contacts.edit',$contact->id) }}" type="button" class="btn btn-warning" ><i class="fa fa-gear"></i> Edit</a>
+                                    <button type="button" class="btn btn-danger" onclick="destroy({{$contact->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button>
+                                    <a href="{{ route('contacts.edit',$contact->id) }}" role="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-gear"></i></a>
                                 </div>
                             </center> 
                         </td>

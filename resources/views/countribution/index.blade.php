@@ -11,7 +11,7 @@
     <div class="card">
     	<div class="card-header">
     		<i class="fa fa-flag"></i> List Iuran
-    		<a href="{{ route('countributions.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah Data</a>
+    		<a href="{{ route('countributions.create') }}" role="button" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Tambah Data"><i class="fa fa-plus"></i></a>
     	</div>
     	<div class="card-body">
     		<div class="table-responsive">
@@ -48,8 +48,8 @@
                             <td>
                                <center>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-danger" onclick="destroy({{$countribution->id}})"><i class="fa fa-trash"></i> Hapus</button>
-                                <a href="{{ route('countributions.edit',$countribution->id) }}" type="button" class="btn btn-warning" ><i class="fa fa-gear"></i> Edit</a>
+                                    <button type="button" class="btn btn-danger" onclick="destroy({{$countribution->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button>
+                                <a href="{{ route('countributions.edit',$countribution->id) }}" role="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-gear"></i></a>
                                 </div>
                                 </center> 
                             </td>

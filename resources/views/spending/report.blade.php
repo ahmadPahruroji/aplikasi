@@ -36,12 +36,13 @@
           </div>
         </div>
       </form> --}}
-
+      <div class="card-header bg-primary mb-3 text-white">
       <p>Cari Tanggal :</p>
       <form action="/export/cari" method="GET">
         <input type="date" name="cari" placeholder="Cari Tanggal .." value="{{ old('cari') }}">
         <input type="submit" value="CARI">
       </form>
+    </div>
       {{--  --}}
       <div id="printThis">
         <div id="konten">

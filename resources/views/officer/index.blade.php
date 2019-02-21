@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header border-primary">
                     <i class="fa fa-flag"></i> List Petugas
-                    <a href="{{ route('officers.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="{{ route('officers.create') }}" role="button" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Tambah Data"><i class="fa fa-plus"></i></a>
 
                 </div>
                 <div class="card-body">
@@ -41,7 +41,7 @@
                                 </td>
                                 <td>{{ $officer->no_wa }}</td>
                                 <td>
-                                  <button type="button" class="btn btn-danger" onclick="destroy({{$officer->id}})"><i class="fa fa-trash"></i> Hapus</button> 
+                                  <button type="button" class="btn btn-danger" onclick="destroy({{$officer->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button> 
                               </td>
                           </tr>
                           @endforeach

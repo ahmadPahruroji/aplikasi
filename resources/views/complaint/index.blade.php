@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header border-primary">
                     <i class="fa fa-flag"></i> List Keluhan
-                    <a href="{{ route('complaints.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
+                    {{-- <a href="{{ route('complaints.create') }}" role="button" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Tambah Data"><i class="fa fa-plus"></i></a> --}}
 
                 </div>
                 <div class="card-body">
@@ -49,8 +49,8 @@
                                 <td>{{ $complaint->complain }}</td>
                                 <td><span class="label radius-circle bg-primary float-left">{{ $complaint->statuscomplaint->name }}</span></td>
                                 <td>
-                                  <button type="button" class="btn btn-danger" onclick="destroy({{$complaint->id}})"><i class="fa fa-trash"></i> Hapus</button> 
-                                  <a href="{{ route('complaints.edit',$complaint->id) }}" type="button" class="btn btn-warning" ><i class="fa fa-gear"></i> Edit</a>
+                                  <button type="button" class="btn btn-danger" onclick="destroy({{$complaint->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button> 
+                                  <a href="{{ route('complaints.edit',$complaint->id) }}" role="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-gear"></i></a>
                               </td>
                           </tr>
                           @endforeach

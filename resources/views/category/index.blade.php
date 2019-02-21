@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header border-primary">
                   <i class="fa fa-flag"></i> List Kategori
-                  <a href="{{ route('categories.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah Kategori</a>
+                  <a href="{{ route('categories.create') }}" role="button" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Tambah Data"><i class="fa fa-plus"></i></a>
 
               </div>
               <div class="card-body">
@@ -38,8 +38,8 @@
                         <td>{{ $category-> description }}</td>
                         <td>
                             <center>
-                                <a href="{{ route('categories.edit',$category->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i>Edit</a>
-                                <button type="submit" class="btn btn-danger" onclick="destroy({{$category->id}})"><i class="fa fa-trash"></i> Hapus</button></td>
+                                <a href="{{ route('categories.edit',$category->id) }}" role="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-pencil"></i>Edit</a>
+                                <button type="submit" class="btn btn-danger" onclick="destroy({{$category->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button></td>
                             </center>
                         </tr>
                         @endforeach
