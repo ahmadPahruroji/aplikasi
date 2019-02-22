@@ -97,7 +97,7 @@
               @endphp
               <tr>
                 <td>Total Pengeluaran</td><td></td>
-                <td>{{ $spendings->sum('total') }}</td>
+                <td>{{ format_uang( $spendings->sum('total')) }}</td>
                 <td></td>
                 <td></td>
               </tr>

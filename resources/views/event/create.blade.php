@@ -13,6 +13,9 @@
 	
 	<div class="container">
 		<div class="row">
+			<div class="col-md-2">
+
+			</div>
 			<div class="col-md-8">
 				<div class="card">
 					<div class="card-header border-primary">
@@ -33,7 +36,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label>Nama</label>
+								<label>Judul</label>
 								<input type="text" class="form-control" name="name" placeholder="type something" required>
 							</div>
 							<div class="form-group">
@@ -55,6 +58,9 @@
 						
 					</div>
 				</div>
+			</div>
+			<div class="col-md-2">
+
 			</div>
 		</div>
 	</div>

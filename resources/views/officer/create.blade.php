@@ -13,6 +13,9 @@
 	
 <div class="container">
 	<div class="row">
+		<div class="col-md-2">
+			
+		</div>
 		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header border-primary">
@@ -46,16 +49,19 @@
 								<label>Alamat</label>
 								<textarea type="text" class="form-control" name="address" placeholder="type something" > </textarea>
 							</div>
-						<div class="form-group">
+						{{-- <div class="form-group">
 							<label>Deskripsi</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something" > </textarea>
-						</div> 
+						</div>  --}}
 					 
 						<button type="submit" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Simpan"><i class="fa fa-check"></i> Submit</button> 
 					</form>
 					
 				</div>
 			</div>
+		</div>
+		<div class="col-md-2">
+			
 		</div>
 	</div>
 </div>

@@ -21,11 +21,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte/css/style.default.css') }}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{ asset('adminlte/css/custom.css') }}">
-
-    <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('datatables.net-bs/css/dataTables.bootstrap.min.css') }}"> 
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> -->
-    <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars-o.min.css">
     <!-- Favicon-->
@@ -44,7 +40,6 @@
       }
     </style>
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Menyisipkan library Google Maps -->
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD_PAWlz-pnuwslVgZq7sZ3ESbYkgqO56g&sensor=false" type="text/javascript""></script>
 
@@ -114,11 +109,11 @@
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
            <ul class="list-unstyled">
 
-            <li {{ Request::is('home') ? 'class=active' : '' }}>
+            <li {{ Request::is('homemember') ? 'class=active' : '' }}>
               <a href="{{ route('homemember') }}"> <i class="icon-home"></i>Dashboard </a>
             </li>
 
-              {{-- pengeluaran --}}
+            {{-- pengeluaran --}}
                 <li {{ Request::is('groups') ? 'class=active' : '' }}>
                  <a href="#iurandropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-fw fa-money"></i> <span> Data Iuran </span> <span class="menu-arrow"></span></a>
                  <ul id="iurandropdown" class="collapse list-unstyled">
@@ -217,7 +212,7 @@
                   <p>Your company &copy; 2017-2019</p>
                 </div>
                 <div class="col-sm-6 text-right">
-                  <p>Design by <a href="https://bootstrapious.com/admin-templates" class="external">Bootstrapious</a></p>
+                  <p>Design by <a href="https://bootstrapious.com/admin-templates" class="external">Admin E_Grasud</a></p>
                   <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
                 </div>
               </div>
@@ -233,60 +228,29 @@
     {{-- <script src="{{ asset('adminlte/vendor/jquery.cookie/jquery.cookie.js') }}"> </script> --}}
     {{-- <script src="{{ asset('adminlte/vendor/chart.js/Chart.min.js') }}"></script> --}}
     {{-- <script src="{{ asset('adminlte/vendor/jquery-validation/jquery.validate.min.js') }}"></script> --}}
-  
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
     <!-- Main File-->
     <script src="{{ asset('adminlte/js/front.js') }}"></script>
-
-    <script src="{{ asset('datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
-<script>
-  $(document).ready(
-  function () {
-    $('#example1').DataTable();
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : true
-    });
-  } );
-</script>
-<script>                
-                                                $(document).ready(function() {
-                                                      $('.select2').select2();
-                                                    });
-  </script>
-    <!-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> -->
-    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
-    <!-- @yield('script') -->
-    <!-- <script>
+    @yield('script')
+    <script type="text/javascript">
       $(document).ready(function(){
         
-        // data-tables
-      $('.datatable').DataTable();
+        $('.datatable').DataTable({
+            
+        });
 
         $('.select2').select2();
 
         // $('.rating').barrating({
         //   theme: 'fontawesome-stars-o'
         // });
-        // counter-up
-      $('.counter').counterUp({
-        delay: 10,
-        time: 600
-      });
-    } );
 
       
       });
-</script> -->
-<script>
+
       const logout = ()=>{
         swal({
             type:"info",

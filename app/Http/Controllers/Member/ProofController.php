@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Proof;
+use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Proof;
 
 class ProofController extends Controller
 {
@@ -16,7 +17,7 @@ class ProofController extends Controller
      */
      public function index()
     {
-        $data["proofs"] = Proof::get();
+        $data["proofs"] = Proof::with('user')->get();
         return view('adminmember/proof.index',$data);
     }
 
@@ -27,7 +28,7 @@ class ProofController extends Controller
      */
     public function create()
     {
-         $data["proofs"] = User::get();
+         $data["users"] = User::find(Auth::user()->id);
 
         return view('adminmember/proof.create',$data);
     }

@@ -4,8 +4,8 @@
 	<div class="container-fluid">
 		{{-- <h2 class="h5 no-margin-bottom">Kategori</h2> --}}
 		<div class="alert alert-primary" role="alert">
-          <i class="fa fa-call"></i> KATEGORI
-        </div>
+			<i class="fa fa-call"></i> KATEGORI
+		</div>
 	</div>
 </div>
 
@@ -13,6 +13,9 @@
 	
 	<div class="container">
 		<div class="row">
+			<div class="col-md-2">
+
+			</div>
 			<div class=" col-md-8">
 				<div class="card">
 					<div class="card-header border-primary">
@@ -37,6 +40,9 @@
 						
 					</div>
 				</div>
+			</div>
+			<div class="col-md-2">
+
 			</div>
 		</div>
 	</div>

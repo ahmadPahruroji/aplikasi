@@ -35,7 +35,7 @@
                              @foreach ($proofs as $p => $proof)
                              <tr>
                              <td>{{ $p+1 }}</td>
-                             <td>{{ $proof->name }}</td>
+                             <td>{{ $proof->user->name }}</td>
                              <td>
                                  <img src="{{ asset('storage/'.$proof->image) }}" class="rounded mx-auto d-block" width="50">
                              </td>

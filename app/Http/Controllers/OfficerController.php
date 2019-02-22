@@ -70,7 +70,8 @@ class OfficerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data["officers"] = Officer::find($id);
+       return view('officer.edit', $data);
     }
 
     /**
@@ -82,7 +83,23 @@ class OfficerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $officer = new Officer();
+        // $officer->fill($request->all());
+        //  if ($request->hasFile('image')) {
+        //     $path = $request->file('image')->store('foto');
+        //     $officer->image = $path;    
+        // }
+        // $officer->save();
+        // dd($request);
+        $officer = Officer::find($id);
+        $officer->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('foto');
+            $officer->image = $path;    
+        }
+        $officer->update();
+             // dd($productimage);
+        return redirect('officers');
     }
 
     /**

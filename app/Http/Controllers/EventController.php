@@ -71,7 +71,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data["events"] = Event::find($id);
+       return view('event.edit', $data);
     }
 
     /**
@@ -83,7 +84,16 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = Event::find($id);
+        $event->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('event');
+            $file = Storage::delete($event->image);
+            $event->image = $path;    
+        }
+        $event->update();
+             // dd($productimage);
+        return redirect('events');
     }
 
     /**

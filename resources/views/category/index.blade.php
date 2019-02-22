@@ -38,7 +38,7 @@
                         <td>{{ $category-> description }}</td>
                         <td>
                             <center>
-                                <a href="{{ route('categories.edit',$category->id) }}" role="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-pencil"></i>Edit</a>
+                                <a href="{{ route('categories.edit',$category->id) }}" role="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-pencil"></i></a>
                                 <button type="submit" class="btn btn-danger" onclick="destroy({{$category->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button></td>
                             </center>
                         </tr>

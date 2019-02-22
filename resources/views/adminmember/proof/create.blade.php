@@ -24,15 +24,10 @@
 							<div class="form-group">
 								<label>Nama User</label>
 								<select class="form-control select2" name="user_id">
-									@foreach ($proofs as $u => $user)
-									<option value="{{ $user->id }}">{{ $user->name }}</option>
-									@endforeach
+									<option value="{{ $users->id }}">{{ $users->name }}</option>
 								</select>
 							</div>
-							<div class="form-group">
-								<label>Nama</label>
-								<input type="text" class="form-control" name="name" placeholder="type something" required>
-							</div>
+					
 							<div class="form-group">
 								<label>Gambar</label>
 								<!-- <img src="{{ asset('storage/uploads/avatars/default.png') }}" class="rounded mx-auto d-block" width="150"> -->

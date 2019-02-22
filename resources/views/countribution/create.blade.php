@@ -2,7 +2,11 @@
 @section('content')
 <div class="page-header">
 	<div class="container-fluid">
-		<h2 class="h5 no-margin-bottom">Data Iuran</h2>
+		{{-- <h2 class="h5 no-margin-bottom">Data Iuran</h2> --}}
+		<div class="alert alert-primary" role="alert">
+			<i class="fa fa-call"></i> 
+			IURAN
+		</div>
 	</div>
 </div>
 
@@ -16,7 +20,7 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card">
-					<div class="card-header">
+					<div class="card-header border-primary">
 						<a href="{{ url('countributions') }}" role="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Kembali"><i class="fa fa-arrow-left"> </i></a>
 						<h5 class="pull-right">Form Iuran</h5>
 					</div>
@@ -64,7 +68,7 @@
 							</select> --}}
 						</div>
 
-						<button type="submit" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Simpan"><i class="fa fa-check"></i> Submit</button>
+						<button type="submit" class="btn btn-success pull-right" data-toggle="tooltip" data-placement="right" title="Simpan"><i class="fa fa-check"></i></button>
 
 					</form> 
 				</div>

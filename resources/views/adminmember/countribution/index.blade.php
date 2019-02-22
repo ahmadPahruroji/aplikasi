@@ -14,12 +14,11 @@
     	</div>
     	<div class="card-body">
     		<div class="table-responsive">
-    			<table id="myTable" class="table table-bordered table-hover">
+    			<table class="table datatable">
     				<thead>
     					<tr>
     						<td>No</td>
                             <td>Nama</td>
-                            <td>Bulan</td>
                             <td>Jumlah Iuran</td>
                             <td>Tanggal</td>
                             <td>Status</td>
@@ -39,10 +38,9 @@
                         <tr>
                             <td>{{ $cu+1 }}</td>
                             <td>{{ $countribution->member->name }}</td>
-                            <td>{{ $countribution->month }}</td>
                             <td>{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
-                            <td><span class="label radius-circle bg-primary float-left">{{ $countribution->status->name }}</span></td>
+                            <td><span class="label radius-circle bg-info float-left">{{ $countribution->status->name }}</span></td>
                         </tr>
                         @endforeach
     				</tbody>

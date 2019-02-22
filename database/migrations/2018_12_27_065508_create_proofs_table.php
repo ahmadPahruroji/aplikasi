@@ -16,7 +16,6 @@ class CreateProofsTable extends Migration
         Schema::create('proofs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('name');
             $table->string('image');
             $table->date('date');
             $table->string('description')->nullable();
