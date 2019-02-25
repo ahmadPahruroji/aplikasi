@@ -2,17 +2,17 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    {{-- <h2 class="h5 no-margin-bottom">Data Bukti Transaksi</h2> --}}
+    <h2 class="h5 no-margin-bottom">Data Bukti Pembayaran</h2>
 </div>
 </div>
 
 <section>
 
     <div class="container-fluid">
-        <div class="card">
-            <div class="card-header bg-primary mb-3 text-white" style="color: #6194c1">
+        {{-- <div class="card"> --}}
+            {{-- <div class="card-header bg-primary mb-3 text-white" style="color: #6194c1">
                 <h3> Bukti Pembayaran </h3>
-            </div>
+            </div> --}}
             <div class="card">
                 <div class="card-header border-primary">
                     <i class="fa fa-flag"></i> List Bukti Pembayaran
@@ -48,7 +48,7 @@
               </div>   
           </div>
       </div>
-  </div>
+  {{-- </div> --}}
 </div>
 
 </section>

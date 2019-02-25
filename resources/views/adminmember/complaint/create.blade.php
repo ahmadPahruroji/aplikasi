@@ -33,10 +33,6 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label>Nama</label>
-								<input type="text" class="form-control" name="name" placeholder="type something" required>
-							</div>
-							<div class="form-group">
 								<label>Gambar</label>
 								<!-- <img src="{{ asset('storage/uploads/avatars/default.png') }}" class="rounded mx-auto d-block" width="150"> -->
 								<input required type="file" name="image" class="form-control">
@@ -48,12 +44,18 @@
 							<div class="form-group">
 								<label>Keluhan</label>
 								<textarea type="text" class="form-control" name="complain" placeholder="type something" > </textarea>
-							</div> 
+							</div>
 							<div class="form-group">
-								<label>Deskripsi</label>
-								<textarea type="text" class="form-control" name="description" placeholder="type something" > </textarea>
-							</div> 
-							
+							{{-- <label>Status</label> --}}
+							<input type="hidden" class="form-control" name="statuscomplaint_id" value="1" placeholder="type something" required>
+
+							{{-- <select class="form-control select2" name="statuscomplaint_id">
+								@foreach ($status_complaints as $s => $status)
+								<option value="{{ $status->id }}">{{ $status->name }}</option>
+								@endforeach
+							</select> --}}
+						</div> 
+						
 							<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
 						</form>
 						

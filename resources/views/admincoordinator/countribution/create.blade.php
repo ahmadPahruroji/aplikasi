@@ -24,11 +24,15 @@
 						<form action="{{ route('countributionuser.store') }}" method="post">
 							{{ csrf_field()}} 
 							<div class="form-group">
+
+								<input type="hidden" class="form-control" name="countribution[user_id]" value="{{ $users->id }}" placeholder="type something" required>
+							</div>
+							{{-- <div class="form-group">
 								<label>Nama User</label>
 								<select class="form-control select2" name="countribution[user_id]">
 									<option value="{{ $users->id }}">{{ $users->name }}</option>
 								</select>
-							</div>
+							</div> --}}
 							<div class="form-group">
 								<label>Nama Warga</label>
 								<select class="form-control select2" name="countribution[member_id]">
@@ -37,11 +41,11 @@
 									@endforeach
 								</select>
 							</div>
-							<div class="form-group">
+							{{-- <div class="form-group">
 								<label>Bulan</label>
-								{{-- <input type="text" class="form-control" name="month" placeholder="type something" required> --}}
-								{{-- <select class="form-control select2" name="month"> --}}
-								{{-- <option>Januari</option>
+								<input type="text" class="form-control" name="month" placeholder="type something" required>
+								<select class="form-control select2" name="month">
+								<option>Januari</option>
 								<option>Februari</option>
 								<option>Maret</option>
 								<option>April</option>
@@ -53,14 +57,14 @@
 								<option>Oktober</option>
 								<option>November</option>
 								<option>Desember</option>
-							</select> --}}
+							</select>
 							<input type="text" class="form-control date" name="countribution[month]" />
 
-						</div>
+						</div> --}}
 						<div class="form-group">
 							<label>Jumlah</label>
 							<input type="text" class="form-control" name="countribution[total]" onkeypress="return hanyaAngka(event)"
-							placeholder="Hanya Angka" maxlength="5" required>
+							placeholder="Hanya Angka" maxlength="10" required>
 						</div>
 						<div class="form-group">
 							<label>Metode Pembayaran</label>
@@ -75,12 +79,14 @@
 							<input type="date" class="form-control" name="countribution[date]" placeholder="type something" required>
 						</div>
 						<div class="form-group">
-							<label>Status</label>
-							<select class="form-control select2" name="countribution[status_id]">
+							{{-- <label>Status</label> --}}
+							<input type="hidden" class="form-control" name="countribution[status_id]" value="2" placeholder="type something" required>
+
+							{{-- <select class="form-control select2" name="status_id">
 								@foreach ($statuses as $s => $status)
 								<option value="{{ $status->id }}">{{ $status->name }}</option>
 								@endforeach
-							</select>
+							</select> --}}
 						</div>
 
 						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>

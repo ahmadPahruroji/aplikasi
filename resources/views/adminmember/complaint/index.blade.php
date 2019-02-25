@@ -2,17 +2,17 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    {{-- <h2 class="h5 no-margin-bottom">Data Keluhan</h2> --}}
+    <h2 class="h5 no-margin-bottom">Data Keluhan</h2>
 </div>
 </div>
 
 <section>
 
     <div class="container-fluid">
-        <div class="card">
-            <div class="card-header bg-primary mb-3 text-white" style="color: #6194c1">
+        {{-- <div class="card"> --}}
+            {{-- <div class="card-header bg-primary mb-3 text-white" style="color: #6194c1">
                 <h3> Data Keluhan </h3>
-            </div>
+            </div> --}}
             <div class="card">
                 <div class="card-header border-primary">
                     <i class="fa fa-flag"></i> List Keluhan
@@ -29,7 +29,7 @@
                                     <td>Gambar</td>
                                     <td>Tanggal</td>
                                     <td>Keluhan</td>
-                                    <td>Keterangan</td>
+                                    <td>Status</td>
                                     <td>Aksi</td>
                                 </tr>
                             </thead>
@@ -37,13 +37,13 @@
                              @foreach ($complaints as $cm => $complaint)
                              <tr>
                                  <td>{{ $cm+1 }}</td>
-                                 <td>{{ $complaint->name }}</td>
+                                 <td>{{ $complaint->user->name }}</td>
                                  <td>
                                     <img src="{{ asset('storage/'.$complaint->image) }}" class="rounded mx-auto d-block" width="50">
                                 </td>
                                 <td>{{ $complaint->date }}</td>
                                 <td>{{ $complaint->complain }}</td>
-                                <td>{{ $complaint->description }}</td>
+                                <td><span class="label radius-circle bg-primary float-left">{{ $complaint->statuscomplaint->name }}</span></td>
                                 <td>
                                   <button type="button" class="btn btn-danger" onclick="destroy({{$complaint->id}})"><i class="fa fa-trash"></i> Hapus</button> 
                               </td>
@@ -53,7 +53,7 @@
                   </table>
               </div>   
           </div>
-      </div>
+      {{-- </div> --}}
   </div>
 </div>
 

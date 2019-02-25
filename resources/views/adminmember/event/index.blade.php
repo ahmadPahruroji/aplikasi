@@ -29,11 +29,11 @@
             </div>
             <div class="form-group">
               <label>Tanggal</label>
-              <input type="text" class="form-control" placeholder="tulis disini" name="date" required value="{{ $date }}">
+              <input type="text" class="form-control" placeholder="tulis disini" readonly="true" name="date" required value="{{ $date }}">
             </div>
             <div class="form-group">
               <label>Keterangan</label>
-              <textarea type="text" class="form-control" name="description" placeholder="type something">{{ $event->description }}</textarea>
+              <textarea type="text" class="form-control" name="description" readonly="true" placeholder="type something">{{ $event->description }}</textarea>
             </div> 
           </div>
         </div>

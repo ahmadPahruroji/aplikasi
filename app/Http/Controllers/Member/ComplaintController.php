@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\User;
+use App\StatusComplaint;
 use App\Complaint;
 
 class ComplaintController extends Controller
@@ -19,7 +20,7 @@ class ComplaintController extends Controller
     public function index()
     {
         $data['complaints'] = Auth::user()->id;
-        $data['complaints'] = Complaint::get();
+        $data['complaints'] = Complaint::with('user','statuscomplaint')->get()->sortByDesc('created_at');
         return view('adminmember/complaint.index', $data);
     }
 
