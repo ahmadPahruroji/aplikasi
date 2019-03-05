@@ -4,7 +4,7 @@
 	<div class="container-fluid">
 		{{-- <h2 class="h5 no-margin-bottom">Pengeluaran</h2> --}}
 		<div class="alert alert-primary" role="alert">
-			<i class="fa fa-call"></i> PENGELURAN
+			<i class="fa fa-call"></i> PENGELAURAN
 		</div>
 	</div>
 </div>
