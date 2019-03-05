@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Member;
 use App\Payment;
@@ -13,14 +14,19 @@ use App\Countribution;
 class CountributionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listging of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data["countributions"] = Countribution::with('member','payment','status')->get();
+        $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
         return view('adminmember/countribution.index', $data);
+
+        //         $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
+        //  $name["user"] = User::with('biodata')->find(Auth::user()->id);
+        // // dd($data);
+        // return view('admincoordinator/countribution.index', $data, $name);
     }
 
     /**

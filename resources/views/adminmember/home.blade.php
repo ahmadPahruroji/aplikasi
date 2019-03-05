@@ -122,7 +122,7 @@
 <script type="text/javascript">
     $(()=>{
         if({!! $login !!}){
-            swal("Hello :)","You Have Login as Member, Feel free to surf","success");
+            swal("Hello :)","Kamu Login sebagai Member","success");
         }
     });
 </script>
