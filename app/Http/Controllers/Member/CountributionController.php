@@ -20,7 +20,7 @@ class CountributionController extends Controller
      */
     public function index()
     {
-        $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
+        $data["countributions"] = Countribution::with('member','payment','status')->get();
         return view('adminmember/countribution.index', $data);
 
         //         $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();

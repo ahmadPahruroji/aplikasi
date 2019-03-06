@@ -37,6 +37,10 @@
 							</select>
 					</div> 
 					<div class="form-group">
+						<label>Qty</label>
+						<input type="number" class="form-control" value="{{ $spendings->qty }}"  name="qty"  onkeypress="return hanyaAngka(event)" placeholder="Hanya Angka" required> 
+					</div> 
+					<div class="form-group">
 						<label>Jumlah Pengeluaran</label>
 						<input type="number" class="form-control" value="{{ $spendings->total }}"  name="total"  onkeypress="return hanyaAngka(event)" placeholder="Hanya Angka" required> 
 					</div> 

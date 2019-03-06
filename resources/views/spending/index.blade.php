@@ -24,7 +24,9 @@
                            <tr>
                               <td>No</td>
                               <td>Nama Item</td>
+                               <td>Qty</td>
                               <td>Jumlah Pengeluaran</td>
+                              
                               <td>Tanggal</td>
                               <td>Keterangan</td>
                               <td>Action</td>
@@ -44,6 +46,7 @@
                         <tr>
                             <td>{{ $sp+1 }}</td>
                             <td>{{ $spending->category->name }}</td>
+                             <td>{{ $spending->qty }}</td>
                             <td>{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
                             <td>{{ $spending->description }}</td>

@@ -18,6 +18,7 @@ class CreateSpendingsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
+            $table->integer('qty');
             $table->integer('total');
             $table->date('date');
             $table->string('description')->nullable();

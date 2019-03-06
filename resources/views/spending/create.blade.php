@@ -4,7 +4,7 @@
 	<div class="container-fluid">
 		{{-- <h2 class="h5 no-margin-bottom">Pengeluaran</h2> --}}
 		<div class="alert alert-primary" role="alert">
-			<i class="fa fa-call"></i> PENGELAURAN
+			<i class="fa fa-call"></i> PENGELURAN
 		</div>
 	</div>
 </div>
@@ -41,6 +41,9 @@
 									<option value="{{ $category->id }}">{{ $category->name }}</option>
 									@endforeach
 								</select>
+							</div><div class="form-group">
+								<label>Qty</label>
+								<input type="number" class="form-control" name="qty" onkeypress="return hanyaAngka(event)" placeholder="Hanya Angka" required>
 							</div>
 							<div class="form-group">
 								<label>Jumlah Pengeluaran</label>
