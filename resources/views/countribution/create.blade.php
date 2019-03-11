@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 @section('content')
+@php
+ $tanggal = date_default_timezone_get('Asia/Jakarta'); date("Y-m-d");
+  $tanggal_data = date("Y-m-d");
+  $date = date("d-m-Y", strtotime($tanggal_data));
+@endphp
 <div class="page-header">
 	<div class="container-fluid">
 		{{-- <h2 class="h5 no-margin-bottom">Data Iuran</h2> --}}
@@ -55,7 +60,7 @@
 						</div>
 						<div class="form-group">
 							<label>Tanggal</label>
-							<input type="date" class="form-control" name="date" placeholder="type something" required>
+							<input type="date" class="form-control" name="date" placeholder="type something" value="{{ $date }}" required>
 						</div>
 						<div class="form-group">
 							{{-- <label>Status</label> --}}

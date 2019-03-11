@@ -52,6 +52,15 @@
                             <td>
                              <center>
                                 <div class="btn-group">
+                                  <a  role='button' class='btn btn-success' href = "">Lunas</a>
+                                                <!-- echo "<a type='button' class='btn btn-warning' href = \"?page=sttslayanan&id_layanan=$r[id_layanan]&status=Suspended\">Belum Lunas</a>"; -->
+                                 
+                                </div>
+                            </center> 
+                        </td>
+                            <td>
+                             <center>
+                                <div class="btn-group">
                                     <!-- <button type="button" class="btn btn-danger" onclick="destroy({{$countribution->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button> -->
                                     <a href="{{ route('countributions.edit',$countribution->id) }}" role="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-gear"></i></a>
                                 </div>
