@@ -8,8 +8,16 @@ class Countribution extends Model
 {
      protected $guarded = ["id"];
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
     public function member(){
     	return $this->belongsTo('App\Member');
+    }
+
+    public function money(){
+        return $this->belongsTo('App\Money');
     }
     
      public function payment(){

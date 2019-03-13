@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Member;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Category;
-use App\Spending;
-use App\Countribution;
+use App\Member;
 
-
-class SpendingController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,22 +16,8 @@ class SpendingController extends Controller
      */
     public function index()
     {
-        $data["spendings"] = Spending::with('category')->get();
-        $total["spend"] = Spending::sum('total');
-         $data["spend"] = Spending::get();
-         // $total["countribution"] = Countribution::sum('total');
-         $data["countribution"] = Countribution::get();
-        return view('adminmember/spending.index',$total,$data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $members = Member::with('user')->get();
+        return response()->json($events);
     }
 
     /**
@@ -45,7 +28,11 @@ class SpendingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $member = new Member;
+        $member->fill($request->all());
+        $member->save();
+
+        return response()->json($member);
     }
 
     /**
@@ -56,18 +43,9 @@ class SpendingController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $member = Member::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return response()->json($member);
     }
 
     /**
@@ -79,7 +57,11 @@ class SpendingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $member = Member::find($id);
+        $member->fill($request->all());
+        $member->update();
+
+        return response()->json($member);
     }
 
     /**
@@ -90,6 +72,7 @@ class SpendingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $member = Member::find($id)->delete();
+        return response()->json($member);
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Biodata;
 use App\Member;
+use App\Money;
 use App\Payment;
 use App\Status;
 use App\Countribution;
@@ -21,7 +22,7 @@ class CountributionController extends Controller
      */
     public function index()
     {
-        $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
+        $data["countributions"] = Countribution::with('user','member','money','payment','status')->get();
          $name["user"] = User::with('biodata')->find(Auth::user()->id);
         // dd($data);
         return view('admincoordinator/countribution.index', $data, $name);
@@ -34,8 +35,9 @@ class CountributionController extends Controller
      */
     public function create()
     {
-        $data["users"] = User::find(Auth::user()->id);
+        $data["users"] = User::get();
         $data["members"] = Member::get();
+        $data["money"] = Money::get();
         $data["payments"] = Payment::get();
         $data["statuses"] = Status::get();
        return view('admincoordinator/countribution.create',$data);

@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Member;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Category;
 use App\Spending;
-use App\Countribution;
-
 
 class SpendingController extends Controller
 {
@@ -19,22 +17,8 @@ class SpendingController extends Controller
      */
     public function index()
     {
-        $data["spendings"] = Spending::with('category')->get();
-        $total["spend"] = Spending::sum('total');
-         $data["spend"] = Spending::get();
-         // $total["countribution"] = Countribution::sum('total');
-         $data["countribution"] = Countribution::get();
-        return view('adminmember/spending.index',$total,$data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $spendings = Spending::with('category')->get()->sortByDesc('created_at');
+        return response()->json($spendings);
     }
 
     /**
@@ -45,7 +29,11 @@ class SpendingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $spending = new Spending;
+        $spending->fill($request->all());
+        $spending->save();
+
+        return response()->json($spending);
     }
 
     /**
@@ -56,18 +44,9 @@ class SpendingController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $spending = Spending::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return response()->json($spending);
     }
 
     /**
@@ -79,7 +58,11 @@ class SpendingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $spending = Spending::find($id);
+        $spending->fill($request->all());
+        $spending->update();
+
+        return response()->json($spending);
     }
 
     /**
@@ -90,6 +73,7 @@ class SpendingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $spending = Spending::find($id)->delete();
+        return response()->json($spending);
     }
 }

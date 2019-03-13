@@ -1,34 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Member;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use App\User;
-use App\Member;
-use App\Money;
-use App\Payment;
-use App\Status;
-use App\Countribution;
 
-class CountributionController extends Controller
+class MoneyController extends Controller
 {
     /**
-     * Display a listging of the resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
-        $data["countributions"] = Countribution::with('user','member','money','payment','status')->where('user_id',Auth::user()->id)->get();
-        return view('adminmember/countribution.index', $data);
-
-        //         $data["countributions"] = Countribution::with('member','payment','status')->where('user_id',Auth::user()->id)->get();
-        //  $name["user"] = User::with('biodata')->find(Auth::user()->id);
-        // // dd($data);
-        // return view('admincoordinator/countribution.index', $data, $name);
+        //
     }
 
     /**
@@ -96,17 +81,4 @@ class CountributionController extends Controller
     {
         //
     }
-
-    public function status()
-    {
-        $status = Countribution::get();
-        if ($this->$status->status == 0)
-        {
-            return "belum lunas";
-        }
-        else 
-        {
-            return "lunas";
-        }
-    }    
 }

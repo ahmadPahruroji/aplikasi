@@ -64,18 +64,7 @@
                 <td></td>
                 <td></td>
               </tr>
-              <tr>
-                <td>Total masukan/Iuran</td><td></td>
-                <td>{{ format_uang($countributions) }}</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Total sisa Iuran</td><td></td>
-                <td>{{ pengurangan($countributions,$spendings->sum('total')) }}</td>
-                <td></td>
-                <td></td>
-              </tr>              
+              {{--  --}}              
             </tfoot>
 			</table>
 		</body>

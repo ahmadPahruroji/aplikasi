@@ -95,24 +95,24 @@
                 return $kurang;
               }
               @endphp
-              <tr>
-                <td>Total Pengeluaran</td><td></td>
-                <td>{{ format_uang( $spendings->sum('total')) }}</td>
+              <tr style="color: red" bgcolor="yellow">
+                <td><b>Total Pengeluaran</b></td><td></td>
+                <td><b>{{ format_uang( $spendings->sum('total')) }}</b></td>
                 <td></td>
                 <td></td>
               </tr>
-              <tr>
+              {{-- <tr>
                 <td>Total masukan/Iuran</td><td></td>
                 <td>{{ format_uang($countributions) }}</td>
                 <td></td>
                 <td></td>
-              </tr>
-              <tr>
+              </tr> --}}
+              {{-- <tr>
                 <td>Total sisa Iuran</td><td></td>
                 <td>{{ format_uang(pengurangan($countributions,$spendings->sum('total'))) }}</td>
                 <td></td>
                 <td></td>
-              </tr>              
+              </tr>  --}}             
             </tfoot>
           </table>
           <br/>

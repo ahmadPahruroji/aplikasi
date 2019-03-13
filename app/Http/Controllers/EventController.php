@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\Event;
+use App\Notifikasi;
 
 class EventController extends Controller
 {
@@ -17,7 +18,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $data['events'] = Event::get()->sortByDesc('created_at');
+        $data['events'] = Event::get()->sortByAsc('created_at');
         return view('event.index', $data);
     }
 
@@ -49,8 +50,64 @@ class EventController extends Controller
         }
         $event->save();
 
+        // if ($event->save())
+        //  {
+        //     $notif = new Notifikasi();
+        //     $notif->id = 1;
+        //     $notif->name = "Kegiatan Baru";
+        //     $notif->save();
+        //      $res['status'] = true;
+        //         $res['code'] = 200;
+        //         $res['message'] = "Berhasil  !";
+        //         return response()->json($res);
+        // }
+        // else
+        // {
+        //      $res['status'] = false;
+        //         $res['code'] = 200;
+        //         $res['message'] = "Gagal  !";
+        //         return response()->json($res);;
+        // }
+
         return redirect('events');
     }
+
+    // ////////////////////////////////////////
+    public function getnotif()
+          {
+              $data = Notifikasi::all();
+              $jumlah = count($data);
+              if($jumlah>0)
+              {
+              echo $jumlah;    
+              }else{
+              echo "";    
+              }
+              
+              
+          }
+          
+          public function datanotif(){
+              $data = Notifikasi::all();
+              
+              if(count($data)>0)
+              {
+                  
+                  //return $data;
+                  echo "kegiatan";
+              }else{
+                  echo "Tidak ada data kegiatan yang belum dibaca";
+                  
+              }
+          }
+          
+          public function actiondarurat()
+          {
+              $deleteNotifikasi = Notifikasi::truncate();
+            return redirect()->route('events');
+          }
+
+          // /////
 
     /**
      * Display the specified resource.

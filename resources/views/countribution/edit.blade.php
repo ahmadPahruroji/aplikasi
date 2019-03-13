@@ -30,9 +30,9 @@
 
 					<div class="form-group">
 						<label>Nama Warga</label>
-						<select class="form-control select2" name="member_id">
-								@foreach ($members as $m => $member)
-								<option value="{{ $member->id }}" {{$member->id==$countributions->member_id ? 'selected':null}}>{{ $member->name }}</option>
+						<select class="form-control select2" name="user_id">
+								@foreach ($users as $u => $user)
+								<option value="{{ $user->id }}" {{$user->id==$countributions->user_id ? 'selected':null}}>{{ $user->name }}</option>
 								@endforeach
 							</select>
 					</div> 
@@ -40,9 +40,21 @@
 						<label>Bulan</label>
 						<input type="text" class="form-control date" value="{{ $countributions->month }}"  name="month" placeholder="type something" required> 
 					</div>  --}}
+					{{-- <div class="form-group">
+								<label>Jumlah Uang</label>
+								<select class="form-control select2" name="money_id">
+									@foreach ($money as $m => $moneys)
+									<option value="{{ $moneys->id }}">{{ $moneys->money }}</option>
+									@endforeach
+								</select>
+							</div> --}}
 					<div class="form-group">
-						<label>Jumlah Iuran</label>
-						<input type="text" class="form-control" value="{{ $countributions->total }}"  name="total" onkeypress="return hanyaAngka(event)" placeholder="Hanya Angka" maxlength="5" required> 
+						<label>Jumlah Uang</label>
+								<select class="form-control select2" name="money_id">
+									@foreach ($money as $m => $moneys)
+									<option value="{{ $moneys->id }}" {{$moneys->id==$countributions->money_id ? 'selected':null}}>{{ $moneys->money }}</option>
+									@endforeach
+								</select> 
 					</div>
 					<div class="form-group">
 						<label>Metode Pembayaran</label>
@@ -57,12 +69,7 @@
 						<input type="date" class="form-control" value="{{ $countributions->date }}"  name="date" placeholder="type something" required> 
 					</div>
 					<div class="form-group">
-						<label>Status</label>
-						<select class="form-control select2" name="status_id">
-								@foreach ($statuses as $s => $status)
-								<option value="{{ $status->id }}" {{$status->id==$countributions->status_id ? 'selected':null}}>{{ $status->name }}</option>
-								@endforeach
-							</select>
+						<input type="hidden" class="form-control" value="{{ $countributions->status }}"  name="status" placeholder="type something" required> 
 					</div>
 					{{-- <div class="form-group">
 						<label>Keterangan</label>

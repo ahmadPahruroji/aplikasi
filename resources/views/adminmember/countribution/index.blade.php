@@ -14,14 +14,14 @@
     	</div>
     	<div class="card-body">
     		<div class="table-responsive">
-    			<table class="table datatable">
+    			<table class="table datatable" border="2">
     				<thead>
     					<tr>
     						<td>No</td>
-                            <td>Nama</td>
-                            <td>Jumlah Iuran</td>
-                            <td>Tanggal</td>
-                            <td>Status</td>
+                            <td style="text-align: center;">Nama</td>
+                            <td style="text-align: center;">Jumlah Iuran</td>
+                            <td style="text-align: center;">Tanggal</td>
+                            <td style="text-align: center;">Status</td>
                             
     					</tr>
     				</thead>
@@ -33,14 +33,19 @@
                $date = strftime( "%d %B %Y", strtotime($countribution->date));
 
                // Rupiah //
-               $rupiah = "Rp " . number_format($countribution->total,2,',','.');
+               $rupiah = "Rp " . number_format($countribution->money->money,2,',','.');
                @endphp
                         <tr>
                             <td>{{ $cu+1 }}</td>
-                            <td>{{ $countribution->member->name }}</td>
-                            <td>{{ $rupiah }}</td>
+                            <td>{{ $countribution->user->name }}</td>
+                            <td style="text-align: right;">{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
-                            <td><span class="label radius-circle bg-info float-left">{{ $countribution->status->name }}</span></td>
+                            <td><span class="label radius-circle bg-info float-left">
+                                @if ($countribution->status == 0)
+              <button type="link" value="0" class="btn btn-danger btn-sm">belum lunas</button>
+              @else
+              <button onclick="return confirm('apakah belum lunas?');" value="1" class="btn btn-success btn-sm">Lunas</button>
+              @endif</span></td>
                         </tr>
                         @endforeach
     				</tbody>

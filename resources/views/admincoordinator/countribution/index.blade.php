@@ -36,15 +36,15 @@
                $date = strftime( "%d %B %Y", strtotime($countribution->date));
 
                // Rupiah //
-               $rupiah = "Rp " . number_format($countribution->total,2,',','.');
+               $rupiah = "Rp " . number_format($countribution->money->money,2,',','.');
                @endphp
                         <tr>
                             <td>{{ $cu+1 }}</td>
-                            <td>{{ $countribution->member->name }}</td>
+                            <td>{{ $countribution->user->name }}</td>
                             {{-- <td>{{ $countribution->month }}</td> --}}
                             <td>{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
-                            <td><span class="label radius-circle bg-primary float-left">{{ $countribution->status->name }}</span></td>
+                            <td><span class="label radius-circle bg-primary float-left">{{ $countribution->status }}</span></td>
                             {{-- <td>{{ $countribution->description }}</td> --}}
                             <td>
                                <center>

@@ -984,7 +984,7 @@ a.fancybox:hover img {
                                                       singleDatePicker: true,
                                                       showDropdowns: true,
                                                       locale: {
-                      format: 'MMMM'
+                      format: 'YYYY/MM/DD'
                     }
                                                     });
                                                   });

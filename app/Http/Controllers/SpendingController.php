@@ -119,7 +119,7 @@ class SpendingController extends Controller
         $data["spendings"] = Spending::with('category')->get();
         $total["spend"] = Spending::sum('total');
          $data["spend"] = Spending::get();
-         $total["countributions"] = Countribution::sum('total');
+         $total["countributions"] = Countribution::sum('money_id');
          $data["countributions"] = Countribution::get();
         return view('spending.report',$total,$data);   
     }
@@ -155,10 +155,10 @@ class SpendingController extends Controller
     public function pdf() {
         // ambil semua data
         $spending['spendings'] = Spending::with('category')->get();
-        $total["countributions"] = Countribution::sum('total');
+        // $total["countributions"] = Countribution::sum('total');
         $data["countributions"] = Countribution::get();
         // mengarahkan view pada file pdf.blade.php di views/provinsi/
-        $pdf = PDF::loadview('spending.pdf', $total,$spending,$data);
+        $pdf = PDF::loadview('spending.pdf', $spending,$data);
         // $view = View::make('spending.pdf',$provinsi); 
         // panggil fungsi dompdf
         // $pdf = App::make('PDF');

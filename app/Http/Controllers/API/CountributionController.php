@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Member;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Category;
-use App\Spending;
+use App\Member;
+use App\Payment;
+use App\Status;
 use App\Countribution;
 
-
-class SpendingController extends Controller
+class CountributionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,22 +19,8 @@ class SpendingController extends Controller
      */
     public function index()
     {
-        $data["spendings"] = Spending::with('category')->get();
-        $total["spend"] = Spending::sum('total');
-         $data["spend"] = Spending::get();
-         // $total["countribution"] = Countribution::sum('total');
-         $data["countribution"] = Countribution::get();
-        return view('adminmember/spending.index',$total,$data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $countributions = Countribution::with('user','statuscomplaint')->get()->sortByDesc('created_at');
+        return response()->json($countributions);
     }
 
     /**
@@ -45,7 +31,11 @@ class SpendingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $countribution = new Countribution;
+        $countribution->fill($request->all());
+        $countribution->save();
+
+        return response()->json($countribution);
     }
 
     /**
@@ -56,18 +46,9 @@ class SpendingController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $countribution = Countribution::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return response()->json($countribution);
     }
 
     /**
@@ -79,7 +60,11 @@ class SpendingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $countribution = Countribution::find($id);
+        $countribution->fill($request->all());
+        $countribution->update();
+
+        return response()->json($countribution);
     }
 
     /**
@@ -90,6 +75,7 @@ class SpendingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $countribution = Countribution::find($id)->delete();
+        return response()->json($countribution);
     }
 }

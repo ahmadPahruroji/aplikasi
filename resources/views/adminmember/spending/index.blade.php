@@ -14,14 +14,14 @@
               </div>
               <div class="card-body">
                   <div class="table-responsive">
-                     <table class="table table-striped datatable">
+                     <table class="table table-striped datatable" border="1">
                         <thead>
                            <tr>
                               <td>No</td>
-                              <td>Nama Item</td>
-                              <td>Jumlah Pengeluaran</td>
-                              <td>Tanggal</td>
-                              <td>Keterangan</td>
+                              <td style="text-align: center;">Nama Item</td>
+                              <td style="text-align: center;">Jumlah Pengeluaran</td>
+                              <td style="text-align: center;">Tanggal</td>
+                              <td style="text-align: center;">Keterangan</td>
                           </tr>
                       </thead>
                       <tbody>
@@ -38,7 +38,7 @@
                         <tr>
                             <td>{{ $sp+1 }}</td>
                             <td>{{ $spending->category->name }}</td>
-                            <td>{{ $rupiah }}</td>
+                            <td style="text-align: right;">{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
                             <td>{{ $spending->description }}</td>
                     </tr>
@@ -55,18 +55,19 @@
                         return $kurang;
                       }
                   @endphp
-                      <tr>
+                      <tr bgcolor="yellow">
                         <td>Total Pengeluaran</td><td></td>
-                        <td>{{ format_uang($spend) }}</td>
+                        <td style="text-align: right;">{{ format_uang($spend) }}</td>
+                        <td></td><td></td>
                       </tr>
-                      <tr>
+                      {{-- <tr>
                         <td>Total masukan/Iuran</td><td></td>
                         <td>{{ format_uang($countribution) }}</td>
                       </tr>
                       <tr>
                         <td>Total sisa Iuran</td><td></td>
                         <td>{{ pengurangan($countribution,$spend) }}</td>
-                      </tr>              
+                      </tr>     --}}          
                   
                 </tfoot>
             </table>

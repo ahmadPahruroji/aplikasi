@@ -30,11 +30,11 @@ class HomeController extends Controller
     public function index()
     {
         $data["login"] = request()->login ?? "false";
-        $total["countributions"] = Countribution::sum('total');
+        // $total["countributions"] = Countribution::sum('total');
         $data["members"] = Member::get();
         $data["officers"] = Officer::get();
         $data["users"] = User::get();
         $name['users'] = User::with('biodata')->find(Auth::user()->id);
-        return view('home', $total,$data,$name);
+        return view('home',$data,$name);
     }
 }

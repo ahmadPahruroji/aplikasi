@@ -20,7 +20,7 @@ class HomeMemberController extends Controller
     public function index()
     {
          $data["login"] = request()->login ?? "false";
-        $total["countributions"] = Countribution::sum('total');
+        // $total["countributions"] = Countribution::sum('total');
         $data["countributions"] = Countribution::get();
         $total["spendings"] = Spending::sum('total');
          $data["spendings"] = Spending::get();

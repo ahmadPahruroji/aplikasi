@@ -1,10 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-@php
- $tanggal = date_default_timezone_get('Asia/Jakarta'); date("Y-m-d");
-  $tanggal_data = date("Y-m-d");
-  $date = date("d-m-Y", strtotime($tanggal_data));
-@endphp
 <div class="page-header">
 	<div class="container-fluid">
 		{{-- <h2 class="h5 no-margin-bottom">Data Iuran</h2> --}}
@@ -32,24 +27,44 @@
 					<div class="card-body">
 						<form action="{{ route('countributions.store') }}" method="post">
 							{{ csrf_field()}} 
-							<div class="form-group">
+							@php
+							$tanggal = date_default_timezone_get('Asia/Jakarta'); date("Y-m-d");
+							$tanggal_data = date("Y-m-d");
+							$date = date("Y-m-d", strtotime($tanggal_data));
+							@endphp
+							{{-- <div class="form-group">
 
 								<input type="hidden" class="form-control" name="user_id" value="1" placeholder="type something" required>
-							</div>
-							<div class="form-group">
+							</div> --}}
+							{{-- <div class="form-group">
 								<label>Nama Warga</label>
 								<select class="form-control select2" name="member_id">
 									@foreach ($members as $m => $member)
 									<option value="{{ $member->id }}">{{ $member->name }}</option>
 									@endforeach
 								</select>
+							</div> --}}
+							<div class="form-group">
+								<label>Nama Warga</label>
+								<select class="form-control select2" name="user_id">
+									@foreach ($users as $u => $user)
+									<option value="{{ $user->id }}">{{ $user->name }}</option>
+									@endforeach
+								</select>
 							</div>
-				
-						<div class="form-group">
+							<div class="form-group">
+								<label>Jumlah Iuran</label>
+								<select class="form-control select2" name="money_id">
+									@foreach ($money as $m => $moneys)
+									<option value="{{ $moneys->id }}">{{ $moneys->money }}</option>
+									@endforeach
+								</select>
+							</div>
+						{{-- <div class="form-group">
 							<label>Jumlah</label>
 							<input type="text" class="form-control" name="total" onkeypress="return hanyaAngka(event)"
 							placeholder="Hanya Angka" maxlength="5" required>
-						</div>
+						</div> --}}
 						<div class="form-group">
 							<label>Metode Pembayaran</label>
 							<select class="form-control select2" name="payment_id">
@@ -64,7 +79,7 @@
 						</div>
 						<div class="form-group">
 							{{-- <label>Status</label> --}}
-							<input type="hidden" class="form-control" name="status_id" value="2" placeholder="type something" required>
+							<input type="hidden" class="form-control" name="status" value="0" placeholder="type something" required>
 
 							{{-- <select class="form-control select2" name="status_id">
 								@foreach ($statuses as $s => $status)

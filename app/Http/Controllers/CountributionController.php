@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Member;
+use App\Money;
 use App\Payment;
 use App\Status;
 use App\Countribution;
@@ -19,7 +20,7 @@ class CountributionController extends Controller
      */
     public function index()
     {
-        $data["countributions"] = Countribution::with('member','payment','status')->get()->sortByDesc('created_at');
+        $data["countributions"] = Countribution::with('member','money','payment','status')->orderBy('created_at','desc')->get();
         return view('countribution.index', $data);
     }
 
@@ -30,7 +31,9 @@ class CountributionController extends Controller
      */
     public function create()
     {
+        $data["users"] = User::get();
         $data["members"] = Member::get();
+        $data["money"] = Money::get();
         $data["payments"] = Payment::get();
         $data["statuses"] = Status::get();
        return view('countribution.create',$data);
@@ -72,7 +75,9 @@ class CountributionController extends Controller
     public function edit($id)
     {
         $data["countributions"] = Countribution::find($id);
+        $data["users"] = User::get();
         $data["members"] = Member::get();
+        $data["money"] = Money::get();
         $data["payments"] = Payment::get();
         $data["statuses"] = Status::get();
        return view('countribution.edit', $data);
@@ -104,5 +109,20 @@ class CountributionController extends Controller
     {
         $data = Countribution::find($id)->delete();
         return response()->json($data);
+    }
+
+    public function status(Request $request, $id){
+        $status = Countribution::findOrFail($id);
+        if($status->status == 0 || null){
+            $status->status = $request->status = 1;
+            $status->save();
+            return redirect()->route('countributions.index');
+        }
+        else
+        {
+            $status->status = $request->status = 0;
+            $status->save();
+            return redirect()->route('countributions.index');
+        }
     }
 }

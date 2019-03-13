@@ -12,6 +12,7 @@
         "barryvdh/laravel-dompdf": "^0.8.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
+        "laravel/passport": "^7.2",
         "laravel/tinker": "^1.0",
         "pusher/pusher-php-server": "^3.3"
     },

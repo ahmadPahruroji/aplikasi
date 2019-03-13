@@ -49,14 +49,7 @@
                       </div>
                     </div>
                     <div class="number"><h4>
-                      <?php
-                                     function format_uang($angka){
-                                        $hasil = "Rp. " . number_format($angka,2,',','.');
-                                        return $hasil;
-                                    }
-                                    echo format_uang($spendings);
-
-                                    ?>
+                      {{--  --}}
                     </h4>
                   </div>
                   </div>
@@ -71,11 +64,7 @@
                       </div>
                     </div>
                     <div class="number"><h4>
-                      <?php
-                                  
-                                    echo format_uang($countributions);
-
-                                    ?>
+                      
                     </h4>
 
                       <?php

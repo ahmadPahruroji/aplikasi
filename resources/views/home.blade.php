@@ -22,14 +22,7 @@
                                     <i class="fa fa-money float-right text-white" style="font-size: 20px"></i>
                                     <h6 class="text-white text-uppercase m-b-20">Iuran</h6>
                                     <h4 class="m-b-20 text-white">
-                                     <?php
-                                     function format_uang($angka){
-                                        $hasil = "Rp. " . number_format($angka,2,',','.');
-                                        return $hasil;
-                                    }
-                                    echo format_uang($countributions);
-
-                                    ?>
+                                     {{--  --}}
                                 </h4>
                                 <span class="text-white">Total Seluruh Iuran</span>
                             </div>

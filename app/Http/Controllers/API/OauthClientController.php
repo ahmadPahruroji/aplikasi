@@ -1,16 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Member;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Category;
-use App\Spending;
-use App\Countribution;
+use App\OauthClient;
 
-
-class SpendingController extends Controller
+class OauthClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,21 +14,6 @@ class SpendingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $data["spendings"] = Spending::with('category')->get();
-        $total["spend"] = Spending::sum('total');
-         $data["spend"] = Spending::get();
-         // $total["countribution"] = Countribution::sum('total');
-         $data["countribution"] = Countribution::get();
-        return view('adminmember/spending.index',$total,$data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
     {
         //
     }
@@ -45,7 +26,7 @@ class SpendingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -56,18 +37,8 @@ class SpendingController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $client = OauthClient::find($id);
+        return response()->json($client);
     }
 
     /**

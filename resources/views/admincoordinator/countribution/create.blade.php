@@ -23,10 +23,15 @@
 					<div class="card-body">
 						<form action="{{ route('countributionuser.store') }}" method="post">
 							{{ csrf_field()}} 
-							<div class="form-group">
+							@php
+							$tanggal = date_default_timezone_get('Asia/Jakarta'); date("Y-m-d");
+							$tanggal_data = date("Y-m-d");
+							$date = date("Y-m-d", strtotime($tanggal_data));
+							@endphp
+							{{-- <div class="form-group">
 
 								<input type="hidden" class="form-control" name="countribution[user_id]" value="{{ $users->id }}" placeholder="type something" required>
-							</div>
+							</div> --}}
 							{{-- <div class="form-group">
 								<label>Nama User</label>
 								<select class="form-control select2" name="countribution[user_id]">
@@ -35,9 +40,9 @@
 							</div> --}}
 							<div class="form-group">
 								<label>Nama Warga</label>
-								<select class="form-control select2" name="countribution[member_id]">
-									@foreach ($members as $m => $member)
-									<option value="{{ $member->id }}">{{ $member->name }}</option>
+								<select class="form-control select2" name="countribution[user_id]">
+									@foreach ($users as $u => $user)
+									<option value="{{ $user->id }}">{{ $user->name }}</option>
 									@endforeach
 								</select>
 							</div>
@@ -62,10 +67,18 @@
 
 						</div> --}}
 						<div class="form-group">
+								<label>Jumlah Iuran</label>
+								<select class="form-control select2" name="countribution[money_id]">
+									@foreach ($money as $m => $moneys)
+									<option value="{{ $moneys->id }}">{{ $moneys->money }}</option>
+									@endforeach
+								</select>
+							</div>
+						{{-- <div class="form-group">
 							<label>Jumlah</label>
 							<input type="text" class="form-control" name="countribution[total]" onkeypress="return hanyaAngka(event)"
 							placeholder="Hanya Angka" maxlength="10" required>
-						</div>
+						</div> --}}
 						<div class="form-group">
 							<label>Metode Pembayaran</label>
 							<select class="form-control select2" name="countribution[payment_id]">
@@ -76,11 +89,12 @@
 						</div>
 						<div class="form-group">
 							<label>Tanggal</label>
-							<input type="date" class="form-control" name="countribution[date]" placeholder="type something" required>
+							<input type="date" class="form-control" name="countribution[date]" placeholder="type something" value="{{ $date }}" required>
 						</div>
 						<div class="form-group">
 							{{-- <label>Status</label> --}}
-							<input type="hidden" class="form-control" name="countribution[status_id]" value="2" placeholder="type something" required>
+							<input type="hidden" class="form-control" name="countribution[status]" value="0" placeholder="type something" required>
+							{{-- <input type="hidden" class="form-control" name="countribution[status_id]" value="2" placeholder="type something" required> --}}
 
 							{{-- <select class="form-control select2" name="status_id">
 								@foreach ($statuses as $s => $status)
