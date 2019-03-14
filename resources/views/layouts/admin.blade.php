@@ -319,9 +319,9 @@ a.fancybox:hover img {
                 <a href="{{ url ('complaints') }}"> <i class="fa fa-fw fa-comment"></i><span> Keluhan </span> </a>
               </li>
               {{-- kontak --}}
-              <li {{ Request::is('contacts') ? 'class=active' : '' }}>
+             {{--  <li {{ Request::is('contacts') ? 'class=active' : '' }}>
                 <a href="{{ url ('contacts') }}"> <i class="fa fa-fw fa-phone"></i><span> Kontak </span> </a>
-              </li>
+              </li> --}}
 
               {{--  --}}
               <li {{ Request::is('export') ? 'class=active' : '' }}>

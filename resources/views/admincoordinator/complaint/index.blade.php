@@ -43,7 +43,13 @@
                                 </td>
                                 <td>{{ $complaint->date }}</td>
                                 <td>{{ $complaint->complain }}</td>
-                                <td><span class="label radius-circle bg-primary float-left">{{ $complaint->statuscomplaint->name }}</span></td>
+                                <td>@if ($complaint->statuscomplaint == 0)
+                                    <button type="link" value="0" class="btn btn-danger btn-sm">belum proses</button>
+                                    @elseif ($complaint->statuscomplaint == 1)
+                                    <button type="link" value="1" class="btn btn-primary btn-sm">proses</button>
+                                  @else
+                                  <button  value="2" class="btn btn-success btn-sm">selesai</button>
+                              @endif</td>
                                 <td>
                                   <button type="button" class="btn btn-danger" onclick="destroy({{$complaint->id}})"><i class="fa fa-trash"></i> Hapus</button> 
                               </td>

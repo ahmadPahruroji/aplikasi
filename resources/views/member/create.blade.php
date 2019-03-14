@@ -42,10 +42,10 @@
 						<label>Alamat</label>
 						<textarea type="text" class="form-control" name="alamat" placeholder="type something" > </textarea>
 					</div>
-					<div class="form-group">
+					{{-- <div class="form-group">
 						<label>KK</label>
 						<input type="text" class="form-control" name="kk" placeholder="type something" required>
-					</div>
+					</div> --}}
 					<div class="form-group">
 						<label>Nomor HP</label>
 						<input type="text" class="form-control" name="no_hp" placeholder="type something" required>

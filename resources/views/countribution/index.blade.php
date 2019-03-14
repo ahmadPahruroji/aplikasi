@@ -39,7 +39,7 @@
           $date = strftime( "%d %B %Y", strtotime($countribution->date));
 
                // Rupiah //
-          $rupiah = "Rp " . number_format($countribution->money->money,2,',','.');
+          $rupiah = "Rp " . number_format($countribution->money,2,',','.');
           @endphp
           <tr>
             <td>{{ $cu+1 }}</td>
@@ -55,9 +55,9 @@
              <form action="{{ route('countributions.status', $countribution->id) }}" method="post">
               @csrf
               @if ($countribution->status == 0)
-              <button type="link" onclick="return confirm('apakah sudah lunas?');" value="0" class="btn btn-danger btn-sm">belum lunas</button>
+              <button type="link" onclick="return confirm('apakah sudah lunas?');" value="0" class="btn btn-danger btn-sm"><b>Belum Lunas</b></button>
               @else
-              <button type="link" onclick="return confirm('apakah belum lunas?');" value="1" class="btn btn-success btn-sm">Lunas</button>
+              <button type="link" onclick="return confirm('apakah belum lunas?');" value="1" class="btn btn-success btn-sm"><b>Lunas</b></button>
               @endif
             </form>
             </td>

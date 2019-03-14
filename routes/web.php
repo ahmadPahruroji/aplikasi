@@ -64,6 +64,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/export/cari', 'SpendingController@cari');
 		Route::any('export/pdf', array('as' => 'export/pdf', 'uses' => 'SpendingController@pdf')); // action untuk mencetak data pdf
 		Route::post('countributions/status/{id}', 'CountributionController@status')->name('countributions.status');
+		Route::post('complaints/status/{id}', 'ComplaintController@status')->name('complaints.status');
 	});
 
 

@@ -20,11 +20,11 @@ class CreateComplaintsTable extends Migration
             $table->string('image');
             $table->date('date');
             $table->string('complain');
-            $table->integer('statuscomplaint_id')->unsigned();
+            $table->integer('statuscomplaint');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('statuscomplaint_id')->references('id')->on('status_complaints')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('statuscomplaint_id')->references('id')->on('status_complaints')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

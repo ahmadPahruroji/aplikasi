@@ -77,7 +77,7 @@
               <tr>
                 <td>{{ $sp+1 }}</td>
                 <td>{{ $spending->category->name }}</td>
-                <td>{{ $rupiah }}</td>
+                <td style="text-align: right;">{{ $rupiah }}</td>
                 <td>{{ $date }}</td>
                 <td>{{ $spending->description }}</td>
 
@@ -97,7 +97,7 @@
               @endphp
               <tr style="color: red" bgcolor="yellow">
                 <td><b>Total Pengeluaran</b></td><td></td>
-                <td><b>{{ format_uang( $spendings->sum('total')) }}</b></td>
+                <td style="text-align: right;"><b>{{ format_uang( $spendings->sum('total')) }}</b></td>
                 <td></td>
                 <td></td>
               </tr>

@@ -7,18 +7,20 @@
   </div>
 </div>
 <?php
-// ini_set( 'display_errors', 1 );   
-//     error_reporting( E_ALL );
-//     $to   = $users->email;
-//     $judul  = "Waktu Pembayaran Iuran";
-//     $dari = "From: lnitwelve@gmail.com \n";
-//     $dari .= "Content-type: text/html \r\n";
+ini_set( 'display_errors', 1 );   
+    error_reporting( E_ALL );
+    $to   = $users->email;
+    $judul  = "Waktu Pembayaran Iuran";
+    $dari = "From: e-grasud@planetinformatika.com \n";
+    //pass @Grasud12
+    $dari .= "Content-type: text/html \r\n";
                                                     
-//     $pesan  = "Waktu pembayaran Iuran sudah dimulai. Silahkan melakukan pembayaran. <br />";
-//     if (date('d') == "18" ){
+    $pesan  = "Waktu pembayaran Iuran sudah dimulai. Silahkan melakukan pembayaran pada bulan ini. <br />
+    jika sudah bayar abaikan saja ok (:";
+    if (date('d') == "18" ){
                                                          
-//     @mail($to, $judul, $pesan, $dari);
-//     }
+    @mail($to, $judul, $pesan, $dari);
+    }
 ?>
 
 

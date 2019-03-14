@@ -47,7 +47,17 @@
                                 </td>
                                 <td>{{ $date }}</td>
                                 <td>{{ $complaint->complain }}</td>
-                                <td><span class="label radius-circle bg-primary float-left">{{ $complaint->statuscomplaint->name }}</span></td>
+                                <td><span>
+                                  <form action="{{ route('complaints.status', $complaint->id) }}" method="post">
+              @csrf
+              @if ($complaint->statuscomplaint == 0)
+              <button type="link" onclick="return confirm('apakah sudah mulai?');" value="0" class="btn btn-danger btn-sm"><b>Belum proses</b></button>
+              @elseif ($complaint->statuscomplaint == 1)
+              <button type="link" onclick="return confirm('apakah sudah di proses?');" value="1" class="btn btn-primary btn-sm"><b>proses</b></button>
+              @else
+              <button type="link" onclick="return confirm('apakah belum di proses?');" value="2" class="btn btn-success btn-sm"><b>selesai</b></button>
+              @endif
+            </form></span></td>
                                 <td>
                                   <button type="button" class="btn btn-danger" onclick="destroy({{$complaint->id}})" data-toggle="tooltip" data-placement="right" title="Hapus Data"><i class="fa fa-trash"></i></button> 
                                   <a href="{{ route('complaints.edit',$complaint->id) }}" role="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Edit Data"><i class="fa fa-gear"></i></a>

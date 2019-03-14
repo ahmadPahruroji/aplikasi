@@ -47,7 +47,7 @@
 							</div>
 							<div class="form-group">
 							{{-- <label>Status</label> --}}
-							<input type="hidden" class="form-control" name="statuscomplaint_id" value="1" placeholder="type something" required>
+							<input type="hidden" class="form-control" name="statuscomplaint" value="0" placeholder="type something" required>
 
 							{{-- <select class="form-control select2" name="statuscomplaint_id">
 								@foreach ($status_complaints as $s => $status)

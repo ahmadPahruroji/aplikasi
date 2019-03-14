@@ -119,7 +119,7 @@ class SpendingController extends Controller
         $data["spendings"] = Spending::with('category')->get();
         $total["spend"] = Spending::sum('total');
          $data["spend"] = Spending::get();
-         $total["countributions"] = Countribution::sum('money_id');
+         $total["countributions"] = Countribution::sum('money');
          $data["countributions"] = Countribution::get();
         return view('spending.report',$total,$data);   
     }

@@ -19,17 +19,24 @@ class HomeMemberController extends Controller
      */
     public function index()
     {
-         $data["login"] = request()->login ?? "false";
+        //  $data["login"] = request()->login ?? "false";
+        // $total["countributions"] = Countribution::sum('total');
+        // $data["countributions"] = Countribution::get();
+        // $total["spendings"] = Spending::sum('total');
+        //  $data["spendings"] = Spending::get();
+        //  $name['users'] = User::with('biodata')->find(Auth::user()->id);
+        //  $data['email'] = User::with('biodata')->find(Auth::user()->email);
+         
+       $data["login"] = request()->login ?? "false";
         // $total["countributions"] = Countribution::sum('total');
         $data["countributions"] = Countribution::get();
         $total["spendings"] = Spending::sum('total');
          $data["spendings"] = Spending::get();
-         $name['users'] = User::with('biodata')->find(Auth::user()->id);
+         $data["users"] = User::with('biodata')->find(Auth::user()->id);
          $data['email'] = User::with('biodata')->find(Auth::user()->email);
          
-       
         // dd($data);
-        return view('adminmember.home',$total,$data,$name);
+        return view('adminmember.home',$total,$data);
     }
 
     /**

@@ -39,10 +39,10 @@
 						<label>Nomor HP</label>
 						<input type="text" class="form-control" value="{{ $members->no_hp }}"  name="no_hp" placeholder="type something" required> 
 					</div>
-					<div class="form-group">
+					{{-- <div class="form-group">
 						<label>KK</label>
 						<input type="text" class="form-control" value="{{ $members->kk }}"  name="kk" placeholder="type something" required> 
-					</div> 
+					</div>  --}}
 					<div class="form-group">
 						<label>Keterangan</label>
 						<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $members->description}}</textarea>

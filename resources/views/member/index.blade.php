@@ -26,7 +26,7 @@
                           <td>Nama</td>
                           <td>ALAMAT/BLOK</td>
                           <td>Nomor HP</td>
-                          <td>KK</td>
+                          {{-- <td>KK</td> --}}
                           <td>KETERANGAN</td>
                           <td>Action</td>
                       </tr>
@@ -39,7 +39,7 @@
                         <td>{{ $member->name }}</td>
                         <td>{{ $member->alamat }}</td>
                         <td>{{ $member->no_hp }}</td>
-                        <td>{{ $member->kk }}</td>
+                        {{-- <td>{{ $member->kk }}</td> --}}
                         <td>{{ $member->description }}</td>
                         <td>
                          <center>

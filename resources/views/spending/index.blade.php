@@ -47,7 +47,7 @@
                             <td>{{ $sp+1 }}</td>
                             <td>{{ $spending->category->name }}</td>
                              <td>{{ $spending->qty }}</td>
-                            <td>{{ $rupiah }}</td>
+                            <td style="text-align: right;">{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
                             <td>{{ $spending->description }}</td>
                             <td>

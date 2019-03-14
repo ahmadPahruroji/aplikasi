@@ -50,11 +50,29 @@
 							</div> --}}
 					<div class="form-group">
 						<label>Jumlah Uang</label>
-								<select class="form-control select2" name="money_id">
+								{{-- <select class="form-control select2" name="money_id">
 									@foreach ($money as $m => $moneys)
 									<option value="{{ $moneys->id }}" {{$moneys->id==$countributions->money_id ? 'selected':null}}>{{ $moneys->money }}</option>
 									@endforeach
-								</select> 
+								</select> --}}
+								<select class="form-control select2" name="money">
+								<option>{{ $countributions->money }}</option>
+								<option>50000</option>
+								<option>75000</option>
+								<option>100000</option>
+								<option>150000</option>
+								<option>200000</option>
+								<option>250000</option>
+								<option>300000</option>
+								<option>375000</option>
+								<option>450000</option>
+								<option>525000</option>
+								<option>600000</option>
+								<option>675000</option>
+								<option>750000</option>
+								<option>825000</option>
+								<option>900000</option>
+							</select> 
 					</div>
 					<div class="form-group">
 						<label>Metode Pembayaran</label>

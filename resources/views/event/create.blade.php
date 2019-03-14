@@ -27,13 +27,16 @@
 						<form action="{{ route('events.store') }}" enctype="multipart/form-data" files="true" method="post">
 							@csrf
 							@method('post')
+							@php
+							$tanggal = date_default_timezone_get('Asia/Jakarta'); date("Y-m-d");
+							$tanggal_data = date("Y-m-d");
+							$date = date("Y-m-d", strtotime($tanggal_data));
+							@endphp
 							<div class="form-group">
-								<label>Nama User</label>
-								<select class="form-control select2" name="user_id">
-									@foreach ($users as $u => $user)
-									<option value="{{ $user->id }}">{{ $user->name }}</option>
-									@endforeach
-								</select>
+								<div class="form-group">
+
+								<input type="hidden" class="form-control" name="user_id" value="1" placeholder="type something" required>
+							</div>
 							</div>
 							<div class="form-group">
 								<label>Judul</label>
@@ -46,7 +49,7 @@
 							</div>
 							<div class="form-group">
 								<label>Tanggal</label>
-								<input type="date" class="datepicker form-control" name="date" placeholder="type something" required>
+								<input type="date" class="datepicker form-control" name="date" placeholder="type something" value="{{ $date }}" required>
 							</div>
 							<div class="form-group">
 								<label>Deskripsi</label>

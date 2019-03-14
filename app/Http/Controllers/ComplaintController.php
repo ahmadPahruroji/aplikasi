@@ -109,4 +109,24 @@ class ComplaintController extends Controller
         $data = Complaint::find($id)->delete();
         return response()->json($data);
     }
+
+    public function status(Request $request, $id){
+        $status = Complaint::findOrFail($id);
+        if($status->statuscomplaint == 0 || null){
+            $status->statuscomplaint = $request->statuscomplaint = 1;
+            $status->save();
+            return redirect()->route('complaints.index');
+        }
+        else if($status->statuscomplaint == 1){
+            $status->statuscomplaint = $request->statuscomplaint = 2;
+            $status->save();
+            return redirect()->route('complaints.index');
+        }
+        else
+        {
+            $status->statuscomplaint = $request->statuscomplaint = 0;
+            $status->save();
+            return redirect()->route('complaints.index');
+        }
+    }
 }
