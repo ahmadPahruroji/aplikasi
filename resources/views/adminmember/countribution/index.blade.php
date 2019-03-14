@@ -33,7 +33,7 @@
                $date = strftime( "%d %B %Y", strtotime($countribution->date));
 
                // Rupiah //
-               $rupiah = "Rp " . number_format($countribution->money->money,2,',','.');
+               $rupiah = "Rp " . number_format($countribution->money,2,',','.');
                @endphp
                         <tr>
                             <td>{{ $cu+1 }}</td>
