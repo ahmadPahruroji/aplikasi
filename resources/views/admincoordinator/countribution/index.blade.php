@@ -44,7 +44,11 @@
                             {{-- <td>{{ $countribution->month }}</td> --}}
                             <td>{{ $rupiah }}</td>
                             <td>{{ $date }}</td>
-                            <td><span class="label radius-circle bg-primary float-left">{{ $countribution->status }}</span></td>
+                            <td><span>@if ($countribution->status == 0)
+              <button type="link" value="0" class="btn btn-danger btn-sm">belum lunas</button>
+              @else
+              <button onclick="return confirm('apakah belum lunas?');" value="1" class="btn btn-success btn-sm">Lunas</button>
+              @endif</span></td>
                             {{-- <td>{{ $countribution->description }}</td> --}}
                             <td>
                                <center>
